@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurrentWeapon : MonoBehaviour {
+public class WeaponStats : MonoBehaviour {
 
 	public GameObject bullet;
 	public string name; //Has no effect on gameplay, is just for ID purposes.

@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent (typeof (BoxCollider2D))]
 public class Attackable : MonoBehaviour {
 	public float maxHP = 1;
-	public float hp;
+	public float hp = 1;
 	public bool allied;
 	public bool anarchy;
-	public bool alive;
+	public bool alive = true;
 	public bool important;
 	public float deathbarrier = -999999999999999;
 	public float regenRate;

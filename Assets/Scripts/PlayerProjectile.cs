@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof (Rigidbody2D))]
-public class Projectile : MonoBehaviour {
-	CurrentWeapon firedFrom;
+public class PlayerProjectile : MonoBehaviour {
+    WeaponStats firedFrom;
 	Rigidbody2D m_body;
 	public bool isAllied;
 	public bool anarchy;
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour {
 		m_body = GetComponent<Rigidbody2D> ();
 	}
 
-	public void SetWeapon(CurrentWeapon sent){
+	public void SetWeapon(WeaponStats sent){
 		firedFrom = sent;
 	}
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapons : MonoBehaviour {
+public class WeaponHandler : MonoBehaviour {
 	public List<GameObject> weapons;
 	public float weaponSwitchDelay;
 	public GameObject nextWeapon;
@@ -20,7 +20,7 @@ public class Weapons : MonoBehaviour {
 	void Update(){
 		cooldown -= 1 * Time.deltaTime;
 
-		if (nextWeapon == null || nextWeapon.GetComponent<CurrentWeapon>().name == transform.GetChild(0).GetComponent<CurrentWeapon>().name) {
+		if (nextWeapon == null || nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name) {
 			nextWeapon = weapons [Random.Range (0, weapons.Count)];
 		}
 		if (cooldown <= 0){

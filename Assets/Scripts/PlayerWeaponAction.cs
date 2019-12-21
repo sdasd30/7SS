@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour {
+public class PlayerWeaponAction : MonoBehaviour {
 	//public Rigidbody projectile;
 	//public GameObject BulletPrefab;
-	CurrentWeapon Weapon;
+	WeaponStats Weapon;
 	public Vector2 Offset;
 	bool firing;
 	float coolDown = 0;
 	// Use this for initialization
 	void Start () {
-		Weapon = GetComponent<CurrentWeapon> ();
+		Weapon = GetComponent<WeaponStats> ();
 	}
 
 	// Update is called once per frame
@@ -47,8 +47,8 @@ public class PlayerShoot : MonoBehaviour {
 		for (int i = 0; i < Weapon.shots; i++) {
 			float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
 			GameObject bullet = GameObject.Instantiate (Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
-			bullet.GetComponent<Projectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range (-Weapon.spread, Weapon.spread) - 90);
-			bullet.GetComponent<Projectile> ().SetWeapon (Weapon);
+			bullet.GetComponent<PlayerProjectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range (-Weapon.spread, Weapon.spread) - 90);
+			bullet.GetComponent<PlayerProjectile> ().SetWeapon (Weapon);
 			Destroy (bullet, Weapon.duration);
 			}
 		coolDown = Weapon.firerate / 1000;
