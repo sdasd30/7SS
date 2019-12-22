@@ -5,153 +5,231 @@ using System.Collections.Generic;
 [RequireComponent (typeof (BoxCollider2D))]
 public class PhysicsSS : MonoBehaviour {
 
+    //Collision Detection
 	public LayerMask collisionMask;
+    public Vector2 m_accumulatedVelocity = Vector2.zero;
 
-	const float skinWidth = .015f;
-	int horizontalRayCount = 4;
-	int verticalRayCount = 4;
+    public CollisionInfo m_collisions;
 
-	public Vector2 SelfInput = Vector2.zero;
-	public Vector2 accumulatedVelocity = Vector2.zero;
-	public bool isGravity = true;
-	public float gravityScale = -1.0f;
-	public float speed;
-	public bool facingLeft = false;
-	public bool canMove = true;
-	public bool AttemptingMovement = false;
-	public float DecelerationRatio = 1.0f;
-	float terminalVelocity = -0.5f;
+    private const float SKIN_WIDTH = .015f;
+	private int horizontalRayCount = 4;
+	private int verticalRayCount = 4;
+    private float horizontalRaySpacing;
+    private float verticalRaySpacing;
+    private BoxCollider2D bCollider;
+    private RaycastOrigins raycastOrigins;
 
-	float maxClimbAngle = 80;
+	
 
-	float horizontalRaySpacing;
-	float verticalRaySpacing;
-	public Vector2 velocity;
-	public string falling;
-	BoxCollider2D bCollider;
-	RaycastOrigins raycastOrigins;
-	public CollisionInfo collisions;
-	SpriteRenderer sprite;
-	List<Vector2> CharForces = new List<Vector2>();
-	List<float> timeForces = new List<float>();
-	public bool onGround = true;
-	Vector2 playerForce = new Vector2();
-	public float dropThruTime = 0.0f;
-	Vector2 spawnPos;
-	bool resetPos = false;
+    private const float VELOCITY_MINIMUM_THRESHOLD = 0.3f;
 
-	float m_initialOffsetX;
+    //Persistent Stats
+    public bool Floating = true;
+    public float GravityForce = -1.0f;
+    public bool facingLeft = false;
+    public bool canMove = true;
+    public bool AttemptingMovement = false;
+    public float DecelerationRatio = 1.0f;
+    public Vector3 TrueVelocity;
+    private float TerminalVelocity = -0.5f;
+    private float maxClimbAngle = 80;
 
-	void Start() {
+    // Tracking movement
+    public bool onGround = true;
+    public float dropThruTime = 0.0f;
+
+    private Vector2 m_velocity;
+    private List<Vector2> m_forces = new List<Vector2>();
+    private List<float> timeForces = new List<float>();
+    private string m_falling;
+    private float m_initialOffsetX;
+    private Vector3 m_lastPosition;
+    private float m_gravityCancelTime = 0f;
+   
+
+    Vector2 m_inputedForce = new Vector2();
+    // Tracking inputed movement
+    public Vector2 SelfInput = Vector2.zero;
+    
+
+    //floating
+    private float m_oldFloatingTime = 0f;
+    private bool m_oldFloating = false;
+
+    void Start() {
 		bCollider = GetComponent<BoxCollider2D> ();
-		float newBOffY = bCollider.offset.y + skinWidth;
+		float newBOffY = bCollider.offset.y + SKIN_WIDTH;
 		m_initialOffsetX = bCollider.offset.x;
 		bCollider.offset = new Vector2(m_initialOffsetX,newBOffY);
-		sprite = GetComponent<SpriteRenderer> ();
 		CalculateRaySpacing ();
 		canMove = true;
 		setFacingLeft (facingLeft);
-		onSpawn ();
-	}
-	void onSpawn() {
-		if (resetPos) {
-			transform.position = new Vector3 (spawnPos.x, spawnPos.y, transform.position.z);
-			GetComponent<PhysicsSS> ().accumulatedVelocity = Vector2.zero;
-			resetPos = false;
-		}
-	}
-	public void setSpawnPos(Vector2 sp) {
-		resetPos = true;
-		spawnPos = sp;
 	}
 
-	public void Move(Vector2 velocity) {
-		//Move (velocity, Vector2.zero);
-	}
-
-	public void setGravityScale(float gravScale) {
-		gravityScale = gravScale;
+	public void setGravityForce(float gravScale) {
+		GravityForce = gravScale;
 	}
 
 	void FixedUpdate() {
-		////Debug.Log (Time.deltaTime);
 		dropThruTime = Mathf.Max(0f,dropThruTime - Time.fixedDeltaTime);
-		if (Mathf.Abs(accumulatedVelocity.x) > 0.3f) {
-			if (collisions.below) {
-				accumulatedVelocity.x *= (1.0f - Time.fixedDeltaTime * DecelerationRatio * 2.0f);
-			} else {
-				accumulatedVelocity.x *= (1.0f - Time.fixedDeltaTime * DecelerationRatio * 3.0f);
-			}
-		} else {
-			accumulatedVelocity.x = 0f;
-		}
-		processMovement ();
-	}
+        DecelerateAutomatically(VELOCITY_MINIMUM_THRESHOLD);
+        //      if (Mathf.Abs(m_accumulatedVelocity.x) > 0.3f) {
+        //	if (m_collisions.below) {
+        //		m_accumulatedVelocity.x *= (1.0f - Time.fixedDeltaTime * DecelerationRatio * 2.0f);
+        //	} else {
+        //		m_accumulatedVelocity.x *= (1.0f - Time.fixedDeltaTime * DecelerationRatio * 3.0f);
+        //	}
+        //} else {
+        //	m_accumulatedVelocity.x = 0f;
+        //}
+        m_updateTrueVelocity();
+        m_processMovement();
+        m_updateFloating();
+    }
+    private void DecelerateAutomatically(float threshold)
+    {
+        if (m_accumulatedVelocity.sqrMagnitude > threshold)
+            m_accumulatedVelocity *= (1.0f - Time.fixedDeltaTime * DecelerationRatio * 3.0f);
+        else
+            m_accumulatedVelocity = Vector2.zero;
+    }
+    private void m_updateTrueVelocity()
+    {
+        TrueVelocity = transform.position - m_lastPosition;
+        m_lastPosition = transform.position;
+    }
+    private void m_updateFloating()
+    {
+        if (m_oldFloatingTime > 0f)
+        {
+            m_oldFloatingTime -= Time.fixedDeltaTime;
+            if (m_oldFloatingTime <= 0f)
+                m_continueFromFreeze();
+        }
+    }
+    public void m_continueFromFreeze()
+    {
+        Floating = m_oldFloating;
+    }
+    public void m_freezeInAir(float time)
+    {
+        if (time > 0f)
+        {
+            m_oldFloating = Floating;
+            m_oldFloatingTime = time;
+            Floating = true;
+            //CancelVerticalMomentum();
+            m_accumulatedVelocity = Vector2.zero;
+            //m_artificialVelocity = Vector2.zero;
+        }
+        else
+        {
+            m_continueFromFreeze();
+        }
+    }
+    private void m_processMovement()
+    {
+        m_checkCanMove();
+        ApplyForcesToVelocity();
+        //processArtificialVelocity();
+        UpdateRaycastOrigins();
+        m_movePlayer();
+        m_collisions.Reset();
+    }
+    private void m_checkCanMove()
+    {
+        if (canMove)
+            return;
+        m_inputedForce = new Vector2(0, 0);
+    }
 
-	void processMovement() {
+    private void ApplyForcesToVelocity()
+	{
+        m_inputedForce = m_inputedForce * Time.fixedDeltaTime;
+        m_velocity.x = m_inputedForce.x;
+        if (Floating)
+            m_velocity.y = m_inputedForce.y;
+        bool Yf = false;
+
+        for (int i = m_forces.Count - 1; i >= 0; i--)
+        {
+            Vector2 selfVec = m_forces[i];
+            if (selfVec.y != 0f && !Floating)
+            {
+                m_velocity.y = 0f;
+                Yf = true;
+            }
+            if (timeForces[i] < Time.fixedDeltaTime)
+            {
+                m_velocity += (selfVec * Time.fixedDeltaTime);
+            }
+            else
+            {
+                m_velocity += (selfVec * Time.fixedDeltaTime);
+            }
+            timeForces[i] = timeForces[i] - Time.fixedDeltaTime;
+            if (timeForces[i] < 0f)
+            {
+                m_forces.RemoveAt(i);
+                timeForces.RemoveAt(i);
+            }
+            if (!Floating && m_velocity.y > TerminalVelocity)
+            {
+                if (Yf || !m_collisions.below)
+                {
+                    m_velocity.y += GravityForce * Time.fixedDeltaTime;
+                }
+                else if (m_collisions.below)
+                { //force player to stick to slopes
+                    m_velocity.y += GravityForce * Time.fixedDeltaTime * 6f;
+                }
+            }
+
+        }
+        m_velocity.x += (m_accumulatedVelocity.x * Time.fixedDeltaTime);
+        if (m_velocity.y > TerminalVelocity && !Floating)
+        {
+            if (!m_collisions.below && m_gravityCancelTime <= 0f)
+            {
+                m_velocity.y += GravityForce * Time.fixedDeltaTime;
+            }
+            else if (m_collisions.below)
+            {
+                m_velocity.y += GravityForce * Time.fixedDeltaTime * 6f;
+            }
+        }
+    }
+    private void m_movePlayer() {
 		if (!canMove) {
 			SelfInput = Vector2.zero;
 		}
-		if (collisions.above || collisions.below){
-			velocity.y = 0.0f;
+		if (m_collisions.above || m_collisions.below){
+			m_velocity.y = 0.0f;
 		}  
-		playerForce = playerForce * Time.fixedDeltaTime;
-		velocity.x = playerForce.x;
-		bool Yf = false;
 
-		for (int i = CharForces.Count - 1; i >= 0; i--) {
-			Vector2 selfVec = CharForces [i];
-			if (selfVec.y != 0f) {
-				velocity.y = 0f;
-				Yf = true;
-			}
-			if (timeForces [i] < Time.fixedDeltaTime) {
-				velocity += (selfVec * Time.fixedDeltaTime);
-			} else {
-				velocity += (selfVec * Time.fixedDeltaTime);
-			}
-			timeForces [i] = timeForces [i] - Time.fixedDeltaTime;
-			if (timeForces [i] < 0f) {
-				CharForces.RemoveAt (i);
-				timeForces.RemoveAt (i);
-			}
-		}
-		if (velocity.y > terminalVelocity){
-			if (Yf || !collisions.below) {
-				velocity.y += gravityScale * Time.fixedDeltaTime;
-			} else if (collisions.below) { //force player to stick to slopes
-				velocity.y += gravityScale * Time.fixedDeltaTime * 6f;
-			}
-		}
-		velocity.x += (accumulatedVelocity.x * Time.fixedDeltaTime);
-		UpdateRaycastOrigins ();
-		collisions.Reset ();
-		////Debug.Log ("Movement Update: SelfInputX: " + SelfInput.x);
-		if (velocity.x != 0 || SelfInput.x != 0) {
-			HorizontalCollisions (ref velocity);
-		}
-		if (velocity.y != 0) {
-			VerticalCollisions (ref velocity);
-		}
-
-		transform.Translate (velocity);
-		speed = Mathf.Abs(velocity.x);
+		m_collisions.Reset ();
+        Vector2 preCollideV = new Vector2(m_velocity.x, m_velocity.y);
+        if (m_velocity.x != 0 || m_inputedForce.x != 0)
+            Horizontalcollisions(ref m_velocity);
+        if (m_velocity.y != 0 || m_inputedForce.y != 0)
+            Verticalcollisions(ref m_velocity);
+        transform.Translate(m_velocity, Space.World);
 	}
 
 	public void addToVelocity(Vector2 veloc )
 	{
-		accumulatedVelocity.x += veloc.x;
+		m_accumulatedVelocity.x += veloc.x;
 		addSelfForce (new Vector2 (0f, veloc.y), 0f);
 	}
 	public void addSelfForce(Vector2 force, float duration) {
-		CharForces.Add (force);
+		m_forces.Add (force);
 		timeForces.Add (duration);
 	}
 
 	public void Move(Vector2 veloc, Vector2 input) {
 		//NumKnivesLog ("Move Called with input: " + input);
 		SelfInput = input;
-		playerForce = veloc;
+		m_inputedForce = veloc;
 		if (SelfInput.x != 0.0f)
 			setFacingLeft (SelfInput.x < 0.0f);
 	}
@@ -221,15 +299,15 @@ public class PhysicsSS : MonoBehaviour {
 		}
 		return false;
 	}
-	void HorizontalCollisions(ref Vector2 velocity) {
+	void Horizontalcollisions(ref Vector2 velocity) {
 		float directionX;
-		//Debug.Log ("Horizontal Collisions:" + SelfInput + " : " + velocity);
+		//Debug.Log ("Horizontal m_collisions:" + SelfInput + " : " + velocity);
 		if (velocity.x == 0) {
 			directionX = Mathf.Sign (SelfInput.x);
 		} else {
 			directionX = Mathf.Sign (velocity.x);
 		}
-		float rayLength = Mathf.Max(0.05f,Mathf.Abs (velocity.x) + skinWidth);
+		float rayLength = Mathf.Max(0.05f,Mathf.Abs (velocity.x) + SKIN_WIDTH);
 
 		for (int i = 0; i < horizontalRayCount; i ++) {
 			Vector2 rayOrigin = (directionX == -1)?raycastOrigins.bottomLeft:raycastOrigins.bottomRight;
@@ -253,8 +331,8 @@ public class PhysicsSS : MonoBehaviour {
 					float slopeAngle = Vector2.Angle (hit.normal, Vector2.up);
 					if (i == 0 && slopeAngle <= maxClimbAngle) {
 						float distanceToSlopeStart = 0;
-						if (slopeAngle != collisions.slopeAngleOld) {
-							distanceToSlopeStart = hit.distance - skinWidth;
+						if (slopeAngle != m_collisions.slopeAngleOld) {
+							distanceToSlopeStart = hit.distance - SKIN_WIDTH;
 							//velocity.x -= distanceToSlopeStart * directionX;
 							velocity.x = (Mathf.Abs(velocity.x) + distanceToSlopeStart) * directionX;
 						}
@@ -263,16 +341,16 @@ public class PhysicsSS : MonoBehaviour {
 						velocity.x = (Mathf.Abs(velocity.x) + distanceToSlopeStart) * directionX;
 					}
 
-					if (!collisions.climbingSlope || slopeAngle > maxClimbAngle) {
-						velocity.x = (hit.distance - skinWidth) * directionX;
+					if (!m_collisions.climbingSlope || slopeAngle > maxClimbAngle) {
+						velocity.x = (hit.distance - SKIN_WIDTH) * directionX;
 						rayLength = hit.distance;
 
-						if (collisions.climbingSlope) {
-							velocity.y = Mathf.Tan (collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs (velocity.x);
+						if (m_collisions.climbingSlope) {
+							velocity.y = Mathf.Tan (m_collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs (velocity.x);
 						}
 
-						collisions.left = directionX == -1;
-						collisions.right = directionX == 1;
+						m_collisions.left = directionX == -1;
+						m_collisions.right = directionX == 1;
 					}
 				}
 			}
@@ -280,9 +358,9 @@ public class PhysicsSS : MonoBehaviour {
 
 	}
 	
-	void VerticalCollisions(ref Vector2 velocity) {
+	void Verticalcollisions(ref Vector2 velocity) {
 		float directionY = Mathf.Sign (velocity.y);
-		float rayLength = Mathf.Abs (velocity.y) + skinWidth;
+		float rayLength = Mathf.Abs (velocity.y) + SKIN_WIDTH;
 
 		for (int i = 0; i < verticalRayCount; i ++) {
 			Vector2 rayOrigin = (directionY == -1)?raycastOrigins.bottomLeft:raycastOrigins.topLeft;
@@ -291,18 +369,18 @@ public class PhysicsSS : MonoBehaviour {
 			if (hit && !hit.collider.isTrigger && hit.collider.gameObject != gameObject) {
 				if (hit.collider.gameObject.GetComponent<JumpThru> () && ( velocity.y > 0 || dropThruTime > 0f)){ //|| handleStairs(hit,velocity))){
 				} else {
-					velocity.y = (hit.distance - skinWidth) * directionY;
+					velocity.y = (hit.distance - SKIN_WIDTH) * directionY;
 					rayLength = hit.distance;
-					if (collisions.climbingSlope) {
-						velocity.x = velocity.y / Mathf.Tan (collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign (velocity.x);
+					if (m_collisions.climbingSlope) {
+						velocity.x = velocity.y / Mathf.Tan (m_collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign (velocity.x);
 					}
 
-					collisions.below = directionY == -1;
-					collisions.above = directionY == 1;
+					m_collisions.below = directionY == -1;
+					m_collisions.above = directionY == 1;
 				}
 			}
 		}
-		falling = "none";
+		m_falling = "none";
 		onGround = false;
 		rayLength = rayLength + 0.1f;
 		if (true) {
@@ -320,13 +398,13 @@ public class PhysicsSS : MonoBehaviour {
 						//Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength,Color.red);
 						onGround = true;
 						if ( started && !collide) {
-							falling = "left";
+							m_falling = "left";
 						}
 						collide = true;
 					}  else {
 						//Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength,Color.green);
 						if (started && collide) {
-							falling = "right";
+							m_falling = "right";
 						}
 					}
 				}
@@ -344,16 +422,16 @@ public class PhysicsSS : MonoBehaviour {
 		if (velocity.y <= climbVelocityY) {
 			velocity.y = climbVelocityY;
 			velocity.x = Mathf.Cos (slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign (velocity.x);
-			collisions.below = true;
-			collisions.climbingSlope = true;
-			collisions.slopeAngle = slopeAngle;
+			m_collisions.below = true;
+			m_collisions.climbingSlope = true;
+			m_collisions.slopeAngle = slopeAngle;
 		}
 	}
 
 	void UpdateRaycastOrigins() {
 		Bounds bounds = bCollider.bounds;
 	
-		bounds.Expand (skinWidth );
+		bounds.Expand (SKIN_WIDTH );
 
 		raycastOrigins.bottomLeft = new Vector2 (bounds.min.x , bounds.min.y);
 		raycastOrigins.bottomRight = new Vector2 (bounds.max.x, bounds.min.y);
@@ -363,7 +441,7 @@ public class PhysicsSS : MonoBehaviour {
 
 	void CalculateRaySpacing() {
 		Bounds bounds = bCollider.bounds;
-		bounds.Expand (skinWidth );
+		bounds.Expand (SKIN_WIDTH );
 
 		horizontalRayCount = Mathf.Clamp (horizontalRayCount, 2, int.MaxValue);
 		verticalRayCount = Mathf.Clamp (verticalRayCount, 2, int.MaxValue);
@@ -395,16 +473,8 @@ public class PhysicsSS : MonoBehaviour {
 	}
 	public void setFacingLeft(bool left) {
 		facingLeft = left;
-		if (sprite) {
-			if (facingLeft) {
-				//bCollider.offset = new Vector2(-m_initialOffsetX,bCollider.offset.y);
-				sprite.flipX = true;
-			} else {
-				//bCollider.offset = new Vector2(m_initialOffsetX,bCollider.offset.y);
-				sprite.flipX = false;
-			}
-		}
-
+        if (GetComponent<Orientation>() != null)
+            GetComponent<Orientation>().SetDirection(left);
 	}
 	public void TurnToTransform(Transform t) {
 		if (t.position.x > transform.position.x) {

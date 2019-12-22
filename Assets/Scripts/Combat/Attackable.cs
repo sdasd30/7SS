@@ -63,5 +63,9 @@ public class Attackable : MonoBehaviour {
 			regenCooldown = 1;
 		}
 	}
-		
+	public bool CanAttack(Attackable otherObj)
+    {
+        return anarchy || (allied && !otherObj.allied) ||
+            (!allied && otherObj.allied);
+    }
 }

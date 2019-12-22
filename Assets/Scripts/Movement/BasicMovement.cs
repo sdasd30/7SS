@@ -19,6 +19,7 @@ public class BasicMovement : MonoBehaviour {
 	Vector2 velocity;
 	Vector2 m_jumpVector;
 	float m_velocityXSmoothing;
+    float m_velocityYSmoothing;
 	//-------------------
 	PhysicsSS m_physics;
 
@@ -42,11 +43,10 @@ public class BasicMovement : MonoBehaviour {
 	internal void Start()  {
 		m_physics = GetComponent<PhysicsSS> ();
 		m_gravity = -(2 * JumpHeight) / Mathf.Pow (TimeToJumpApex, 2);
-		m_physics.setGravityScale (m_gravity * (1.0f/60f));
+		m_physics.setGravityForce(m_gravity * (1.0f/60f));
 		m_jumpVelocity = Mathf.Abs(m_gravity) * TimeToJumpApex;
 		m_jumpVector = new Vector2 (0f, m_jumpVelocity);
         m_aibase = GetComponent<AIBase>();
-
     }
 		
 	public void onHitConfirm(GameObject otherObj) {
@@ -63,47 +63,11 @@ public class BasicMovement : MonoBehaviour {
 	}
 
 	internal InputPacket playerMovement() {
-        //if (m_physics.onGround) {canDoubleJump = true;}
-        //inputX = 0.0f;
-        //inputY = 0.0f;
-        //if (!autonomy && m_physics.canMove && targetSet) {
-        //	if (targetObj) {
-        //		if (followObj == null) {
-        //			endTarget ();
-        //			return;
-        //		}
-        //		targetPoint = followObj.transform.position;
-        //	}
-        //	moveToPoint (targetPoint);
-        //}else if (m_physics.canMove && autonomy) {
-        //	inputY = Input.GetAxis ("Vertical");
-        //	inputX = Input.GetAxis("Horizontal");
-        //	if (Input.GetButtonDown("Jump")) {
-        //		if (inputY < -0.9f) {
-        //			GetComponent<PhysicsSS>().setDropTime(1.0f);
-        //		}
-        //		else if (m_physics.collisions.below) {
-        //			m_physics.addSelfForce (m_jumpVector, 0f);
-        //			jumpPersist = 0.2f;
-        //		} else if (canDoubleJump) {
-        //			velocity.y = m_jumpVelocity;
-        //			m_physics.addSelfForce (m_jumpVector, 0f);
-        //			canDoubleJump = false;
-        //		}
-        //	}
-        //}
-        ////m_physics logic
-        //float targetVelocityX = inputX * MoveSpeed;
-        //velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref m_velocityXSmoothing, (m_physics.collisions.below)?m_accelerationTimeGrounded:m_accelerationTimeAirborne);
-        //Vector2 input = new Vector2 (inputX, inputY);
-        //m_physics.Move (velocity, input);
-        //m_physics.AttemptingMovement = (inputX != 0.0f);
         InputPacket ip = new InputPacket();
         ip.movementInput.x = Input.GetAxis("Horizontal");
         ip.movementInput.y = Input.GetAxis("Vertical");
         ip.jump = Input.GetButtonDown("Jump");
         return ip;
-        
 	}
 
     //=== NPC movement ====
@@ -114,18 +78,19 @@ public class BasicMovement : MonoBehaviour {
             ip = m_aibase.AITemplate();
         return ip;
     }
-    void oldMovement () {
-		if (targetSet) {
-			if (targetObj) {
-				if (followObj == null) {
-					endTarget ();
-					return;
-				}
-				targetPoint = followObj.transform.position;
-			}
-			moveToPoint (targetPoint);
-		}
-	}
+
+ //   void oldMovement () {
+	//	if (targetSet) {
+	//		if (targetObj) {
+	//			if (followObj == null) {
+	//				endTarget ();
+	//				return;
+	//			}
+	//			targetPoint = followObj.transform.position;
+	//		}
+	//		moveToPoint (targetPoint);
+	//	}
+	//}
 
 
     internal void baseMovement(InputPacket ip)
@@ -144,7 +109,7 @@ public class BasicMovement : MonoBehaviour {
                 }
                 targetPoint = followObj.transform.position;
             }
-            moveToPoint(targetPoint);
+            //moveToPoint(targetPoint);
         }
         else if (m_physics.canMove && autonomy)
         {
@@ -156,7 +121,7 @@ public class BasicMovement : MonoBehaviour {
                 {
                     GetComponent<PhysicsSS>().setDropTime(1.0f);
                 }
-                else if (m_physics.collisions.below)
+                else if (m_physics.m_collisions.below)
                 {
                     m_physics.addSelfForce(m_jumpVector, 0f);
                     jumpPersist = 0.2f;
@@ -171,43 +136,50 @@ public class BasicMovement : MonoBehaviour {
         }
         //m_physics logic
         float targetVelocityX = inputX * MoveSpeed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref m_velocityXSmoothing, (m_physics.collisions.below) ? m_accelerationTimeGrounded : m_accelerationTimeAirborne);
+        float targetVelocityY = inputY * MoveSpeed;
+        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref m_velocityXSmoothing, (m_physics.m_collisions.below) ? m_accelerationTimeGrounded : m_accelerationTimeAirborne);
+        if (m_physics.Floating)
+            velocity.y = Mathf.SmoothDamp(velocity.y, targetVelocityY, ref m_velocityYSmoothing, (m_physics.m_collisions.below) ? m_accelerationTimeGrounded : m_accelerationTimeAirborne);
         Vector2 input = new Vector2(inputX, inputY);
         m_physics.Move(velocity, input);
-        m_physics.AttemptingMovement = (inputX != 0.0f);
+        m_physics.AttemptingMovement = (inputX != 0.0f || inputY != 0.0f);
+        if (inputX < 0)
+            m_physics.setFacingLeft(true);
+        else if (inputX > 0)
+            m_physics.setFacingLeft(false);
     }
 
-    public void moveToPoint(Vector3 point) {
-		inputX = 0.0f;
-		inputY = 0.0f;
+ //   public void moveToPoint(Vector3 point) {
+	//	inputX = 0.0f;
+	//	inputY = 0.0f;
 
-		float dist = Vector3.Distance (transform.position, point);
-		if (dist > abandonDistance || dist < minDistance) {
-			endTarget ();
-		} else {
-			if (m_physics.canMove) {
-				if (point.x > transform.position.x) {
-					if (dist > minDistance)
-						inputX = 1.0f;
-					m_physics.setFacingLeft (false);
+	//	float dist = Vector3.Distance (transform.position, point);
+	//	if (dist > abandonDistance || dist < minDistance) {
+	//		endTarget ();
+	//	} else {
+	//		if (m_physics.canMove) {
+	//			if (point.x > transform.position.x) {
+	//				if (dist > minDistance)
+	//					inputX = 1.0f;
+	//				m_physics.setFacingLeft (false);
 
-				} else {
-					if (dist > minDistance)
-						inputX = -1.0f;
-					m_physics.setFacingLeft (true);
-				}
-			}
-		}
-		float targetVelocityX = inputX * MoveSpeed;
-		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref m_velocityXSmoothing, (m_physics.collisions.below)?m_accelerationTimeGrounded:m_accelerationTimeAirborne);
-		Vector2 input = new Vector2 (inputX, inputY);
+	//			} else {
+	//				if (dist > minDistance)
+	//					inputX = -1.0f;
+	//				m_physics.setFacingLeft (true);
+	//			}
+	//		}
+	//	}
+	//	float targetVelocityX = inputX * MoveSpeed;
+	//	velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref m_velocityXSmoothing, (m_physics.collisions.below)?m_accelerationTimeGrounded:m_accelerationTimeAirborne);
+	//	Vector2 input = new Vector2 (inputX, inputY);
 
-		if (m_physics.canMove && (m_physics.falling == "left" || m_physics.falling == "right") && m_physics.collisions.below) {
-			m_physics.addSelfForce (new Vector2 (0f, m_jumpVelocity), 0f);
-		}
-		m_physics.Move (velocity, input);
-		m_physics.AttemptingMovement = (inputX != 0.0f);
-	}
+	//	if (m_physics.canMove && (m_physics.falling == "left" || m_physics.falling == "right") && m_physics.collisions.below) {
+	//		m_physics.addSelfForce (new Vector2 (0f, m_jumpVelocity), 0f);
+	//	}
+	//	m_physics.Move (velocity, input);
+	//	m_physics.AttemptingMovement = (inputX != 0.0f);
+	//}
 	public void setTargetPoint(Vector3 point, float proximity) {
 		setTargetPoint (point, proximity, float.MaxValue);
 	}
