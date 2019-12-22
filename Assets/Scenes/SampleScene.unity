@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 982733295}
   - component: {fileID: 982733294}
   - component: {fileID: 982733293}
+  - component: {fileID: 982733299}
   m_Layer: 0
   m_Name: you_irl
   m_TagString: Untagged
@@ -581,6 +582,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982733299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982733292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  hp: 10
+  allied: 1
+  anarchy: 0
+  alive: 1
+  important: 0
+  deathbarrier: -1e+15
+  regenRate: 0
 --- !u!1 &1463802160
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +682,8 @@ GameObject:
   - component: {fileID: 1494612212}
   - component: {fileID: 1494612211}
   - component: {fileID: 1494612210}
+  - component: {fileID: 1494612216}
+  - component: {fileID: 1494612217}
   m_Layer: 0
   m_Name: GroundDumb_big
   m_TagString: Untagged
@@ -680,8 +703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
-  hp: 4
+  maxHP: 10
+  hp: 10
   allied: 0
   anarchy: 0
   alive: 1
@@ -821,12 +844,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494612209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 0, z: 0}
+  m_LocalPosition: {x: -6.72, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494612216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494612209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70872c174922de5499f1545e90a7a957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  coolDownTime: 1
+  knockback: {x: 25, y: 12}
+--- !u!114 &1494612217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494612209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c910b530489b7c479fdbd3b3d1770cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChaseDistance: 10
+  AbandonDistance: 15
 --- !u!1 &1790790553
 GameObject:
   m_ObjectHideFlags: 0

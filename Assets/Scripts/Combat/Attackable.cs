@@ -33,6 +33,10 @@ public class Attackable : MonoBehaviour {
 	public void TakeDamage(float damage){
 		hp -= damage;
 	}
+    public void TakeKnockback(Vector2 vec)
+    {
+        GetComponent<PhysicsSS>().addToVelocity(vec);
+    }
 	public float ReturnHP() {
 		return hp;
 	}
