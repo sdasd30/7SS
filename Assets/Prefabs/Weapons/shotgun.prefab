@@ -104,7 +104,7 @@ MonoBehaviour:
   speed: 9
   duration: 3
   shots: 5
-  knockbackMult: 1
+  knockbackMult: 5
   auto: 0
 --- !u!114 &4586572493465753823
 MonoBehaviour:
