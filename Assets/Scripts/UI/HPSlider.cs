@@ -26,6 +26,6 @@ public class HPSlider : MonoBehaviour
         sliderCurrent = plr.hp;
         kk.maxValue = sliderMax;
         kk.value = sliderCurrent;
-        fillArea.offsetMax = new Vector2(((plr.maxHP * 65.5f)), fillArea.offsetMax.y);
+        fillArea.offsetMax = new Vector2(((plr.maxHP * 64f)), fillArea.offsetMax.y);
     }
 }
