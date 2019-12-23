@@ -129,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -139,7 +139,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b11b0fb46b42747ac9fb4c14faaef9
+      spriteID: b99c5abd6c131c04cb69ff94a74499eb
       internalID: 2968572528661209839
       vertices: []
       indices: 
@@ -149,8 +149,8 @@ TextureImporter:
       name: bullet_types_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 0
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -160,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47ba981944017c94a8dfcfa2df64de15
+      spriteID: e68f9bf554f58784ca5a3aec528c4c97
       internalID: 6149542863852201471
       vertices: []
       indices: 
@@ -170,8 +170,8 @@ TextureImporter:
       name: bullet_types_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 0
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -181,7 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b30917abdc516a14aa57d349c1f2b322
+      spriteID: 420bce432f3f78441bd19724095ba982
       internalID: 6913792754607932572
       vertices: []
       indices: 
@@ -191,8 +191,8 @@ TextureImporter:
       name: bullet_types_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 0
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -202,7 +202,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 444d8e6e109cce4439f49ec3d6570159
+      spriteID: 374f51d2c5ecb8a42b8e258d4228e5f3
       internalID: 396827100868393569
       vertices: []
       indices: 
@@ -212,8 +212,8 @@ TextureImporter:
       name: bullet_types_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 0
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -223,7 +223,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 825ff2df596b6ee44b5919df0f02854a
+      spriteID: 120984cd27f4d304d9afbfddee380353
       internalID: 5598649122271125432
       vertices: []
       indices: 
@@ -233,8 +233,8 @@ TextureImporter:
       name: bullet_types_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
+        x: 0
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -244,7 +244,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 013a8cf80bdd6184faa53a1e7fc5f294
+      spriteID: 6df39d47de2a415449fdbfe9722fee68
       internalID: -2520999609168018073
       vertices: []
       indices: 
@@ -254,8 +254,8 @@ TextureImporter:
       name: bullet_types_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 0
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -265,7 +265,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9434813945a84a4c905f2721d175750
+      spriteID: f3ded11ec33866448b518e03874987f7
       internalID: 6480737093129507320
       vertices: []
       indices: 
@@ -275,8 +275,8 @@ TextureImporter:
       name: bullet_types_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
+        x: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -286,7 +286,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da3e7a3b35aba0d41b64efe316495934
+      spriteID: 0838679c61f98e94f9af8675301abd42
       internalID: 5897281025878691048
       vertices: []
       indices: 
@@ -296,7 +296,7 @@ TextureImporter:
       name: bullet_types_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 0
         width: 32
         height: 32
@@ -307,7 +307,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96e12fdb488b7bf48b77802d20f54fa4
+      spriteID: df879f2527e13804a9291af8c66f1f8b
       internalID: 6615212957726289914
       vertices: []
       indices: 

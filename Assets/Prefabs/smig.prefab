@@ -99,7 +99,7 @@ MonoBehaviour:
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
   name: smig
   spread: 5
-  firerate: 30
+  firerate: 200
   damage: 1
   speed: 10
   duration: 5
