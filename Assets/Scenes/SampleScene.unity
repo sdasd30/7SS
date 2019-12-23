@@ -1337,6 +1337,10 @@ PrefabInstance:
       propertyPath: WeaponHandler
       value: 
       objectReference: {fileID: 14909110}
+    - target: {fileID: 97455699, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 982733292}
     - target: {fileID: 204278800, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
       propertyPath: WeaponHandler
       value: 
@@ -1357,6 +1361,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 982733292}
+    - target: {fileID: 299919613, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 982733292}
     - target: {fileID: 585465686, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
       propertyPath: player
       value: 
@@ -1365,10 +1373,18 @@ PrefabInstance:
       propertyPath: WeaponHandler
       value: 
       objectReference: {fileID: 14909110}
+    - target: {fileID: 740655749, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 982733292}
     - target: {fileID: 908377374, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 982733292}
+    - target: {fileID: 1790790557, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8994709058253228583, guid: b15d2173ab9bb6e418ff2ad86f448095,
         type: 3}
       propertyPath: m_Name
