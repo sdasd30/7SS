@@ -10,8 +10,7 @@ public class InputPacket {
 
     public void Combine(InputPacket ip)
     {
-        movementInput = new Vector2(Mathf.Max(ip.movementInput.x, movementInput.x),
-            Mathf.Max(ip.movementInput.y, movementInput.y));
+        movementInput = movementInput + ip.movementInput;
         MousePointWorld = ip.MousePointWorld;
         jump = jump || ip.jump;
         fire1 = fire1 || ip.fire1;
