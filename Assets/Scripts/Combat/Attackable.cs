@@ -10,9 +10,9 @@ public class Attackable : MonoBehaviour {
 	public bool anarchy;
 	public bool alive = true;
 	public bool important;
-	public float deathbarrier = -999999999999999;
+	public float deathbarrier = -9999;
 	public float regenRate;
-	float regenCooldown;
+	public float regenCooldown;
 	// Use this for initialization
 	void Start () {
 		hp = maxHP;
@@ -21,15 +21,23 @@ public class Attackable : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (hp <= 0){
-			alive = false;
-		}
-		if (!alive) {
-			Destroy (this.gameObject);
-		}
+        checkDead();
 		FallDown ();
 		Regen ();
 	}
+
+    public void checkDead()
+    {
+        if (hp <= 0)
+        {
+            alive = false;
+        }
+        if (!alive)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 	public void TakeDamage(float damage){
 		hp -= damage;
 	}
@@ -55,12 +63,12 @@ public class Attackable : MonoBehaviour {
 		regenCooldown -= Time.deltaTime;
 		if (regenCooldown <= 0) {
 			if (hp <= maxHP) {
-				hp += maxHP * regenRate;
+				hp += regenRate;
 				if (hp > maxHP) {
 					hp = maxHP;
 				}
 			}
-			regenCooldown = 1;
+			regenCooldown = .05f;
 		}
 	}
 	public bool CanAttack(Attackable otherObj)

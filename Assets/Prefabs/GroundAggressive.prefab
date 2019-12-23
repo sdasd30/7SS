@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1796919630272550340}
   - component: {fileID: 1796919630272550343}
   - component: {fileID: 3328107960243353216}
+  - component: {fileID: 5999850937406509247}
   m_Layer: 0
   m_Name: GroundAggressive
   m_TagString: Untagged
@@ -182,6 +183,7 @@ MonoBehaviour:
   important: 0
   deathbarrier: -1e+15
   regenRate: 0
+  regenCooldown: 0
 --- !u!114 &1796919630272550341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,3 +251,16 @@ MonoBehaviour:
   FacingLeft: 0
   CurrentDirection: 2
   m_sprite: {fileID: 1796919630272550347}
+--- !u!114 &5999850937406509247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796919630272550348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ccb0f1384b9f24ca8199da7aa164cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 2
