@@ -29,26 +29,17 @@ public class CameraFollow : MonoBehaviour {
 		initFunct ();
 	}
     public void initFunct() {
-        if (target == null)
-            findATarget();
-        if (target != null)
+        SetPlayerObj(target);
+    }
+
+    public void SetPlayerObj(Transform t)
+    {
+        if (t != null)
         {
+            target = t;
             viewSize.y = GetComponent<Camera>().orthographicSize * 2f;
             viewSize.x = viewSize.y * GetComponent<Camera>().aspect;
             focusArea = new FocusArea(target.GetComponent<Collider2D>().bounds, focusAreaSize, viewSize, minVertex, maxVertex);
-        }
-        
-	}
-
-    private void findATarget()
-    {
-        BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
-        foreach (BasicMovement bm in ListMovements)
-        {
-            if (bm.IsCurrentPlayer)
-            {
-                target = bm.transform;
-            }
         }
     }
 	void Update() {
