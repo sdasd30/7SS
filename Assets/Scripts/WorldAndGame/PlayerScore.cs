@@ -6,7 +6,7 @@ public class PlayerScore : MonoBehaviour
 {
     public float score = 0;
 
-    public float retrieveScore()
+    public float getScore()
     {
         return score;
     }
