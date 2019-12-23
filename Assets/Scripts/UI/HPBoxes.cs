@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class HPBoxes : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject player;
     public GameObject HPBox;
     Attackable playerAtackable;
     int maxHP;
     // Start is called before the first frame update
     void Start()
     {
-        playerAtackable = Player.GetComponent<Attackable>();
+        playerAtackable = player.GetComponent<Attackable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        maxHP = (int) playerAtackable.maxHP;
+        if (player != null) updateBoxes();
+    }
+
+    private void updateBoxes()
+    {
+        maxHP = (int)playerAtackable.maxHP;
         if (transform.childCount < maxHP)
         {
             GameObject box = Instantiate(HPBox, new Vector3(), new Quaternion());

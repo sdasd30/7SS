@@ -22,6 +22,11 @@ public class HPSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player != null) updateSlider();
+    }
+
+    private void updateSlider()
+    {
         sliderMax = (int)plr.maxHP;
         sliderCurrent = plr.hp;
         kk.maxValue = sliderMax;

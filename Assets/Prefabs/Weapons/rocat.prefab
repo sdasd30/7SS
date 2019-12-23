@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 6eedafb0ab8ebde41aca3a194eb717a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d290d386b18b60499e05a54c842db23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
-  name: rocat
+  name: snippy longshooter
   spread: 0
   firerate: 1000
   damage: 5

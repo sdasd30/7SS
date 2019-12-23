@@ -19,8 +19,14 @@ public class HPText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentHP = (int) player.GetComponent<Attackable>().hp;
-        maxHP = (int) player.GetComponent<Attackable>().maxHP;
+        if (player != null) updateText();
+    }
+
+    private void updateText()
+    {
+        currentHP = (int)player.GetComponent<Attackable>().hp;
+        maxHP = (int)player.GetComponent<Attackable>().maxHP;
         me.text = "HP: " + currentHP + "/" + maxHP;
     }
+
 }
