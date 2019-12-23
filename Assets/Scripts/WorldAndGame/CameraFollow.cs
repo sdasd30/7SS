@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-	public PhysicsSS target;
+	public Transform target;
 	public float verticalOffset;
 	public float lookAheadDstX;
 	public float lookSmoothTimeX;
@@ -28,13 +28,29 @@ public class CameraFollow : MonoBehaviour {
 	void Start() {
 		initFunct ();
 	}
-	public void initFunct() {
-		if (target != null) {
-			viewSize.y = GetComponent<Camera> ().orthographicSize * 2f;
-			viewSize.x = viewSize.y * GetComponent<Camera> ().aspect;
-			focusArea = new FocusArea (target.GetComponent<Collider2D> ().bounds, focusAreaSize,viewSize,minVertex,maxVertex);
-		}
+    public void initFunct() {
+        if (target == null)
+            findATarget();
+        if (target != null)
+        {
+            viewSize.y = GetComponent<Camera>().orthographicSize * 2f;
+            viewSize.x = viewSize.y * GetComponent<Camera>().aspect;
+            focusArea = new FocusArea(target.GetComponent<Collider2D>().bounds, focusAreaSize, viewSize, minVertex, maxVertex);
+        }
+        
 	}
+
+    private void findATarget()
+    {
+        BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
+        foreach (BasicMovement bm in ListMovements)
+        {
+            if (bm.IsCurrentPlayer)
+            {
+                target = bm.transform;
+            }
+        }
+    }
 	void Update() {
 		if (target != null) {
 			focusArea.Update (target.GetComponent<Collider2D> ().bounds, minVertex, maxVertex, UseCameraLimits);
