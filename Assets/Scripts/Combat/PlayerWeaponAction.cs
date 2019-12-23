@@ -7,7 +7,7 @@ public class PlayerWeaponAction : MonoBehaviour {
 	//public GameObject BulletPrefab;
 	WeaponStats Weapon;
 	public Vector2 Offset;
-	bool firing;
+	bool firing; //Why does this variable exist?
 	float coolDown = 0;
 	// Use this for initialization
 	void Start () {
