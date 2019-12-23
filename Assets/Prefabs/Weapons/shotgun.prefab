@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2834987892926104134
+--- !u!1 &4586572493465753816
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2834987892926104128}
-  - component: {fileID: 2834987892926104135}
-  - component: {fileID: 2834987892926104130}
-  - component: {fileID: 2834987892926104129}
-  - component: {fileID: -4046559179060988510}
+  - component: {fileID: 4586572493465753822}
+  - component: {fileID: 4586572493465753817}
+  - component: {fileID: 4586572493465753820}
+  - component: {fileID: 4586572493465753823}
+  - component: {fileID: 8700142536737820645}
   m_Layer: 0
-  m_Name: peestoll
+  m_Name: shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2834987892926104128
+--- !u!4 &4586572493465753822
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834987892926104134}
+  m_GameObject: {fileID: 4586572493465753816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8006441, y: -0.35476774, z: 0}
+  m_LocalPosition: {x: -1.527, y: -1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2834987892926104135
+--- !u!212 &4586572493465753817
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834987892926104134}
+  m_GameObject: {fileID: 4586572493465753816}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: a50e3e67029327c42b204f5f95fbedb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b159280e3abc8c4082c11eae7249f10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,48 +84,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2834987892926104130
+--- !u!114 &4586572493465753820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834987892926104134}
+  m_GameObject: {fileID: 4586572493465753816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
-  name: peestol
-  spread: 1
-  firerate: 400
+  name: shotty
+  spread: 5
+  firerate: 1000
   damage: 1
-  speed: 12
-  duration: 5
-  shots: 1
-  knockbackMult: 1
+  speed: 9
+  duration: 3
+  shots: 5
+  knockbackMult: 5
   auto: 0
---- !u!114 &2834987892926104129
+--- !u!114 &4586572493465753823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834987892926104134}
+  m_GameObject: {fileID: 4586572493465753816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f2bf1cd189d3d4d9e592462af64964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
---- !u!114 &-4046559179060988510
+--- !u!114 &8700142536737820645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834987892926104134}
+  m_GameObject: {fileID: 4586572493465753816}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}

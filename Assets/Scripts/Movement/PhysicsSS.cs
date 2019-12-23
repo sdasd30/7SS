@@ -187,6 +187,8 @@ public class PhysicsSS : MonoBehaviour {
 
         }
         m_velocity.x += (m_accumulatedVelocity.x * Time.fixedDeltaTime);
+        if (Floating)
+            m_velocity.y += (m_accumulatedVelocity.y * Time.fixedDeltaTime);
         if (m_velocity.y > TerminalVelocity && !Floating)
         {
             if (!m_collisions.below && m_gravityCancelTime <= 0f)
@@ -219,7 +221,10 @@ public class PhysicsSS : MonoBehaviour {
 	public void addToVelocity(Vector2 veloc )
 	{
 		m_accumulatedVelocity.x += veloc.x;
-		addSelfForce (new Vector2 (0f, veloc.y), 0f);
+        if (Floating)
+            m_accumulatedVelocity.y += veloc.y;
+        else
+		    addSelfForce (new Vector2 (0f, veloc.y), 0f);
 	}
 	public void addSelfForce(Vector2 force, float duration) {
 		m_forces.Add (force);
