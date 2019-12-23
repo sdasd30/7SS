@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 [RequireComponent (typeof (PhysicsSS))]
@@ -38,15 +39,17 @@ public class BasicMovement : MonoBehaviour {
 	public float minDistance = 1.0f;
 	public float abandonDistance = 10.0f;
 	public PhysicsSS followObj;
-    private AIBase m_aibase;
-
+    private List<AIBase> m_aibase;
+    private List<OffensiveTemplate> m_offensiveTemplates;
 	internal void Start()  {
 		m_physics = GetComponent<PhysicsSS> ();
 		m_gravity = -(2 * JumpHeight) / Mathf.Pow (TimeToJumpApex, 2);
 		m_physics.setGravityForce(m_gravity * (1.0f/60f));
 		m_jumpVelocity = Mathf.Abs(m_gravity) * TimeToJumpApex;
 		m_jumpVector = new Vector2 (0f, m_jumpVelocity);
-        m_aibase = GetComponent<AIBase>();
+
+        m_aibase = new List<AIBase>(GetComponents<AIBase>());
+        m_offensiveTemplates = new List<OffensiveTemplate>(GetComponents<OffensiveTemplate>());
     }
 		
 	public void onHitConfirm(GameObject otherObj) {
@@ -60,6 +63,9 @@ public class BasicMovement : MonoBehaviour {
 			ip = npcMovement ();
 		}
         baseMovement(ip);
+        foreach (OffensiveTemplate ot in m_offensiveTemplates)
+            ot.HandleInput(ip);
+
 	}
 
 	internal InputPacket playerMovement() {
@@ -74,8 +80,8 @@ public class BasicMovement : MonoBehaviour {
     internal InputPacket npcMovement()
     {
         InputPacket ip = new InputPacket();
-        if (m_aibase != null)
-            ip = m_aibase.AITemplate();
+        foreach (AIBase aib in m_aibase)
+            ip.Combine( aib.AITemplate());
         return ip;
     }
 

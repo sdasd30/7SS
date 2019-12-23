@@ -34,17 +34,14 @@ public class PlayerProjectile : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Entered A Collider");
         //if (other.gameObject.CompareTag("Collider"))
         //{
-            Debug.Log("Collided With Terrain");
             Destroy(gameObject);
         //}
     }
     void OnTriggerEnter2D(Collider2D other) {
  
         if (other.gameObject.GetComponent<Attackable> () != null) {
-            Debug.Log("Collided With Enemy");
             Attackable a = other.gameObject.GetComponent<Attackable> ();
 			if (a.anarchy) {
                 DoHit(a);

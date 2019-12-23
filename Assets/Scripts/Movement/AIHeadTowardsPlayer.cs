@@ -7,10 +7,18 @@ public class AIHeadTowardsPlayer : AIBase
     public float ChaseDistance = 10f;
     public float AbandonDistance = 15f;
     public float DelayAfterAttack = 1.0f;
+    public float JumpProbabilityPercent = 0.0f;
+    public float JumpCheckInterval = 1.0f;
+    public float JumpWhenInProximityOf = 999f;
+    public bool YAccessMove = false;
+    public Vector2 TargetOffset = new Vector2();
+    public float TargetTolerance = 0.2f;
 
     private Transform m_targetObj;
     private BasicMovement m_playerChar;
     private float m_nextMoveOKTime = 0.0f;
+    private float m_nextJumpTime = 0.0f;
+    private float m_jumpingHoldTime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +40,33 @@ public class AIHeadTowardsPlayer : AIBase
     public override InputPacket AITemplate()
     {
         InputPacket ip = new InputPacket();
-        if (m_targetObj != null && Time.timeSinceLevelLoad > m_nextMoveOKTime)
-            ip.movementInput = new Vector2((m_targetObj.position.x > transform.position.x) ? 1f : -1f,
+        float t = Time.timeSinceLevelLoad;
+        if (m_targetObj != null && t > m_nextMoveOKTime)
+        {
+            Vector2 target = new Vector2(m_targetObj.transform.position.x + TargetOffset.x, m_targetObj.transform.position.y + TargetOffset.y);
+            float d = Vector2.Distance(target, transform.position);
+            if (d > TargetTolerance)
+            {
+                ip.movementInput = new Vector2((m_targetObj.position.x > transform.position.x) ? 1f : -1f,
                 (m_targetObj.position.y > transform.position.y) ? 1f : -1f);
+                if (!YAccessMove)
+                    ip.movementInput.y = 0f;
+            }
+            if (t < m_jumpingHoldTime)
+                ip.jump = true;
+                
+            if (JumpProbabilityPercent > 0.0f && t > m_nextJumpTime && d < JumpWhenInProximityOf)
+            {
+                m_nextJumpTime = t + JumpCheckInterval;
+                if (Random.Range(0, 100) < JumpProbabilityPercent)
+                {
+                    m_jumpingHoldTime = t + 0.5f;
+                    Debug.Log("Trying to Jump");
+                }
+                    
+            }
+        }
+        
         return ip;
     }
     void OnTriggerEnter2D(Collider2D other)
