@@ -59,11 +59,11 @@ public class PlayerProjectile : MonoBehaviour {
         float angle = transform.localRotation.z ;
         
         Vector2 kb = new Vector2(Mathf.Cos( angle + Mathf.PI / 2f), Mathf.Sin( angle + Mathf.PI / 2f));
-        Debug.Log(Mathf.Rad2Deg * angle);
+        //Debug.Log(Mathf.Rad2Deg * angle);
         if (Mathf.Abs(Mathf.Rad2Deg * angle) > 45f)
             kb.y *= -1f;
         kb = kb * firedFrom.knockbackMult;
-        Debug.Log(kb);
+        //Debug.Log(kb);
         a.TakeKnockback(kb);
         if (!piercing)
             Destroy(this.gameObject);
