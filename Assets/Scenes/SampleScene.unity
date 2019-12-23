@@ -1476,19 +1476,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &707733744736202578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8960972120875151716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ccb0f1384b9f24ca8199da7aa164cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 1
 --- !u!1001 &1534082483653060130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,21 +1545,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f87247bff376ee4f9adf1f6f1c6a03e, type: 3}
---- !u!114 &5376142120305758760
-MonoBehaviour:
+--- !u!1001 &3409336208523080661
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8960972120875151716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b349d71a72be818499907204d21736d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FacingLeft: 0
-  CurrentDirection: 2
-  m_sprite: {fileID: 8960972120875151715}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5984054227554796209, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground_Gunner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984054227554796215, guid: 61ddcee72e9ed884fb9ff5ee4385dde9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61ddcee72e9ed884fb9ff5ee4385dde9, type: 3}
 --- !u!1001 &7457555227020473153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1652,6 +1693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052f386f6d8c81a4e8eda38b34843576, type: 3}
+<<<<<<< HEAD
 --- !u!50 &8960972120875151712
 Rigidbody2D:
   serializedVersion: 4
@@ -1892,6 +1934,8 @@ MonoBehaviour:
   minDistance: 1
   abandonDistance: 10
   followObj: {fileID: 0}
+=======
+>>>>>>> 01f4bcbd9e9258a35c8aed6fe9282b889fdfe2b1
 --- !u!1001 &8994709058700816987
 PrefabInstance:
   m_ObjectHideFlags: 0
