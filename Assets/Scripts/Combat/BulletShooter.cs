@@ -46,11 +46,12 @@ public class BulletShooter : OffensiveTemplate
     {
         for (int i = 0; i < Weapon.shots; i++)
         {
-            float angle = Vector2.Angle(transform.position, targetPoint) * Mathf.Deg2Rad;
+            float angle = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x) * Mathf.Rad2Deg - 90f;
             //float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
             GameObject bullet = GameObject.Instantiate(Weapon.bullet, transform.position + new Vector3(Offset.x * Mathf.Cos(angle), Offset.y * Mathf.Sin(angle), +.5f), Quaternion.identity);
-            float baseAngle = Vector2.Angle(transform.position, targetPoint);
-            bullet.GetComponent<PlayerProjectile>().SetAngle(baseAngle + Random.Range(-Weapon.spread, Weapon.spread) + 90);
+
+            Debug.Log("from: " + transform.position + " to: " + targetPoint + " ang: " + angle);
+            bullet.GetComponent<PlayerProjectile>().SetAngle(angle + Random.Range(-Weapon.spread, Weapon.spread));
             bullet.GetComponent<PlayerProjectile>().SetWeapon(Weapon);
             bullet.GetComponent<PlayerProjectile>().isAllied = GetComponent<Attackable>().allied;
             Destroy(bullet, Weapon.duration);
