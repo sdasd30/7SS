@@ -32,13 +32,20 @@ public class PlayerProjectile : MonoBehaviour {
 	void Update () {
 		m_body.transform.Translate (new Vector2(0f,firedFrom.speed * Time.deltaTime)); //new Vector2 (Mathf.Cos(angle) * speed * Time.deltaTime,Mathf.Sin(angle) * speed * Time.deltaTime));
 	}
-
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Obstacle" && collides) {
-			Destroy (this.gameObject);
-		}
-		if (other.gameObject.GetComponent<Attackable> () != null) {
-			Attackable a = other.gameObject.GetComponent<Attackable> ();
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Entered A Collider");
+        //if (other.gameObject.CompareTag("Collider"))
+        //{
+            Debug.Log("Collided With Terrain");
+            Destroy(gameObject);
+        //}
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+ 
+        if (other.gameObject.GetComponent<Attackable> () != null) {
+            Debug.Log("Collided With Enemy");
+            Attackable a = other.gameObject.GetComponent<Attackable> ();
 			if (a.anarchy) {
                 DoHit(a);
 			} else if (isAllied && !a.allied) {
