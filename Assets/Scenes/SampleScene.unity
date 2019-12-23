@@ -1345,17 +1345,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
-        type: 3}
-      propertyPath: weapons.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
-        type: 3}
-      propertyPath: weapons.Array.data[3]
-      value: 
-      objectReference: {fileID: 4586572493465753816, guid: acd2c5f8a8f9da34986a202d5232e6f5,
-        type: 3}
     - target: {fileID: 7457555227399086765, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: m_Name

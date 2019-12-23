@@ -26,7 +26,7 @@ public class HPBoxes : MonoBehaviour
         if (transform.childCount < maxHP)
         {
             GameObject box = Instantiate(HPBox, new Vector3(), new Quaternion());
-            box.transform.parent = this.transform;
+            box.transform.SetParent(this.transform);
         }
 
         if (transform.childCount > maxHP)

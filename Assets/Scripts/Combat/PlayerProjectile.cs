@@ -64,4 +64,10 @@ public class PlayerProjectile : MonoBehaviour {
         if (!piercing)
             Destroy(this.gameObject);
     }
+
+    private void OnDestroy()
+    {
+        if (firedFrom.OnDeathCreate != null)
+            Instantiate(firedFrom.OnDeathCreate, transform.position, transform.rotation);
+    }
 }
