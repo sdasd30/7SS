@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = Mathf.Max(0f, 1f - (m_timeSinceGameOver / 2f));
         m_timeSinceGameOver += Time.unscaledDeltaTime;
         GameOverText.color = new Color(1f, 1f, 1f, Mathf.Max(0f, Mathf.Min(1f, m_timeSinceGameOver - 1f)));
-        if (m_timeSinceGameOver > 10.0f)
+        if (m_timeSinceGameOver > 5f)
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("TempTitle");
         }
     }
     private void findATarget()
