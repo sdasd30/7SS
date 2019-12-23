@@ -67,7 +67,9 @@ public class PlayerProjectile : MonoBehaviour {
 
     private void OnDestroy()
     {
-        if (firedFrom.OnDeathCreate != null)
-            Instantiate(firedFrom.OnDeathCreate, transform.position, transform.rotation);
+        foreach (GameObject obj in firedFrom.OnDeathCreate)
+        {
+            GameObject go = Instantiate(obj, transform.position, transform.rotation);
+        }
     }
 }

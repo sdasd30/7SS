@@ -100,13 +100,14 @@ MonoBehaviour:
   name: rocat
   spread: 0
   firerate: 1000
-  damage: 5
+  damage: 1
   speed: 20
   duration: 3
   shots: 1
   knockbackMult: 20
-  OnDeathCreate: {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d,
-    type: 3}
+  OnDeathCreate:
+  - {fileID: 8548057531607664229, guid: 0c52a8b6d11f2a54a86c192d43f73e4f, type: 3}
+  - {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d, type: 3}
   auto: 0
 --- !u!114 &6305337551200706567
 MonoBehaviour:

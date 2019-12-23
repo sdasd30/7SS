@@ -101,11 +101,11 @@ MonoBehaviour:
   spread: 0
   firerate: 1000
   damage: 5
-  speed: 20
+  speed: 30
   duration: 3
   shots: 1
   knockbackMult: 20
-  OnDeathCreate: {fileID: 0}
+  OnDeathCreate: []
   auto: 0
 --- !u!114 &113342055392346229
 MonoBehaviour:
