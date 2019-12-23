@@ -61,6 +61,8 @@ MonoBehaviour:
   - {fileID: 7316566861236072436, guid: 11fbe59d30dbfad42ab485af00d3eb71, type: 3}
   - {fileID: 113342055392346226, guid: 56095786ac6ee5d499079fc9243eb366, type: 3}
   - {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e, type: 3}
+  - {fileID: 4586572493465753816, guid: acd2c5f8a8f9da34986a202d5232e6f5, type: 3}
+  - {fileID: 6305337551200706560, guid: efee45d4612c56e47bd404bba8da13b2, type: 3}
   weaponSwitchDelay: 7
   nextWeapon: {fileID: 0}
   currWeapon: {fileID: 0}
@@ -267,6 +269,7 @@ MonoBehaviour:
   important: 0
   deathbarrier: -1e+15
   regenRate: 0
+  regenCooldown: 0
 --- !u!114 &7457555227399086773
 MonoBehaviour:
   m_ObjectHideFlags: 0
