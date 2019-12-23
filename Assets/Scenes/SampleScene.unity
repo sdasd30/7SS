@@ -1361,6 +1361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: you_irl
       objectReference: {fileID: 0}
+    - target: {fileID: 7457555227399086770, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: regenRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7457555227399086771, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: m_LocalPosition.x
