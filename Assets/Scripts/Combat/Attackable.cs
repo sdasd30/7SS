@@ -17,6 +17,7 @@ public class Attackable : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        if (hp > maxHP) hp = maxHP;
         checkDead();
 	}
 

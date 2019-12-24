@@ -159,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20269c755b37a0749a9e6e3bbc12eec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   weaponSprite: {fileID: 0}
 --- !u!1 &184703352
 GameObject:
@@ -480,8 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb994f82e2fa1441b4797b5ac906556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   HPBox: {fileID: 2006250206525667017, guid: 5943df89f9d9eb54f8294f52edd9dda8, type: 3}
+  HPBoxLeft: {fileID: 0}
+  HPBoxRight: {fileID: 0}
 --- !u!1 &411631980
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,8 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0c8eff20845a841b2f7f13bfa1891c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  weaponSprite: {fileID: 0}
 --- !u!1 &907024731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1284,8 @@ GameObject:
   - component: {fileID: 8994709058253228580}
   - component: {fileID: 8994709058253228582}
   - component: {fileID: 8994709058253228581}
+  - component: {fileID: 4027366174074475956}
+  - component: {fileID: 1793197985249184141}
   - component: {fileID: 8994709058253228762}
   - component: {fileID: 159889451}
   m_Layer: 0
@@ -1382,6 +1382,32 @@ MonoBehaviour:
   UseCameraLimits: 0
   minVertex: {x: 0, y: 0}
   maxVertex: {x: 0, y: 0}
+--- !u!114 &4027366174074475956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994709058253228583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d68eb7e26abc8a4da70d155cd2acb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!114 &1793197985249184141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994709058253228583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f4ab1235320b4dbcfb06c8fa54b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyLevel: 0
 --- !u!114 &8994709058253228762
 MonoBehaviour:
   m_ObjectHideFlags: 0
