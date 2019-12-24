@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class DeathDropItem
 {
     public GameObject Item;
@@ -19,17 +20,15 @@ public class OnDeathDrop : MonoBehaviour
 
     private List<DeathDropItem> no_exclude_items = new List<DeathDropItem>();
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        foreach ( DeathDropItem item in DeathItems)
+        {
+            if (!item.UseExcludeCategory)
+                no_exclude_items.Add(item);
+        }
     }
-
     private void OnDestroy()
     {
         foreach (DeathDropItem item in no_exclude_items)
@@ -44,9 +43,10 @@ public class OnDeathDrop : MonoBehaviour
     {
         Vector3 pos = new Vector3(transform.position.x + Random.Range(item.XOffsetRange.x, item.XOffsetRange.y),
                     transform.position.y + Random.Range(item.YOffsetRange.x, item.YOffsetRange.y), transform.position.z);
-        Instantiate(item.Item, pos, Quaternion.identity);
-        if (item.InheritFaction)
+        GameObject go = Instantiate(item.Item, pos, Quaternion.identity);
+        if (item.InheritFaction && GetComponent<FactionHolder>() != null)
         {
+            GetComponent<FactionHolder>().SetFaction(go);
         }
     }
 }

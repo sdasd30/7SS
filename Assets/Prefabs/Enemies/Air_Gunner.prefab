@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 9075143508853035557}
   - component: {fileID: 9075143508853035560}
   - component: {fileID: 9075143508853035556}
+  - component: {fileID: 1478193371139158639}
   m_Layer: 0
   m_Name: Air_Gunner
   m_TagString: Untagged
@@ -180,11 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   hp: 10
-  allied: 0
-  anarchy: 0
   alive: 1
-  important: 0
-  deathbarrier: -1e+15
   regenRate: 0
   regenCooldown: 0
 --- !u!114 &9075143508853035552
@@ -203,6 +200,7 @@ MonoBehaviour:
   coolDownTime: 0.5
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
+  recoilDamage: 0
 --- !u!114 &9075143508853035553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +326,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
+--- !u!114 &1478193371139158639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075143508853035561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a573bd068fa2f7444b705f1c1ae65aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 2

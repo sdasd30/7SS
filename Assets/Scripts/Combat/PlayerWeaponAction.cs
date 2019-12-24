@@ -49,6 +49,7 @@ public class PlayerWeaponAction : MonoBehaviour {
 			GameObject bullet = GameObject.Instantiate (Weapon.bullet, transform.position + new Vector3 (Offset.x * Mathf.Cos (angle), Offset.y * Mathf.Sin (angle), +.5f), Quaternion.identity);
 			bullet.GetComponent<PlayerProjectile> ().SetAngle (transform.rotation.eulerAngles.z + Random.Range (-Weapon.spread, Weapon.spread) - 90);
 			bullet.GetComponent<PlayerProjectile> ().SetWeapon (Weapon);
+            transform.parent.parent.GetComponent<FactionHolder>().SetFaction(bullet);
 			Destroy (bullet, Weapon.duration);
 			}
 		coolDown = Weapon.firerate / 1000;

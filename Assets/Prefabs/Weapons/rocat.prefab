@@ -106,8 +106,22 @@ MonoBehaviour:
   shots: 1
   knockbackMult: 20
   OnDeathCreate:
-  - {fileID: 8548057531607664229, guid: 0c52a8b6d11f2a54a86c192d43f73e4f, type: 3}
-  - {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d, type: 3}
+  - Item: {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
+    ExcludeCategory: 1
+    InheritFaction: 1
+  - Item: {fileID: 8548057531607664229, guid: 0c52a8b6d11f2a54a86c192d43f73e4f, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
+    ExcludeCategory: 1
+    InheritFaction: 1
   auto: 0
 --- !u!114 &6305337551200706567
 MonoBehaviour:

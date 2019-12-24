@@ -241,7 +241,7 @@ public class Hitbox : MonoBehaviour
 
     protected bool canAttack(Attackable atkObj)
     {
-        return Creator == null || !(!atkObj || (atkObj.gameObject == Creator) || m_collidedObjs.Contains(atkObj) || !atkObj.CanAttack(Creator.GetComponent<Attackable>()));
+        return GetComponent<FactionHolder>().CanAttack(atkObj);
     }
 
     internal HitResult OnTriggerEnter2D(Collider2D other)

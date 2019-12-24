@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 551442610887704541}
   - component: {fileID: 8703211806402641330}
   - component: {fileID: -8146732252105927955}
+  - component: {fileID: 7178997471186984128}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -118,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8533c5eb39e7524409c0174891052336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAllied: 1
-  anarchy: 0
+  Faction: 0
   collides: 1
   piercing: 0
+  pierceWall: 0
 --- !u!61 &-8146732252105927955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +149,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.28}
   m_EdgeRadius: 0
+--- !u!114 &7178997471186984128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879148698963788461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f970af80ad03428dba3be2b7b5242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathItems: []

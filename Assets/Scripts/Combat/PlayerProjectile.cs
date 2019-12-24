@@ -6,8 +6,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour {
     WeaponStats firedFrom;
 	Rigidbody2D m_body;
-	public bool isAllied;
-	public bool anarchy;
+    public FactionType Faction;
 	private bool speed;
 	public bool collides = true;
 	public bool piercing = false;
@@ -22,6 +21,7 @@ public class PlayerProjectile : MonoBehaviour {
 
 	public void SetWeapon(WeaponStats sent){
 		firedFrom = sent;
+        GetComponent<OnDeathDrop>().DeathItems = sent.OnDeathCreate;
 	}
 
 	public float getDamage(){
@@ -34,28 +34,20 @@ public class PlayerProjectile : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collision Enter");
         //if (other.gameObject.CompareTag("Collider"))
         //{
             Destroy(gameObject);
         //}
     }
     void OnTriggerEnter2D(Collider2D other) {
-
-        Debug.Log("Trigger Enter: " + other.gameObject);
-        if (other.gameObject.GetComponent<Attackable> () != null) {
-            Attackable a = other.gameObject.GetComponent<Attackable> ();
-			if (a.anarchy) {
-                DoHit(a);
-			} else if (isAllied && !a.allied) {
-                DoHit(a);
-            } else if (!isAllied && a.allied) {
-                DoHit(a);
-            }
-		} else if (!other.isTrigger && !pierceWall)
+        if (other.gameObject.GetComponent<Attackable>() != null)
         {
-            Destroy(this.gameObject);
+            Attackable a = other.gameObject.GetComponent<Attackable>();
+            if (GetComponent<FactionHolder>().CanAttack(a))
+                DoHit(a);
         }
+        else if (!other.isTrigger && !pierceWall)
+            Destroy(gameObject);
 	}
 
     private void DoHit(Attackable a)
@@ -71,14 +63,6 @@ public class PlayerProjectile : MonoBehaviour {
         //Debug.Log(kb);
         a.TakeKnockback(kb);
         if (!piercing)
-            Destroy(this.gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        foreach (GameObject obj in firedFrom.OnDeathCreate)
-        {
-            GameObject go = Instantiate(obj, transform.position, transform.rotation);
-        }
+            Destroy(gameObject);
     }
 }

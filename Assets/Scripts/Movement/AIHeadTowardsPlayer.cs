@@ -71,7 +71,7 @@ public class AIHeadTowardsPlayer : AIBase
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<Attackable>() != null && GetComponent<Attackable>().CanAttack(other.gameObject.GetComponent<Attackable>()))
+        if (other.gameObject.GetComponent<Attackable>() != null && GetComponent<FactionHolder>().CanAttack(other.gameObject.GetComponent<Attackable>()))
             m_nextMoveOKTime = Time.timeSinceLevelLoad + DelayAfterAttack;
     }
 

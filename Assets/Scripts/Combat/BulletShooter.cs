@@ -53,7 +53,7 @@ public class BulletShooter : OffensiveTemplate
             Debug.Log("from: " + transform.position + " to: " + targetPoint + " ang: " + angle);
             bullet.GetComponent<PlayerProjectile>().SetAngle(angle + Random.Range(-Weapon.spread, Weapon.spread));
             bullet.GetComponent<PlayerProjectile>().SetWeapon(Weapon);
-            bullet.GetComponent<PlayerProjectile>().isAllied = GetComponent<Attackable>().allied;
+            GetComponent<FactionHolder>().SetFaction(bullet);
             Destroy(bullet, Weapon.duration);
         }
         coolDown = Weapon.firerate / 1000;

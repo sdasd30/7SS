@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof (BoxCollider2D))]
+[RequireComponent (typeof (FactionHolder))]
 public class Attackable : MonoBehaviour {
 	public float maxHP = 1;
 	public float hp = 1;
-	public bool allied;
-	public bool anarchy;
 	public bool alive = true;
 	public float regenRate;
 	public float regenCooldown;
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 		hp = maxHP;
 		regenCooldown = 1;
+        if (GetComponent<FactionHolder>() == null)
+            gameObject.AddComponent<FactionHolder>();
 	}
 
 	// Update is called once per frame
@@ -44,21 +45,20 @@ public class Attackable : MonoBehaviour {
         GetComponent<PhysicsSS>().addToVelocity(vec);
     }
 
-	void Regen(){
-		regenCooldown -= Time.deltaTime;
-		if (regenCooldown <= 0) {
-			if (hp <= maxHP) {
-				hp += regenRate;
-				if (hp > maxHP) {
-					hp = maxHP;
-				}
-			}
-			regenCooldown = .05f;
-		}
-	}
-	public bool CanAttack(Attackable otherObj)
+    void Regen()
     {
-        return anarchy || (allied && !otherObj.allied) ||
-            (!allied && otherObj.allied);
+        regenCooldown -= Time.deltaTime;
+        if (regenCooldown <= 0)
+        {
+            if (hp <= maxHP)
+            {
+                hp += regenRate;
+                if (hp > maxHP)
+                {
+                    hp = maxHP;
+                }
+            }
+            regenCooldown = .05f;
+        }
     }
 }
