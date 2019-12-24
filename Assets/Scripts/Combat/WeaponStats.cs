@@ -14,6 +14,7 @@ public class WeaponStats : MonoBehaviour {
 	public int shots = 1; //How many shots does the gun shoot at once?
     public float knockbackMult = 1; //Multiplier of knockback. 1 is mean does base knockback.
     public List<DeathDropItem> OnDeathCreate;
+    public float GravityScale = 0f;
 	//public int burstShots = 1;
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?

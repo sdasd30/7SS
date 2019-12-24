@@ -128,6 +128,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 7134458166870073486, guid: be5feae16c1da7a4d93da70753667649,
+        type: 3}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 4297970527236253607, guid: e79a28933c3e47f48b3a8ed2888b8c9e,
+        type: 3}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[4]
+      value: 
+      objectReference: {fileID: 1616467649620937505, guid: 984fa4aefcbd7444b83fc33da35803fd,
+        type: 3}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[5]
+      value: 
+      objectReference: {fileID: 6305337551200706560, guid: efee45d4612c56e47bd404bba8da13b2,
+        type: 3}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[6]
+      value: 
+      objectReference: {fileID: 113342055392346226, guid: 56095786ac6ee5d499079fc9243eb366,
+        type: 3}
+    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: weapons.Array.data[7]
+      value: 
+      objectReference: {fileID: 7316566861236072436, guid: 11fbe59d30dbfad42ab485af00d3eb71,
+        type: 3}
     - target: {fileID: 7457555227399086765, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: m_Name
@@ -898,6 +939,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6645073660975388512, guid: 8e3dd4d7e406e8a4a8777ccfba64e3f0,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645073660975388512, guid: 8e3dd4d7e406e8a4a8777ccfba64e3f0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645073660975388512, guid: 8e3dd4d7e406e8a4a8777ccfba64e3f0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6645073660975388515, guid: 8e3dd4d7e406e8a4a8777ccfba64e3f0,
         type: 3}
       propertyPath: m_LocalPosition.x

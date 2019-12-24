@@ -103,8 +103,10 @@ MonoBehaviour:
   damage: 1
   speed: 9
   duration: 3
-  shots: 5
+  shots: 6
   knockbackMult: 5
+  OnDeathCreate: []
+  GravityScale: 0
   auto: 0
 --- !u!114 &4586572493465753823
 MonoBehaviour:

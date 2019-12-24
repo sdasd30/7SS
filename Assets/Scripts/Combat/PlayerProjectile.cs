@@ -7,7 +7,8 @@ public class PlayerProjectile : MonoBehaviour {
     WeaponStats firedFrom;
 	Rigidbody2D m_body;
     public FactionType Faction;
-	private bool speed;
+	//private bool speed;
+
 	public bool collides = true;
 	public bool piercing = false;
     public bool pierceWall = false;
@@ -31,7 +32,8 @@ public class PlayerProjectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		m_body.transform.Translate (new Vector2(0f,firedFrom.speed * Time.deltaTime)); //new Vector2 (Mathf.Cos(angle) * speed * Time.deltaTime,Mathf.Sin(angle) * speed * Time.deltaTime));
-	}
+        m_body.transform.Translate(new Vector2(0f, firedFrom.speed * Time.deltaTime));
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
         //if (other.gameObject.CompareTag("Collider"))

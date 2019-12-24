@@ -101,10 +101,12 @@ MonoBehaviour:
   spread: 1
   firerate: 400
   damage: 1
-  speed: 12
+  speed: 16
   duration: 5
   shots: 1
   knockbackMult: 5
+  OnDeathCreate: []
+  GravityScale: 0
   auto: 0
 --- !u!114 &2834987892926104129
 MonoBehaviour:
