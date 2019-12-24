@@ -15,7 +15,7 @@ public class Difficulty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //difficultyLevel = (int) (plrScore.getScore()/49) + 1;
+        difficultyLevel = (int) (plrScore.getScore()/49) + 1;
     }
 
     public int getDifficulty()
