@@ -15,6 +15,7 @@ public class WeaponStats : MonoBehaviour {
     public float knockbackMult = 1; //Multiplier of knockback. 1 is mean does base knockback.
     public List<DeathDropItem> OnDeathCreate;
     public float GravityScale = 0f;
+    public float RecoilDamage = 0f;
 	//public int burstShots = 1;
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?

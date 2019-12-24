@@ -99,7 +99,7 @@ MonoBehaviour:
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
   name: doobel peestoll
   spread: 6
-  firerate: 400
+  firerate: 180
   damage: 1
   speed: 16
   duration: 5
@@ -107,6 +107,7 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0
+  RecoilDamage: 0
   auto: 0
 --- !u!114 &1616467649620937510
 MonoBehaviour:

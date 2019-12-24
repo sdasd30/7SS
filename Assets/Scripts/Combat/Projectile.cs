@@ -9,8 +9,12 @@ public class Projectile : Hitbox
     public int PenetrativePower = 0;
     public bool TravelThroughWalls = false;
     public bool OrientToSpeed = true;
+    public float GravityScale = 0.0f;
+
     int m_numPenetrated = 0;
 
+    private const float TERMINAL_VELOCITY = -10f;
+    private Vector3 m_velocity;
     new virtual internal void Update()
     {
         Tick();
@@ -19,11 +23,15 @@ public class Projectile : Hitbox
     protected override void Tick()
     {
         base.Tick();
-        Vector3 movement = new Vector3(ProjectileSpeed * Time.deltaTime * AimPoint.normalized.x,
-            ProjectileSpeed * Time.deltaTime * AimPoint.normalized.y, 0f);
-        transform.Translate(movement, Space.World);
+    }
+
+    protected void FixedUpdate()
+    {
+        if (GravityScale != 0.0f)
+            processGravity();
+        transform.Translate(m_velocity, Space.World);
         if (OrientToSpeed)
-            orientToSpeed(new Vector2(movement.x, movement.y));
+            orientToSpeed(new Vector2(m_velocity.x, m_velocity.y));
     }
     protected override HitResult OnAttackable(Attackable atkObj)
     {
@@ -37,6 +45,12 @@ public class Projectile : Hitbox
         m_numPenetrated++;
         if (m_numPenetrated > PenetrativePower)
             Duration = 0f;
+    }
+
+    private void processGravity()
+    {
+        if (m_velocity.y > TERMINAL_VELOCITY)
+            m_velocity.y += -GravityScale * Time.fixedDeltaTime;
     }
     protected override void OnHitObject(Collider2D other)
     {
@@ -64,5 +78,11 @@ public class Projectile : Hitbox
     {
         base.SetHitboxActive(a);
         m_numPenetrated = 0;
+    }
+
+    public void SetAimPoint(Vector2 AimPoint)
+    {
+        m_velocity = new Vector3(ProjectileSpeed * Time.deltaTime * AimPoint.normalized.x,
+            ProjectileSpeed * Time.deltaTime * AimPoint.normalized.y, 0f);
     }
 }

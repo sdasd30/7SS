@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7134458166870073486
+--- !u!1 &3911655489491922923
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7134458166870073480}
-  - component: {fileID: 7134458166870073487}
-  - component: {fileID: 7134458166870073482}
-  - component: {fileID: 7134458166870073481}
-  - component: {fileID: 4207846375726883403}
+  - component: {fileID: 3911655489491922925}
+  - component: {fileID: 3911655489491922922}
+  - component: {fileID: 3911655489491922927}
+  - component: {fileID: 3911655489491922924}
+  - component: {fileID: 8011648557204253998}
   m_Layer: 0
-  m_Name: oozee
+  m_Name: aykay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7134458166870073480
+--- !u!4 &3911655489491922925
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134458166870073486}
+  m_GameObject: {fileID: 3911655489491922923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8006441, y: -0.35476774, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7134458166870073487
+--- !u!212 &3911655489491922922
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134458166870073486}
+  m_GameObject: {fileID: 3911655489491922923}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 205634a2928ad6541a63379298810250, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5275026d170402499036cff961dfa7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,51 +84,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7134458166870073482
+--- !u!114 &3911655489491922927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134458166870073486}
+  m_GameObject: {fileID: 3911655489491922923}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
-  name: oozee
+  name: aykay
   spread: 12
-  firerate: 60
+  firerate: 100
   damage: 0.75
   speed: 11
-  duration: 3
+  duration: 4
   shots: 1
   knockbackMult: 2
   OnDeathCreate: []
   GravityScale: 0
   RecoilDamage: 0
   auto: 1
---- !u!114 &7134458166870073481
+--- !u!114 &3911655489491922924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134458166870073486}
+  m_GameObject: {fileID: 3911655489491922923}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f2bf1cd189d3d4d9e592462af64964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
---- !u!114 &4207846375726883403
+--- !u!114 &8011648557204253998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134458166870073486}
+  m_GameObject: {fileID: 3911655489491922923}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}

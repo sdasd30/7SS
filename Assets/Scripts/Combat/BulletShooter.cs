@@ -45,6 +45,7 @@ public class BulletShooter : OffensiveTemplate
 
     public void fire(WeaponStats wp, Vector2 targetPoint)
     {
+        GetComponent<Attackable>().TakeDamage(wp.RecoilDamage);
         for (int i = 0; i < Weapon.shots; i++)
         {
             //float angle = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x) * Mathf.Rad2Deg - 90f;
@@ -61,11 +62,11 @@ public class BulletShooter : OffensiveTemplate
             Vector3 rawTargetPoint = targetPoint;
             rawTargetPoint = rawTargetPoint + new Vector3(Offset.x,Offset.y,0f);
             float angle = Mathf.Atan2(rawTargetPoint.y, rawTargetPoint.x);
-            float spread = Weapon.speed * Mathf.Deg2Rad;
+            float spread = Weapon.spread * Mathf.Deg2Rad;
             float rand = Random.Range(-spread, spread);
             
             angle += rand;
-            targetPoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), transform.position.z);
+            targetPoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
             //Debug.Log(rand + " : " + Mathf.Cos(angle) + " : " + Mathf.Sin(angle));
             CreateProjectile(wp.bullet, Vector2.zero, targetPoint, wp);
         }
@@ -101,9 +102,10 @@ public class BulletShooter : OffensiveTemplate
         newProjectile.AddElement(element);
         newProjectile.Creator = gameObject;
         GetComponent<FactionHolder>().SetFaction(go);
-        newProjectile.AimPoint = targetPoint; // (m_physics == null) ? targetPoint : m_physics.OrientVectorToDirection(targetPoint);
-        newProjectile.ProjectileSpeed = projectileSpeed;        
+        newProjectile.ProjectileSpeed = projectileSpeed;
+        newProjectile.SetAimPoint(targetPoint); // (m_physics == null) ? targetPoint : m_physics.OrientVectorToDirection(targetPoint);
         newProjectile.Init();
+        newProjectile.GravityScale = wps.GravityScale;
         OnDeathDrop odi = go.AddComponent<OnDeathDrop>();
         odi.DeathItems = wps.OnDeathCreate;
         return newProjectile;

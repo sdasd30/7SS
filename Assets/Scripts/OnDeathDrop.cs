@@ -44,9 +44,13 @@ public class OnDeathDrop : MonoBehaviour
         Vector3 pos = new Vector3(transform.position.x + Random.Range(item.XOffsetRange.x, item.XOffsetRange.y),
                     transform.position.y + Random.Range(item.YOffsetRange.x, item.YOffsetRange.y), transform.position.z);
         GameObject go = Instantiate(item.Item, pos, Quaternion.identity);
-        if (item.InheritFaction && GetComponent<FactionHolder>() != null)
+        if (item.InheritFaction)
         {
             GetComponent<FactionHolder>().SetFaction(go);
+        } else
+        {
+            go.AddComponent<FactionHolder>();
+            go.GetComponent<FactionHolder>().Faction = FactionType.NEUTRAL;
         }
     }
 }
