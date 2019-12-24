@@ -9,6 +9,7 @@ public class NextWeaponUI : MonoBehaviour {
     private GameObject theWeapon;
 	public Sprite weaponSprite;
     // Use this for initialization
+
     public void init(GameObject plr)
     {
         player = plr;
