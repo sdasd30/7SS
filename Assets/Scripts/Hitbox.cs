@@ -197,7 +197,7 @@ public class Hitbox : MonoBehaviour
 
     protected virtual HitResult OnAttackable(Attackable atkObj)
     {
-        if (!canAttack(atkObj))
+        if (atkObj == null || (!canAttack(atkObj)))
             return HitResult.NONE;
         if (IsRandomKnockback)
             RandomizeKnockback();
@@ -246,6 +246,7 @@ public class Hitbox : MonoBehaviour
 
     internal HitResult OnTriggerEnter2D(Collider2D other)
     {
+        if (other == null)
         if (!m_hitboxActive)
             return HitResult.NONE;
         OnHitObject(other);

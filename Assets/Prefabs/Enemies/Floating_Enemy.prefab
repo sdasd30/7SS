@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3331552278932581188, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
+        type: 3}
+      propertyPath: YAccessMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3331552278932581189, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
         type: 3}
       propertyPath: knockback.x
