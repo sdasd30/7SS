@@ -11,7 +11,7 @@ public class PlayerProjectile : MonoBehaviour {
 	private bool speed;
 	public bool collides = true;
 	public bool piercing = false;
-
+    public bool pierceWall = false;
 	public void SetAngle (float rotation) {
 		m_body.transform.rotation = Quaternion.Euler (new Vector3(0f,0f,rotation));
 	}
@@ -34,13 +34,15 @@ public class PlayerProjectile : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("Collision Enter");
         //if (other.gameObject.CompareTag("Collider"))
         //{
             Destroy(gameObject);
         //}
     }
     void OnTriggerEnter2D(Collider2D other) {
- 
+
+        Debug.Log("Trigger Enter: " + other.gameObject);
         if (other.gameObject.GetComponent<Attackable> () != null) {
             Attackable a = other.gameObject.GetComponent<Attackable> ();
 			if (a.anarchy) {
@@ -50,7 +52,10 @@ public class PlayerProjectile : MonoBehaviour {
             } else if (!isAllied && a.allied) {
                 DoHit(a);
             }
-		}
+		} else if (!other.isTrigger && !pierceWall)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     private void DoHit(Attackable a)
