@@ -9,6 +9,7 @@ public class EnemyContactHurt : MonoBehaviour
     public float coolDownTime = 1f;
     public Vector2 knockback = new Vector2(10f, 0);
     public Vector2 recoilKnockback = new Vector2(5f, 5f);
+    public float recoilDamage = 0.0f;
     private float m_nextRefreshTime;
     private Attackable m_parentAttackable;
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class EnemyContactHurt : MonoBehaviour
             {
                 a.TakeDamage(damage);
                 a.TakeKnockback(kb);
+                GetComponent<Attackable>().TakeDamage(recoilDamage);
                 m_parentAttackable.TakeKnockback(rkb);
             }
             m_nextRefreshTime = Time.timeSinceLevelLoad + coolDownTime;
