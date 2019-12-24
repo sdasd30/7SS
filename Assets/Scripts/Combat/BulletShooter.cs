@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletShooter : OffensiveTemplate
 {
-    WeaponStats Weapon;
+    public WeaponStats Weapon;
     public Vector2 Offset;
     bool firing;
     float coolDown = 0;
@@ -15,48 +15,97 @@ public class BulletShooter : OffensiveTemplate
     }
     public override void HandleInput(InputPacket ip)
     {
+        if (Weapon == null)
+            return;
         if (Weapon.auto)
         {
             if (ip.fire1)
             {
                 if (coolDown <= 0)
                 {
-                    fire(ip.MousePointWorld);
+                    fire(Weapon, ip.MousePointWorld);
                 }
             }
         }
         else
         {
-            if (ip.fire1)
+            if (ip.fire1Press)
             {
                 if (coolDown <= 0)
                 {
-                    fire(ip.MousePointWorld);
+                    fire(Weapon, ip.MousePointWorld);
                 }
             }
         }
-
         if (coolDown >= 0)
         {
             coolDown -= 1 * Time.deltaTime;
         }
     }
 
-    public void fire(Vector2 targetPoint)
+    public void fire(WeaponStats wp, Vector2 targetPoint)
     {
         for (int i = 0; i < Weapon.shots; i++)
         {
-            float angle = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+            //float angle = Mathf.Atan2(targetPoint.y - transform.position.y, targetPoint.x - transform.position.x) * Mathf.Rad2Deg - 90f;
             //float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-            GameObject bullet = GameObject.Instantiate(Weapon.bullet, transform.position + new Vector3(Offset.x * Mathf.Cos(angle), Offset.y * Mathf.Sin(angle), +.5f), Quaternion.identity);
+            //GameObject bullet = GameObject.Instantiate(Weapon.bullet, transform.position + new Vector3(Offset.x * Mathf.Cos(angle), Offset.y * Mathf.Sin(angle), +.5f), Quaternion.identity);
 
-            Debug.Log("from: " + transform.position + " to: " + targetPoint + " ang: " + angle);
-            bullet.GetComponent<PlayerProjectile>().SetAngle(angle + Random.Range(-Weapon.spread, Weapon.spread));
-            bullet.GetComponent<PlayerProjectile>().SetWeapon(Weapon);
-            GetComponent<FactionHolder>().SetFaction(bullet);
-            Destroy(bullet, Weapon.duration);
+            //Debug.Log("from: " + transform.position + " to: " + targetPoint + " ang: " + angle);
+            ////bullet.GetComponent<Projectile>().SetAngle(angle + Random.Range(-Weapon.spread, Weapon.spread));
+            //bullet.GetComponent<Projectile>().
+            //bullet.GetComponent<Projectile>().SetWeapon(Weapon);
+            //GetComponent<FactionHolder>().SetFaction(bullet);
+            //Destroy(bullet, Weapon.duration);
+
+            Vector3 rawTargetPoint = targetPoint;
+            rawTargetPoint = rawTargetPoint + new Vector3(Offset.x,Offset.y,0f);
+            float angle = Mathf.Atan2(rawTargetPoint.y, rawTargetPoint.x);
+            float spread = Weapon.speed * Mathf.Deg2Rad;
+            float rand = Random.Range(-spread, spread);
+            
+            angle += rand;
+            targetPoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), transform.position.z);
+            //Debug.Log(rand + " : " + Mathf.Cos(angle) + " : " + Mathf.Sin(angle));
+            CreateProjectile(wp.bullet, Vector2.zero, targetPoint, wp);
         }
         coolDown = Weapon.firerate / 1000;
     }
 
+    public Projectile CreateProjectile(GameObject prefab, Vector2 creationPoint, Vector2 targetPoint,
+        WeaponStats wps)
+    {
+        float projectileSpeed = wps.speed;
+        float damage = wps.damage;
+        float stun = 0f;
+        float projectileDuration = wps.duration;
+        Vector2 knockback = wps.knockbackMult * Vector2.right;
+        bool fixedKnockback = true;
+        ElementType element = ElementType.PHYSICAL;
+        Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
+        Vector3 newPos = transform.position + (Vector3)cOff;
+        GameObject go;
+        if (prefab == null)
+            return null;
+        go = GameObject.Instantiate(prefab, newPos, Quaternion.identity);
+        Projectile newProjectile = go.GetComponent<Projectile>();
+
+        newProjectile.Damage = damage;
+        newProjectile.Duration = projectileDuration;
+        if (fixedKnockback)
+            newProjectile.Knockback = (GetComponent<Orientation>() == null) ? knockback : GetComponent<Orientation>().OrientVectorToDirection2D(knockback);
+        else
+            newProjectile.Knockback = knockback;
+        newProjectile.IsFixedKnockback = fixedKnockback;
+        newProjectile.Stun = stun;
+        newProjectile.AddElement(element);
+        newProjectile.Creator = gameObject;
+        GetComponent<FactionHolder>().SetFaction(go);
+        newProjectile.AimPoint = targetPoint; // (m_physics == null) ? targetPoint : m_physics.OrientVectorToDirection(targetPoint);
+        newProjectile.ProjectileSpeed = projectileSpeed;        
+        newProjectile.Init();
+        OnDeathDrop odi = go.AddComponent<OnDeathDrop>();
+        odi.DeathItems = wps.OnDeathCreate;
+        return newProjectile;
+    }
 }

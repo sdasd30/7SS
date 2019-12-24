@@ -18,6 +18,7 @@ public class FactionHolder : MonoBehaviour
     }
     public bool CanAttack(Attackable otherObj)
     {
+        
         //Debug.Log(otherObj);
         return CanAttack(otherObj.GetComponent<FactionHolder>().Faction);
     }

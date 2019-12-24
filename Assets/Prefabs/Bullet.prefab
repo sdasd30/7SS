@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1553813668979101540}
   - component: {fileID: 4388886275993286474}
   - component: {fileID: 551442610887704541}
-  - component: {fileID: 8703211806402641330}
   - component: {fileID: -8146732252105927955}
   - component: {fileID: 7178997471186984128}
+  - component: {fileID: -3971701342080197440}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -107,22 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8703211806402641330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879148698963788461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8533c5eb39e7524409c0174891052336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Faction: 0
-  collides: 1
-  piercing: 0
-  pierceWall: 0
 --- !u!61 &-8146732252105927955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +146,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathItems: []
+--- !u!114 &-3971701342080197440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879148698963788461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb4dee13a5fae04cbeed8c7474f4366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damage: 10
+  m_focusDamage: -1
+  m_penetration: 0
+  m_duration: 1
+  m_hasDuration: 1
+  m_isFixedKnockback: 0
+  m_resetKnockback: 1
+  m_knockback: {x: 0, y: 40}
+  m_stun: 0
+  m_isRandomKnockback: 0
+  m_FreezeTime: 0
+  m_elementList: 
+  m_followObj: {fileID: 0}
+  m_followOffset: {x: 0, y: 0}
+  m_upRightDownLeftColliders: []
+  m_collidedObjs: []
+  m_overlappingControl: []
+  ProjectileSpeed: 0
+  AimPoint: {x: 0, y: 0}
+  PenetrativePower: 0
+  TravelThroughWalls: 0
+  OrientToSpeed: 1

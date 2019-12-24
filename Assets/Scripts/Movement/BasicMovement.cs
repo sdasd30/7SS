@@ -73,6 +73,14 @@ public class BasicMovement : MonoBehaviour {
         ip.movementInput.x = Input.GetAxis("Horizontal");
         ip.movementInput.y = Input.GetAxis("Vertical");
         ip.jump = Input.GetButtonDown("Jump");
+        ip.fire1 = Input.GetButton("Fire1");
+        ip.fire1Press = Input.GetButtonDown("Fire1");
+        Vector3 mousePos = Input.mousePosition;
+
+        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
+        ip.MousePointWorld = mousePos;
         return ip;
 	}
 

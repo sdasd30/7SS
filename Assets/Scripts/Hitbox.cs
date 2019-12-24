@@ -247,9 +247,12 @@ public class Hitbox : MonoBehaviour
     internal HitResult OnTriggerEnter2D(Collider2D other)
     {
         if (other == null)
+            return HitResult.NONE;
         if (!m_hitboxActive)
             return HitResult.NONE;
         OnHitObject(other);
+        if (other.gameObject.GetComponent<Attackable>() == null)
+            return HitResult.NONE;
         return OnAttackable(other.gameObject.GetComponent<Attackable>());
     }
     protected virtual void OnHitObject(Collider2D other)

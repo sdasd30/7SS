@@ -78,6 +78,15 @@ public class Orientation : MonoBehaviour
         }
         return newV;
     }
+    public Vector2 OrientVectorToDirection2D(Vector2 v, bool negativesAllowed = true)
+    {
+        Vector2 newV = new Vector2(v.x, v.y);
+        if (FacingLeft)
+        {
+            newV.x = -v.x;
+        }
+        return newV;
+    }
     public Vector3 OrientVectorToDirection(Vector3 v,bool negativesAllowed = true)
     {
         return OrientVectorToDirection(CurrentDirection, v, negativesAllowed);
