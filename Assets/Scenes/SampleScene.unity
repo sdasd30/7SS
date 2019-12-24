@@ -298,13 +298,13 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 1357241947132668247, guid: a021f5c9471c48845ba703499ca2ceed,
+      objectReference: {fileID: 1720769669559322421, guid: 7bcc3c3c181d3bb49bdadf9be00f011a,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[1]
       value: 
-      objectReference: {fileID: 234205443385772468, guid: 6d376fa1c691fd640bb340ef9c6f23dd,
+      objectReference: {fileID: 3911655489491922923, guid: 0a80f0acbc2c3da44be817c75e736b3f,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
@@ -334,7 +334,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[2]
       value: 
-      objectReference: {fileID: 6305337551200706560, guid: efee45d4612c56e47bd404bba8da13b2,
+      objectReference: {fileID: 1935454864474655953, guid: 01797ec6b25db9a4bad7a1a57ba55afe,
         type: 3}
     - target: {fileID: 7457555227399086765, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
