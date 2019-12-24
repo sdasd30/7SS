@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 3331552278932581192}
   - component: {fileID: 3331552278932581193}
   - component: {fileID: 3331552278932581198}
-  - component: {fileID: 3331552278932581199}
   - component: {fileID: 3331552278932581189}
+  - component: {fileID: 1800363746561705984}
   - component: {fileID: 3331552278932581188}
   - component: {fileID: 3331552278932581191}
-  - component: {fileID: 1800363746561705984}
+  - component: {fileID: 3331552278932581199}
   - component: {fileID: -2614997536169740934}
   m_Layer: 0
   m_Name: GroundDumb_big
@@ -163,27 +163,6 @@ MonoBehaviour:
   onGround: 1
   dropThruTime: 0
   SelfInput: {x: 0, y: 0}
---- !u!114 &3331552278932581199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3331552278932581196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 10
-  hp: 10
-  allied: 0
-  anarchy: 0
-  alive: 1
-  important: 0
-  deathbarrier: -1e+15
-  regenRate: 0
-  regenCooldown: 0
 --- !u!114 &3331552278932581189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +179,21 @@ MonoBehaviour:
   coolDownTime: 0.5
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
+--- !u!114 &1800363746561705984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331552278932581196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b349d71a72be818499907204d21736d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacingLeft: 0
+  CurrentDirection: 2
+  m_sprite: {fileID: 3331552278932581195}
 --- !u!114 &3331552278932581188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +209,12 @@ MonoBehaviour:
   ChaseDistance: 10
   AbandonDistance: 15
   DelayAfterAttack: 2
+  JumpProbabilityPercent: 0
+  JumpCheckInterval: 1
+  JumpWhenInProximityOf: 999
+  YAccessMove: 0
+  TargetOffset: {x: 0, y: 0}
+  TargetTolerance: 0.2
 --- !u!114 &3331552278932581191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   minDistance: 1
   abandonDistance: 10
   followObj: {fileID: 0}
---- !u!114 &1800363746561705984
+--- !u!114 &3331552278932581199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,12 +245,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3331552278932581196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b349d71a72be818499907204d21736d0, type: 3}
+  m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingLeft: 0
-  CurrentDirection: 2
-  m_sprite: {fileID: 3331552278932581195}
+  maxHP: 3
+  hp: 3
+  allied: 0
+  anarchy: 0
+  alive: 1
+  regenRate: 0
+  regenCooldown: 0
 --- !u!114 &-2614997536169740934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,4 +267,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ccb0f1384b9f24ca8199da7aa164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 1
+  scoreValue: 4
