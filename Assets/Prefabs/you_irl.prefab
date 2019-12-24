@@ -79,10 +79,12 @@ GameObject:
   - component: {fileID: 7457555227399086768}
   - component: {fileID: 7457555227399086769}
   - component: {fileID: 7457555227399086766}
+  - component: {fileID: 7457555227399086773}
   - component: {fileID: 7457555227399086767}
   - component: {fileID: 7457555227399086764}
   - component: {fileID: 7457555227399086770}
-  - component: {fileID: 7457555227399086773}
+  - component: {fileID: 3976260652151149018}
+  - component: {fileID: 5852829575971247989}
   m_Layer: 0
   m_Name: you_irl
   m_TagString: Untagged
@@ -202,6 +204,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7457555227399086773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b349d71a72be818499907204d21736d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacingLeft: 0
+  CurrentDirection: 2
+  m_sprite: {fileID: 7457555227399086768}
 --- !u!114 &7457555227399086767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,14 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   hp: 10
-  allied: 1
-  anarchy: 0
-  alive: 1
-  important: 0
-  deathbarrier: -1e+15
-  regenRate: 0
-  regenCooldown: 0
---- !u!114 &7457555227399086773
+--- !u!114 &3976260652151149018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,9 +289,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 7457555227399086765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b349d71a72be818499907204d21736d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 71e7edcf740686a4f90eb9fa0fb257b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FacingLeft: 0
-  CurrentDirection: 2
-  m_sprite: {fileID: 7457555227399086768}
+  regenCooldown: 0.05
+  regenRate: 0
+--- !u!114 &5852829575971247989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61128054a209244099ef1244b908d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathBarrier: -99
+  fallPenalty: 0.25
+  important: 1
+  returnPoint: {x: 0, y: 0, z: 0}

@@ -8,14 +8,19 @@ public class TimeRemaining : MonoBehaviour {
 	WeaponHandler theWeapon;
 	Slider me;
 	// Use this for initialization
-	void Start () {
-		me = this.GetComponent<Slider> ();
-		theWeapon = WeaponHandler.GetComponent<WeaponHandler> ();
-	}
+    public void init(GameObject x)
+    {
+        me = this.GetComponent<Slider>();
+        WeaponHandler = x.GetComponentInChildren<WeaponHandler>().gameObject;
+        theWeapon = WeaponHandler.GetComponent<WeaponHandler>();
+    }
 
 	// Update is called once per frame
 	void Update () {
-		me.minValue = -theWeapon.weaponSwitchDelay;
-		me.value = -theWeapon.cooldown;
+        if (WeaponHandler != null)
+        {
+            me.minValue = -theWeapon.weaponSwitchDelay;
+            me.value = -theWeapon.cooldown;
+        }
 	}
 }

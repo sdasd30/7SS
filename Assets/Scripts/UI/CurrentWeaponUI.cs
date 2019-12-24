@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CurrentWeaponUI : MonoBehaviour {
-	public GameObject player;
-    WeaponHandler playerHandler;
-	GameObject theWeapon;
-	public Sprite weaponSprite;
+	private GameObject player;
+    private WeaponHandler playerHandler;
+    private GameObject theWeapon;
+    private Sprite weaponSprite;
 	// Use this for initialization
-	void Start () {
+
+    public void init(GameObject plr)
+    {
+        player = plr;
         playerHandler = player.GetComponentInChildren<WeaponHandler>();
     }
 

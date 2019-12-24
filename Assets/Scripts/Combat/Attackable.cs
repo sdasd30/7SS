@@ -6,14 +6,11 @@ using UnityEngine;
 public class Attackable : MonoBehaviour {
 	public float maxHP = 1;
 	public float hp = 1;
-	public bool alive = true;
-	public float regenRate;
-	public float regenCooldown;
+	private bool alive = true;
 
     // Use this for initialization
     void Start () {
 		hp = maxHP;
-		regenCooldown = 1;
         if (GetComponent<FactionHolder>() == null)
             gameObject.AddComponent<FactionHolder>();
 	}
@@ -21,7 +18,6 @@ public class Attackable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         checkDead();
-		Regen ();
 	}
 
     public void checkDead()
@@ -43,22 +39,5 @@ public class Attackable : MonoBehaviour {
     public void TakeKnockback(Vector2 vec)
     {
         GetComponent<PhysicsSS>().addToVelocity(vec);
-    }
-
-    void Regen()
-    {
-        regenCooldown -= Time.deltaTime;
-        if (regenCooldown <= 0)
-        {
-            if (hp <= maxHP)
-            {
-                hp += regenRate;
-                if (hp > maxHP)
-                {
-                    hp = maxHP;
-                }
-            }
-            regenCooldown = .05f;
-        }
     }
 }

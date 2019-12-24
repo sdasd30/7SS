@@ -10,10 +10,10 @@ public class HPText : MonoBehaviour
     int maxHP;
     int currentHP;
     // Start is called before the first frame update
-    void Start()
+    public void init(GameObject x)
     {
+        player = x;
         me = this.GetComponent<Text>();
-        
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class HPText : MonoBehaviour
     {
         currentHP = (int)player.GetComponent<Attackable>().hp;
         maxHP = (int)player.GetComponent<Attackable>().maxHP;
+        if (currentHP <= 0) currentHP = 0;
         me.text = "HP: " + currentHP + "/" + maxHP;
     }
 

@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
     {
         findATarget();
         if (CurrentPlayer != null)
+        {
             setPlayerCharacter(CurrentPlayer);
+        }
     }
 
     // Update is called once per frame
@@ -48,16 +50,18 @@ public class GameManager : MonoBehaviour
             if (bm.IsCurrentPlayer)
             {
                 CurrentPlayer = bm.gameObject;
+                return;
             }
         }
     }
     private void setPlayerCharacter(GameObject go)
     {
         GetComponent<CameraFollow>().SetPlayerObj(go.transform);
-        GetComponentInChildren<CurrentWeaponUI>().player = go;
-        GetComponentInChildren<TimeRemaining>().WeaponHandler = go.transform.GetChild(0).gameObject;
-        GetComponentInChildren<HPSlider>().player = go;
-        GetComponentInChildren<HPBoxes>().player = go;
-        GetComponentInChildren<NextWeaponUI>().player = go;
+        GetComponentInChildren<CurrentWeaponUI>().init(go);
+        GetComponentInChildren<TimeRemaining>().init(go);
+        GetComponentInChildren<HPSlider>().init(go);
+        GetComponentInChildren<HPBoxes>().init(go);
+        GetComponentInChildren<NextWeaponUI>().init(go);
+        GetComponentInChildren<HPText>().init(go);
     }
 }

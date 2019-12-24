@@ -4,34 +4,55 @@ using UnityEngine;
 
 public class HPBoxes : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject HPBox;
-    Attackable playerAtackable;
-    int maxHP;
+    public GameObject HPBoxLeft;
+    public GameObject HPBoxRight;
+    private Attackable playerAtackable;
+    private int maxHP;
     // Start is called before the first frame update
+
+    public void init(GameObject x)
+    {
+        player = x;
+        playerAtackable = player.GetComponent<Attackable>();
+    }
+
     void Start()
     {
-        playerAtackable = player.GetComponent<Attackable>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player != null) updateBoxes();
+        maxHP = (int)playerAtackable.maxHP;
+        if (player != null && transform.childCount != maxHP) switchBoard(maxHP);
     }
 
-    private void updateBoxes()
+    private void switchBoard(int mhp)
     {
-        maxHP = (int)playerAtackable.maxHP;
-        if (transform.childCount < maxHP)
+        GameObject box;
+        if (transform.childCount == 0)
         {
-            GameObject box = Instantiate(HPBox, new Vector3(), new Quaternion());
+            box = Instantiate(HPBoxLeft, new Vector3(), new Quaternion());
             box.transform.SetParent(this.transform);
         }
 
-        if (transform.childCount > maxHP)
+        if (transform.childCount < mhp)
         {
-            Destroy(transform.GetChild(0).gameObject);
+            while (transform.childCount < mhp - 1)
+            {
+                box = Instantiate(HPBox, new Vector3(), new Quaternion());
+                box.transform.SetParent(this.transform);
+            }
+            box = Instantiate(HPBoxRight, new Vector3(), new Quaternion());
+            box.transform.SetParent(this.transform);
+        }
+
+        if (transform.childCount > mhp)
+        {
+            Destroy(transform.GetChild(1).gameObject);
         }
     }
 }

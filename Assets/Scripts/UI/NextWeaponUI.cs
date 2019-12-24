@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NextWeaponUI : MonoBehaviour {
-	public GameObject player;
-    WeaponHandler playerHandler;
-	GameObject theWeapon;
+	private GameObject player;
+    private WeaponHandler playerHandler;
+    private GameObject theWeapon;
 	public Sprite weaponSprite;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    public void init(GameObject plr)
+    {
+        player = plr;
         playerHandler = player.GetComponentInChildren<WeaponHandler>();
-	}
+    }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         if (player != null) updateSprite();
 	}
 

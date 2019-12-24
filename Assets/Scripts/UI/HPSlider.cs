@@ -6,16 +6,23 @@ using UnityEngine.UI;
 public class HPSlider : MonoBehaviour
 {
     public GameObject player;
-    Attackable plr;
-    RectTransform fillArea;
-    Slider kk;
+    private Attackable plr;
+    private RectTransform fillArea;
+    private Slider kk;
     int sliderMax;
     float sliderCurrent;
     // Start is called before the first frame update
+
+    public void init(GameObject x)
+    {
+        player = x;
+        plr = player.GetComponent<Attackable>();
+    }
+
     void Start()
     {
+        //player = FindObjectOfType<PlayerScore>().gameObject;
         fillArea = GetComponentInChildren<RectTransform>();
-        plr = player.GetComponent<Attackable>();
         kk = this.GetComponent<Slider>();
     }
 
