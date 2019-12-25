@@ -65,7 +65,6 @@ public class BasicMovement : MonoBehaviour {
         baseMovement(ip);
         foreach (OffensiveTemplate ot in m_offensiveTemplates)
             ot.HandleInput(ip);
-
 	}
 
 	internal InputPacket playerMovement() {
