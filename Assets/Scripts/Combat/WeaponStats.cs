@@ -16,6 +16,8 @@ public class WeaponStats : MonoBehaviour {
     public List<DeathDropItem> OnDeathCreate;
     public float GravityScale = 0f;
     public float RecoilDamage = 0f;
+    public Sprite Icon;
+    public int Cost;
 	//public int burstShots = 1;
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?

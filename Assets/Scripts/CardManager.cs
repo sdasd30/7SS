@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CardManager : MonoBehaviour
 {
-    private static GameManager m_instance;
+    private static CardManager m_instance;
 
+    public List<GameObject> CurrentHand = new List<GameObject>();
     void Awake()
     {
 
         if (m_instance == null)
         {
             m_instance = this;
-            //SceneManager.sceneLoaded += InitCanvasOnSceneLoad;
+            SceneManager.sceneLoaded += onSceneLoad;
         }
         else if (m_instance != this)
         {
@@ -33,5 +35,13 @@ public class CardManager : MonoBehaviour
     void Update()
     {
         
+    }
+    private void onSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        WeaponHandler wh = FindObjectOfType<WeaponHandler>();
+        if (wh != null)
+        {
+            wh.weapons = CurrentHand;
+        }
     }
 }

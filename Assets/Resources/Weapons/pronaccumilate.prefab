@@ -204,6 +204,8 @@ MonoBehaviour:
     InheritFaction: 1
   GravityScale: 0
   RecoilDamage: 0
+  Icon: {fileID: 21300000, guid: 1a21f0d2df3c588479ab2a6b4e868d50, type: 3}
+  Cost: 5
   auto: 0
 --- !u!114 &1720769669559322418
 MonoBehaviour:
@@ -230,4 +232,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipped: 0

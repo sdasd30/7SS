@@ -106,6 +106,10 @@ MonoBehaviour:
   shots: 1
   knockbackMult: 20
   OnDeathCreate: []
+  GravityScale: 0
+  RecoilDamage: 0
+  Icon: {fileID: 21300000, guid: 9d290d386b18b60499e05a54c842db23, type: 3}
+  Cost: 1
   auto: 0
 --- !u!114 &113342055392346229
 MonoBehaviour:
@@ -132,4 +136,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipped: 0
