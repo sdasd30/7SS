@@ -47,8 +47,8 @@ public class AIHeadTowardsPlayer : AIBase
             float d = Vector2.Distance(target, transform.position);
             if (d > TargetTolerance)
             {
-                ip.movementInput = new Vector2((m_targetObj.position.x > transform.position.x) ? 1f : -1f,
-                (m_targetObj.position.y > transform.position.y) ? 1f : -1f);
+                ip.movementInput = new Vector2((target.x > transform.position.x) ? 1f : -1f,
+                (target.y > transform.position.y) ? 1f : -1f);
                 if (!YAccessMove)
                     ip.movementInput.y = 0f;
             }
