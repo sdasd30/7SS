@@ -252,9 +252,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   hp: 3
-  alive: 1
-  regenRate: 0
-  regenCooldown: 0
 --- !u!114 &-2614997536169740934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 4
+  value: 1
 --- !u!114 &-6642061138553813278
 MonoBehaviour:
   m_ObjectHideFlags: 0

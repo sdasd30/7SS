@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -2614997536169740934, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
+        type: 3}
+      propertyPath: value
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3331552278932581188, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
         type: 3}
       propertyPath: YAccessMove
@@ -26,6 +31,16 @@ PrefabInstance:
         type: 3}
       propertyPath: knockback.y
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331552278932581193, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331552278932581193, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 3331552278932581194, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
         type: 3}
