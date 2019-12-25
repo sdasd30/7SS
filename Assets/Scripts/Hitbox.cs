@@ -207,6 +207,7 @@ public class Hitbox : MonoBehaviour
         newHI.target = atkObj.gameObject;
         //HitResult r = atkObj.TakeHit(newHI);
         atkObj.TakeDamage(m_damage);
+        Debug.Log(newHI.Knockback);
         atkObj.TakeKnockback(newHI.Knockback);
         m_collidedObjs.Add(atkObj);
 

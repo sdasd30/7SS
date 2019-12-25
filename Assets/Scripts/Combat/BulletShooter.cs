@@ -81,7 +81,7 @@ public class BulletShooter : OffensiveTemplate
         float stun = 0f;
         float projectileDuration = wps.duration;
         Vector2 knockback = wps.knockbackMult * Vector2.right;
-        bool fixedKnockback = true;
+        bool fixedKnockback = false;
         ElementType element = ElementType.PHYSICAL;
         Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
         Vector3 newPos = transform.position + (Vector3)cOff;
@@ -96,7 +96,12 @@ public class BulletShooter : OffensiveTemplate
         if (fixedKnockback)
             newProjectile.Knockback = (GetComponent<Orientation>() == null) ? knockback : GetComponent<Orientation>().OrientVectorToDirection2D(knockback);
         else
-            newProjectile.Knockback = knockback;
+        {
+            float angle = Mathf.Atan2(targetPoint.y, targetPoint.x);
+            newProjectile.Knockback = new Vector2(Mathf.Cos(angle)* knockback.x,Mathf.Sin(angle) * knockback.x);
+            
+        }
+            
         newProjectile.IsFixedKnockback = fixedKnockback;
         newProjectile.Stun = stun;
         newProjectile.AddElement(element);

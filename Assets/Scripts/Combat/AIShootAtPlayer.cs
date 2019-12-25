@@ -38,6 +38,8 @@ public class AIShootAtPlayer : AIBase
             {
                 Vector2 target = new Vector2(m_targetObj.transform.position.x + TargetOffset.x, m_targetObj.transform.position.y + TargetOffset.y);
                 target += new Vector2(Random.Range(RandomRangeX.x, RandomRangeX.y), Random.Range(RandomRangeY.x, RandomRangeY.y));
+                target.x = target.x - transform.position.x;
+                target.y = target.y - transform.position.y;
                 ip.MousePointWorld = target;
                 if (t < m_fireHoldTime)
                     ip.fire1 = true;

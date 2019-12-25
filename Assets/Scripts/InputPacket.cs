@@ -14,5 +14,6 @@ public class InputPacket {
         MousePointWorld = ip.MousePointWorld;
         jump = jump || ip.jump;
         fire1 = fire1 || ip.fire1;
+        fire1Press = fire1Press || ip.fire1Press;
     }
 }

@@ -101,12 +101,12 @@ MonoBehaviour:
   spread: 0
   firerate: 1000
   damage: 3
-  speed: 45
+  speed: 30
   duration: 4
   shots: 1
   knockbackMult: 5
   OnDeathCreate: []
-  GravityScale: 0.5
+  GravityScale: 1
   RecoilDamage: 0
   Icon: {fileID: 21300000, guid: c4f2bb66e2fa9b544ae3fe3a254ee78b, type: 3}
   Cost: 0

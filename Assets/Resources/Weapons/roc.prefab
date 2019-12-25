@@ -101,7 +101,7 @@ MonoBehaviour:
   spread: 0
   firerate: 1000
   damage: 1
-  speed: 35
+  speed: 20
   duration: 4
   shots: 1
   knockbackMult: 5
