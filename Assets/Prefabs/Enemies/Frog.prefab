@@ -229,11 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
-  hp: 2
-  alive: 1
-  regenRate: 0
-  regenCooldown: 0
+  maxHP: 3
+  hp: 3
 --- !u!114 &4749055537247360732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 12
+  value: 6
 --- !u!114 &711078186547726136
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,13 +9,11 @@ public class PlayerWeaponAction : MonoBehaviour {
 	public Vector2 Offset;
 	//bool firing; //Why does this variable exist?
 	float coolDown = 0;
-	// Use this for initialization
 	void Start () {
 		Weapon = GetComponent<WeaponStats> ();
         transform.parent.parent.GetComponent<BulletShooter>().Weapon = Weapon;
     }
 
-	// Update is called once per frame
 	void Update () {
 		//if (!firing) {
 		//	if (Weapon.auto) {
