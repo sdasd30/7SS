@@ -82,7 +82,7 @@ public class Projectile : Hitbox
 
     public void SetAimPoint(Vector2 AimPoint)
     {
-        m_velocity = new Vector3(ProjectileSpeed * Time.deltaTime * AimPoint.normalized.x,
-            ProjectileSpeed * Time.deltaTime * AimPoint.normalized.y, 0f);
+        m_velocity = new Vector3(ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.x,
+            ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.y, 0f);
     }
 }
