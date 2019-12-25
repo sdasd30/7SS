@@ -8,7 +8,7 @@ public class BeginGame : MonoBehaviour
 {
     public void LoadTestScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("CardSelection");
     }
 
     /*

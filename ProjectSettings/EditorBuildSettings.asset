@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TempTitle.unity
     guid: b2c504c1ae095e840a565ddbb4bdbcb2
+  - enabled: 1
+    path: Assets/Scenes/CardSelection.unity
+    guid: a1094b15a74956e49846fb65c85bf576
   m_configObjects: {}

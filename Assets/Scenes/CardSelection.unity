@@ -150,14 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbfdcded0720a342bbba0b064af4b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHand:
-  - {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e, type: 3}
-  - {fileID: 1616467649620937505, guid: 984fa4aefcbd7444b83fc33da35803fd, type: 3}
-  - {fileID: 3890615958076796443, guid: 933b7bfb5dae96648935979d02e68f93, type: 3}
-  - {fileID: 1357241947132668247, guid: a021f5c9471c48845ba703499ca2ceed, type: 3}
-  - {fileID: 113342055392346226, guid: 56095786ac6ee5d499079fc9243eb366, type: 3}
-  - {fileID: 4297970527236253607, guid: e79a28933c3e47f48b3a8ed2888b8c9e, type: 3}
-  - {fileID: 234205443385772468, guid: 6d376fa1c691fd640bb340ef9c6f23dd, type: 3}
+  CurrentHand: []
 --- !u!4 &126647126
 Transform:
   m_ObjectHideFlags: 0
