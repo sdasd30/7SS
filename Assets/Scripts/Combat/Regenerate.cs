@@ -6,13 +6,13 @@ public class Regenerate : MonoBehaviour
 {
     // Start is called before the first frame update
     private Attackable myAttackable;
-    public float regenCooldown = .05f; //In seconds. Default is every 50 miliseconds
-    public float regenRate;
-    private float regenCooldownMax;
+    //public float regenCooldown = .05f; //In seconds. Default is every 50 miliseconds
+    public float regenRate; //Howmuch heals after one second
+    //private float regenCooldownMax;
     void Start()
     {
         myAttackable = GetComponent<Attackable>();
-        regenCooldownMax = regenCooldown;
+        //regenCooldownMax = regenCooldown;
     }
 
     // Update is called once per frame
@@ -20,7 +20,14 @@ public class Regenerate : MonoBehaviour
     {
         if (myAttackable != null) Regen();
     }
+
+
     private void Regen()
+    {
+        myAttackable.hp += regenRate * Time.deltaTime;
+    }
+
+    /*private void Regen()
     {
         regenCooldown -= Time.deltaTime;
         if (regenCooldown <= 0)
@@ -36,4 +43,5 @@ public class Regenerate : MonoBehaviour
             regenCooldown = regenCooldownMax;
         }
     }
+    */
 }

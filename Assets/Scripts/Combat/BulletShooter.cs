@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletShooter : OffensiveTemplate
 {
+
     public WeaponStats Weapon;
     public Vector2 Offset;
     bool firing;

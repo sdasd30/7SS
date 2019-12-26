@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour
         GameObject considering;
         considering = enemies[Random.Range(0, enemies.Count)];
         //Debug.Log("initial enemy is " + considering);
-        Debug.Log(creditPool.incrementby * 3);
+        //Debug.Log(creditPool.incrementby * 3);
         while (considering.GetComponent<Score>().value > (creditPool.incrementby * 3))
         {
             //Debug.Log("searching for a new enemy...");

@@ -58,11 +58,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 7316566861236072436, guid: 11fbe59d30dbfad42ab485af00d3eb71, type: 3}
-  - {fileID: 113342055392346226, guid: 56095786ac6ee5d499079fc9243eb366, type: 3}
-  - {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e, type: 3}
-  - {fileID: 4586572493465753816, guid: acd2c5f8a8f9da34986a202d5232e6f5, type: 3}
-  - {fileID: 6305337551200706560, guid: efee45d4612c56e47bd404bba8da13b2, type: 3}
+  - {fileID: 234205443385772468, guid: 6d376fa1c691fd640bb340ef9c6f23dd, type: 3}
+  - {fileID: 3911655489491922923, guid: 0a80f0acbc2c3da44be817c75e736b3f, type: 3}
+  - {fileID: 1935454864474655953, guid: 01797ec6b25db9a4bad7a1a57ba55afe, type: 3}
   weaponSwitchDelay: 7
   nextWeapon: {fileID: 0}
   currWeapon: {fileID: 0}
@@ -85,6 +83,8 @@ GameObject:
   - component: {fileID: 7457555227399086770}
   - component: {fileID: 3976260652151149018}
   - component: {fileID: 5852829575971247989}
+  - component: {fileID: 1812678189}
+  - component: {fileID: 1812678192}
   m_Layer: 0
   m_Name: you_irl
   m_TagString: Untagged
@@ -233,6 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMaskList:
   - serializedVersion: 2
+    m_Bits: 1024
+  - serializedVersion: 2
     m_Bits: 256
   m_accumulatedVelocity: {x: 0, y: 0}
   Floating: 0
@@ -293,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenCooldown: 0.05
-  regenRate: 0
+  regenRate: 0.007142857
 --- !u!114 &5852829575971247989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +308,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61128054a209244099ef1244b908d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathBarrier: -99
+  deathBarrier: -20
   fallPenalty: 0.25
   important: 1
   returnPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812678189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a573bd068fa2f7444b705f1c1ae65aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 1
+--- !u!114 &1812678192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56762e73f109774f96030af1df21bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapon: {fileID: 0}
+  Offset: {x: 0, y: 0}

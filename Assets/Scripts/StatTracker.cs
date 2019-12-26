@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatTracker : MonoBehaviour
 {
+    private static StatTracker m_instance;
+
     public Dictionary<string, int> CurrentEnemykills;
     public Dictionary<string, int> CurrentWeaponKills;
     public Dictionary<string, int> CurrentWeaponScores;
@@ -23,9 +26,25 @@ public class StatTracker : MonoBehaviour
 
     public int currentScore;
     public int maxScore;
-    private WeaponStats m_currentWeapon;
+    private string m_currentWeaponName = "";
     private GameObject m_currentPlayer;
     // Start is called before the first frame update
+    void Awake()
+    {
+
+        if (m_instance == null)
+        {
+            m_instance = this;
+            SceneManager.sceneLoaded += onSceneLoad;
+        }
+        else if (m_instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         LoadStats();
@@ -48,12 +67,12 @@ public class StatTracker : MonoBehaviour
     {
         WeaponStats realWeapon = m_currentPlayer.transform.GetChild(0).GetChild(0).gameObject.GetComponent<WeaponStats>();
 
-        if (m_currentWeapon == null)
+        if (m_currentWeaponName == "")
         {
-            m_currentWeapon = realWeapon;
-        } else if (m_currentWeapon.name != realWeapon.name)
+            m_currentWeaponName = realWeapon.name;
+        } else if (m_currentWeaponName != realWeapon.name)
         {
-            m_currentWeapon = realWeapon;
+            m_currentWeaponName = realWeapon.name;
             OnWeaponSwitch(realWeapon);
         }
     } 
@@ -122,5 +141,12 @@ public class StatTracker : MonoBehaviour
         incrementOrCreate(LifetimeEnemykills, killedObject.TrackName, 1);
         incrementOrCreate(LifetimeWeaponKills, originWeapon.name, 1);
         incrementOrCreate(LifetimeWeaponScores, originWeapon.name, (int)killedObject.scoreValue);
+    }
+
+    private void onSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        CurrentEnemykills = new Dictionary<string, int>();
+        CurrentWeaponKills = new Dictionary<string, int>();
+        CurrentWeaponScores = new Dictionary<string, int>();
     }
 }
