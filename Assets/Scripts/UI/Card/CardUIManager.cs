@@ -9,7 +9,7 @@ public class CardUIManager : MonoBehaviour
 
     public Transform HandTransform;
     public GameObject CardPrefab;
-    public Transform PoolTransform;
+    public RectTransform PoolTransform;
 
     public Text PointCounter;
     public Text ExtraMessage;
@@ -65,6 +65,7 @@ public class CardUIManager : MonoBehaviour
                 GameObject newCard = createCard(g);
                 m_poolObjs.Add(newCard);
                 newCard.transform.SetParent(PoolTransform);
+                PoolTransform.sizeDelta = new Vector2 (PoolTransform.rect.width, (32 + (Mathf.Ceil(m_poolObjs.Count / 7f)) * 136));
             }
         }
     }

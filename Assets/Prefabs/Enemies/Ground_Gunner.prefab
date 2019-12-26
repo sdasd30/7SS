@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 7
-  value: 2
+  value: 3
 --- !u!114 &5984054227554796221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +293,8 @@ MonoBehaviour:
   OnDeathCreate: []
   GravityScale: 0
   RecoilDamage: 0
+  Icon: {fileID: 0}
+  Cost: 0
   auto: 0
 --- !u!114 &5984054227554796208
 MonoBehaviour:

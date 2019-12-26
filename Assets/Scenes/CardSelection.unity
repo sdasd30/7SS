@@ -255,6 +255,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 752
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.000000056345016
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559158596260905981, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294195207205573586, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294195207205573586, guid: 8ade6defa5068644d9121ce7368093dd,
+        type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6470154089571106449, guid: 8ade6defa5068644d9121ce7368093dd,
         type: 3}
       propertyPath: m_Name

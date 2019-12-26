@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 12
-  value: 6
+  value: 5
 --- !u!114 &711078186547726136
 MonoBehaviour:
   m_ObjectHideFlags: 0

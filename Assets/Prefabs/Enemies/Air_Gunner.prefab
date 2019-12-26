@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
-  hp: 10
+  maxHP: 2
+  hp: 2
 --- !u!114 &9075143508853035552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +293,8 @@ MonoBehaviour:
   OnDeathCreate: []
   GravityScale: 0
   RecoilDamage: 0
+  Icon: {fileID: 0}
+  Cost: 0
   auto: 0
 --- !u!114 &9075143508853035560
 MonoBehaviour:
