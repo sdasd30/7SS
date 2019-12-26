@@ -38,6 +38,7 @@ public class WeaponHandler : MonoBehaviour {
         currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         nextWeaponLoad();
 
+
     }
 
     private void nextWeaponLoad()

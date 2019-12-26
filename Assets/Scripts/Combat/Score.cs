@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public float scoreValue = 1;
-    public float value = 1;
+    public string TrackName;
+    public float scoreValue = 1; //Points scored
+    public float value = 1; //Spawn cost
     private void OnDestroy()
     {
-        FindObjectOfType<PlayerScore>().GetComponent<PlayerScore>().addScore(scoreValue);
+        FindObjectOfType<PlayerScore>().addScore(scoreValue);
     }
 }

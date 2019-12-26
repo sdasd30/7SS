@@ -52,5 +52,7 @@ public class OnDeathDrop : MonoBehaviour
             go.AddComponent<FactionHolder>();
             go.GetComponent<FactionHolder>().Faction = FactionType.NEUTRAL;
         }
+        if (go.GetComponent<Hitbox>() != null && GetComponent<Hitbox>() != null)
+            go.GetComponent<Hitbox>().OriginWeapon = GetComponent<Hitbox>().OriginWeapon;
     }
 }

@@ -19,6 +19,7 @@ public class HitInfo
     public Hitbox mHitbox;
 
     public GameObject Creator;
+    public WeaponStats OriginWeapon;
     public GameObject target;
     public float LastTimeHit;
 
@@ -39,6 +40,8 @@ public class HitInfo
 
 public class Hitbox : MonoBehaviour
 {
+    private WeaponStats m_originWeapon;
+    public WeaponStats OriginWeapon { get { return m_originWeapon; } set { m_originWeapon = value; } }
 
     [SerializeField]
     private float m_damage = 10.0f;
@@ -206,8 +209,7 @@ public class Hitbox : MonoBehaviour
         newHI.Knockback = new Vector2(Knockback.x, Knockback.y);
         newHI.target = atkObj.gameObject;
         //HitResult r = atkObj.TakeHit(newHI);
-        atkObj.TakeDamage(m_damage);
-        atkObj.TakeKnockback(newHI.Knockback);
+        atkObj.TakeHit(newHI);
         m_collidedObjs.Add(atkObj);
 
         if (!m_overlappingControl.Contains(atkObj))
@@ -235,6 +237,7 @@ public class Hitbox : MonoBehaviour
         //Debug.Log ("MFreeze: " + m_FreezeTime);
 
         hi.Creator = Creator;
+        hi.OriginWeapon = OriginWeapon;
         hi.mHitbox = this;
         return hi;
     }

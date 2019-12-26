@@ -93,6 +93,7 @@ public class BulletShooter : OffensiveTemplate
 
         newProjectile.Damage = damage;
         newProjectile.Duration = projectileDuration;
+        newProjectile.OriginWeapon = Weapon;
         if (fixedKnockback)
             newProjectile.Knockback = (GetComponent<Orientation>() == null) ? knockback : GetComponent<Orientation>().OrientVectorToDirection2D(knockback);
         else

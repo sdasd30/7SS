@@ -63,5 +63,6 @@ public class GameManager : MonoBehaviour
         GetComponentInChildren<HPBoxes>().init(go);
         GetComponentInChildren<NextWeaponUI>().init(go);
         GetComponentInChildren<HPText>().init(go);
+        FindObjectOfType<StatTracker>().SetPlayerObj(go);
     }
 }

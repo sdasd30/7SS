@@ -8,6 +8,8 @@ public class Attackable : MonoBehaviour {
 	public float hp = 1;
 	private bool alive = true;
 
+
+    private WeaponStats m_lastWeaponHurtBy;
     // Use this for initialization
     void Start () {
 		hp = maxHP;
@@ -23,9 +25,13 @@ public class Attackable : MonoBehaviour {
 
     public void checkDead()
     {
-        if (hp <= 0)
+        if (hp <= 0 && alive)
         {
             alive = false;
+            if (m_lastWeaponHurtBy != null && GetComponent<Score>() != null)
+            {
+                FindObjectOfType<StatTracker>().TrackKill(GetComponent<Score>(), m_lastWeaponHurtBy);
+            }
         }
         if (!alive)
         {
@@ -40,5 +46,12 @@ public class Attackable : MonoBehaviour {
     public void TakeKnockback(Vector2 vec)
     {
         GetComponent<PhysicsSS>().addToVelocity(vec);
+    }
+
+    public void TakeHit(HitInfo hi)
+    {
+        TakeDamage(hi.Damage);
+        TakeKnockback(hi.Knockback);
+        m_lastWeaponHurtBy = hi.OriginWeapon;
     }
 }
