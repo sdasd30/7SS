@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1720769669559322418}
   - component: {fileID: 5835183039189422088}
   m_Layer: 0
-  m_Name: pronaccumilate
+  m_Name: Acclimator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 1a21f0d2df3c588479ab2a6b4e868d50, type: 3}
+  m_Sprite: {fileID: 7780902796599373939, guid: 73b19f8afbc522f449fcb46b2922c752,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
-  name: pronaccumilate
+  bullet: {fileID: 543158920998827678, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
+  name: Acclimator
   spread: 0
   firerate: 2000
   damage: 1
@@ -204,7 +205,7 @@ MonoBehaviour:
     InheritFaction: 1
   GravityScale: 0
   RecoilDamage: 0
-  Icon: {fileID: 21300000, guid: 1a21f0d2df3c588479ab2a6b4e868d50, type: 3}
+  Icon: {fileID: 7780902796599373939, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 5
   auto: 0
 --- !u!114 &1720769669559322418
