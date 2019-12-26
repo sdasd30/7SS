@@ -32,7 +32,7 @@ public class CreditPool : MonoBehaviour
 
     public bool spendCredit(float requested)
     {
-        Debug.Log(requested + " requested, " + creditPool + "owned");
+        //Debug.Log(requested + " requested, " + creditPool + "owned");
         if (requested < creditPool)
         {
             creditPool -= requested;
