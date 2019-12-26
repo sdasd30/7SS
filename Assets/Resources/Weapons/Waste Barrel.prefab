@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3890615958076796443
+--- !u!1 &3214384668466199640
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3890615958076796445}
-  - component: {fileID: 3890615958076796442}
-  - component: {fileID: 3890615958076796447}
-  - component: {fileID: 3890615958076796444}
-  - component: {fileID: 8279274672004970790}
+  - component: {fileID: 3214384668466199646}
+  - component: {fileID: 3214384668466199641}
+  - component: {fileID: 3214384668466199644}
+  - component: {fileID: 3214384668466199647}
+  - component: {fileID: 7746212491046103909}
   m_Layer: 0
-  m_Name: roc
+  m_Name: Waste Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3890615958076796445
+--- !u!4 &3214384668466199646
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890615958076796443}
+  m_GameObject: {fileID: 3214384668466199640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.527, y: -1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3890615958076796442
+--- !u!212 &3214384668466199641
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890615958076796443}
+  m_GameObject: {fileID: 3214384668466199640}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: ff8f93a26f2883740b4dfb6379518d8f, type: 3}
+  m_Sprite: {fileID: -1682704966425736533, guid: 73b19f8afbc522f449fcb46b2922c752,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,53 +85,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3890615958076796447
+--- !u!114 &3214384668466199644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890615958076796443}
+  m_GameObject: {fileID: 3214384668466199640}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
-  name: roc
-  spread: 0
-  firerate: 1000
-  damage: 1
-  speed: 20
-  duration: 4
+  bullet: {fileID: 543158920998827678, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
+  name: Hazardous Waste
+  spread: 360
+  firerate: 20
+  damage: 2
+  speed: 8
+  duration: 2
   shots: 1
   knockbackMult: 5
   OnDeathCreate: []
-  GravityScale: 1
-  RecoilDamage: 0
-  Icon: {fileID: 21300000, guid: ff8f93a26f2883740b4dfb6379518d8f, type: 3}
+  GravityScale: 0
+  RecoilDamage: 0.05
+  Icon: {fileID: -1682704966425736533, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: -1
-  auto: 0
---- !u!114 &3890615958076796444
+  auto: 1
+--- !u!114 &3214384668466199647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890615958076796443}
+  m_GameObject: {fileID: 3214384668466199640}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f2bf1cd189d3d4d9e592462af64964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
---- !u!114 &8279274672004970790
+--- !u!114 &7746212491046103909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890615958076796443}
+  m_GameObject: {fileID: 3214384668466199640}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
