@@ -150,11 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InternalID: 
-  DisplayName: 
-  Description: 
-  typeOfAchievement: 2
-  scoreValue: 0
-  WeaponUsed: {fileID: 0}
-  NumKills: 0
-  LevelAchieved: 0
+  DisplayName: You Murderer
+  Description: Kill 3 enemies
+  typeOfAchievement: 3
+  value: 3
+  WithObject: {fileID: 0}
+  InOneLife: 0

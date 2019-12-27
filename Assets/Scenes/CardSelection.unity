@@ -131,6 +131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 126647126}
   - component: {fileID: 126647125}
+  - component: {fileID: 126647127}
+  - component: {fileID: 126647128}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -165,6 +167,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126647127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126647124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d6eb60dd6bbd045bf6de381f76e7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  maxScore: 0
+--- !u!114 &126647128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126647124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5bd2ae64a066e48b08f4f18c1a1cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AchievementsAlreadyUnlocked: []
 --- !u!1 &303763792
 GameObject:
   m_ObjectHideFlags: 0

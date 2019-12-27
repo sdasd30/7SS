@@ -219,9 +219,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIManager: {fileID: 0}
   InHand: 0
+  LockSprite: {fileID: 21300000, guid: ba37e505e8c8bce46ad93a68ebc79007, type: 3}
   MyCardName: {fileID: 1867745143748100207}
   MyCardCost: {fileID: 7002636143353893165}
   MyCardImage: {fileID: 4217457732570518684}
+  Weapon: {fileID: 0}
 --- !u!1 &7012442327114732453
 GameObject:
   m_ObjectHideFlags: 0

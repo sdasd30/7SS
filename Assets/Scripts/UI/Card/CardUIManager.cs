@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CardUIManager : MonoBehaviour
 {
     public CardManager m_CardManager;
-
+    public AchievementManager m_AchievementManager;
     public Transform HandTransform;
     public GameObject CardPrefab;
     public RectTransform PoolTransform;
@@ -31,6 +31,8 @@ public class CardUIManager : MonoBehaviour
             m_CardManager = FindObjectOfType<CardManager>();
         if (m_CardManager == null)
             return;
+        if (m_AchievementManager == null)
+            m_AchievementManager = FindObjectOfType<AchievementManager>();
         initializeHands();
         initializePool();
         UpdateButton(CheckValid());
@@ -62,6 +64,13 @@ public class CardUIManager : MonoBehaviour
             {
                 if (inHand(g.GetComponent<WeaponStats>()))
                     continue;
+                if (g.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(g.GetComponent<Achievement>())) {
+                    GameObject lockCard = createLockCard(g.GetComponent<Achievement>());
+                    m_poolObjs.Add(lockCard);
+                    lockCard.transform.SetParent(PoolTransform);
+                    PoolTransform.sizeDelta = new Vector2(PoolTransform.rect.width, (32 + (Mathf.Ceil(m_poolObjs.Count / 7f)) * 136));
+                    continue;
+                }
                 GameObject newCard = createCard(g);
                 m_poolObjs.Add(newCard);
                 newCard.transform.SetParent(PoolTransform);
@@ -136,7 +145,13 @@ public class CardUIManager : MonoBehaviour
         gi.GetComponent<Card>().UIManager = this;
         return gi;
     }
-
+    private GameObject createLockCard(Achievement a)
+    {
+        GameObject gi = Instantiate(CardPrefab);
+        gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName,a.Description);
+        gi.GetComponent<Card>().UIManager = this;
+        return gi;
+    }
     public void InitializeGame()
     {
         Debug.Log("Starting the game yajhufwhufh");

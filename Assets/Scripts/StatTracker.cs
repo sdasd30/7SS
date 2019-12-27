@@ -36,6 +36,7 @@ public class StatTracker : MonoBehaviour
         {
             m_instance = this;
             SceneManager.sceneLoaded += onSceneLoad;
+            LoadStats();
         }
         else if (m_instance != this)
         {
@@ -44,10 +45,6 @@ public class StatTracker : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    }
-    void Start()
-    {
-        LoadStats();
     }
 
     // Update is called once per frame
@@ -148,5 +145,21 @@ public class StatTracker : MonoBehaviour
         CurrentEnemykills = new Dictionary<string, int>();
         CurrentWeaponKills = new Dictionary<string, int>();
         CurrentWeaponScores = new Dictionary<string, int>();
+    }
+
+    public int SumStat(Dictionary<string,int> list)
+    {
+        int n = 0;
+        foreach (int i in list.Values)
+            n += i;
+        return n;
+    }
+
+    public int MaxVal(Dictionary<string, int> list)
+    {
+        int n = 0;
+        foreach (int i in list.Values)
+            n = Mathf.Max(n, i);
+        return n;
     }
 }
