@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: You Murderer
   Description: Kill 3 enemies
-  typeOfAchievement: 3
+  typeOfAchievement: 1
   value: 3
   WithObject: {fileID: 0}
   InOneLife: 0

@@ -76,7 +76,7 @@ public class Achievement : MonoBehaviour
             {
                 if (WithObject == null)
                 {
-                    return false;
+                    return st.maxKills >= value;
                 }
                 else
                 {
@@ -136,7 +136,7 @@ public class Achievement : MonoBehaviour
             {
                 if (WithObject == null)
                 {
-                    return false;
+                    return st.maxKills >= value;
                 }
                 else
                 {

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class StatTracker : MonoBehaviour
 {
     private static StatTracker m_instance;
-
     public Dictionary<string, int> CurrentEnemykills;
     public Dictionary<string, int> CurrentWeaponKills;
     public Dictionary<string, int> CurrentWeaponScores;
@@ -26,6 +25,11 @@ public class StatTracker : MonoBehaviour
 
     public int currentScore;
     public int maxScore;
+    public int currentKills;
+    public int maxKills;
+    public int currentSwitches;
+    public int maxSwitches;
+
     private string m_currentWeaponName = "";
     private GameObject m_currentPlayer;
     // Start is called before the first frame update
@@ -76,6 +80,8 @@ public class StatTracker : MonoBehaviour
 
     private void OnWeaponSwitch(WeaponStats weapon)
     {
+        currentSwitches++;
+        maxSwitches = Mathf.Max(maxSwitches, currentSwitches);
         incrementOrCreate(MaxWeaponSwitches, weapon.name, 1);
         incrementOrCreate(LifetimeWeaponSwitches, weapon.name, 1);
         maxOrCreate(MaxWeaponUsedAtLevel, weapon.name, FindObjectOfType<Difficulty>().getDifficulty());
@@ -126,7 +132,9 @@ public class StatTracker : MonoBehaviour
     public void TrackKill(Score killedObject, WeaponStats originWeapon)
     {
         currentScore += (int)killedObject.scoreValue;
+        currentKills++;
         maxScore = Mathf.Max(currentScore, maxScore);
+        maxKills = Mathf.Max(maxKills, currentKills);
         incrementOrCreate(CurrentEnemykills, killedObject.TrackName, 1);
         incrementOrCreate(CurrentWeaponKills, originWeapon.name, 1);
         incrementOrCreate(CurrentWeaponScores, originWeapon.name, (int)killedObject.scoreValue);
@@ -147,6 +155,7 @@ public class StatTracker : MonoBehaviour
         CurrentWeaponScores = new Dictionary<string, int>();
     }
 
+
     public int SumStat(Dictionary<string,int> list)
     {
         int n = 0;
@@ -161,5 +170,46 @@ public class StatTracker : MonoBehaviour
         foreach (int i in list.Values)
             n = Mathf.Max(n, i);
         return n;
+    }
+    public SaveObject TransferToSaveObject()
+    {
+        SaveObject newSave = new SaveObject
+        {
+            savLifetimeEnemykills = LifetimeEnemykills,
+            savLifetimeWeaponKills = LifetimeWeaponKills,
+            savLifetimeWeaponScores = LifetimeWeaponScores,
+            savLifetimeWeaponSwitches = LifetimeWeaponSwitches,
+
+            savMaxEnemykills = MaxEnemykills,
+            savmaxScore = maxScore,
+            savmaxKills = maxKills,
+            savmaxSwitches = maxSwitches,
+            savMaxWeaponKills = MaxWeaponKills,
+            savMaxWeaponScores = MaxWeaponScores,
+            savMaxWeaponSwitches = MaxWeaponSwitches,
+            savMaxWeaponUsedAtLevel = MaxWeaponUsedAtLevel,
+            savAchivementsDone = FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked
+        };
+
+
+        return newSave;
+    }
+
+    public void LoadFromSaveObject(SaveObject oldSave)
+    {
+        LifetimeEnemykills = oldSave.savLifetimeEnemykills;
+        LifetimeWeaponKills = oldSave.savLifetimeWeaponKills;
+        LifetimeWeaponScores = oldSave.savLifetimeWeaponScores;
+        LifetimeWeaponSwitches = oldSave.savLifetimeWeaponSwitches;
+
+        MaxEnemykills = oldSave.savMaxEnemykills;
+        maxScore = oldSave.savmaxScore;
+        maxKills = oldSave.savmaxKills;
+        maxSwitches = oldSave.savmaxSwitches;
+        MaxWeaponKills = oldSave.savMaxWeaponKills;
+        MaxWeaponScores = oldSave.savMaxWeaponScores;
+        MaxWeaponSwitches = oldSave.savMaxWeaponSwitches;
+        MaxWeaponUsedAtLevel = oldSave.savMaxWeaponUsedAtLevel;
+        FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked = oldSave.savAchivementsDone;
     }
 }
