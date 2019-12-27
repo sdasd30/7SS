@@ -18,7 +18,7 @@ public class LoadGame : MonoBehaviour
     // Update is called once per frame
     public void LoadSaveFromFile()
     {
-        if (File.Exists("C:\\Users\\danie\\builds\\gamesave.sav"))
+        if (File.Exists(Application.persistentDataPath + "\\gamesave.sav"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "\\gamesave.sav", FileMode.Open);

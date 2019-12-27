@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Difficulty : MonoBehaviour
 {
-    PlayerScore plrScore;
+    StatTracker plrScore;
     public int difficultyLevel = 1;
     private int requiredScore;
     private int sumOfScore;
@@ -13,7 +13,7 @@ public class Difficulty : MonoBehaviour
 
     private void Start()
     {
-        plrScore = FindObjectOfType<PlayerScore>().GetComponent<PlayerScore>();
+        plrScore = FindObjectOfType<StatTracker>();
         requiredScore = 49;
         difficultyLevel = 1;
     }
@@ -27,7 +27,7 @@ public class Difficulty : MonoBehaviour
         //Debug.Log("rs:" + requiredScore);
         //Debug.Log("tm:" + tmp);
         //requiredScore = 49 * difficultyLevel;
-        if (requiredScore <= plrScore.getScore()-sumOfScore)
+        if (requiredScore <= plrScore.currentScore-sumOfScore)
         {
             sumOfScore += requiredScore;
             requiredScore = (int) ((double)requiredScore * 1.3);
