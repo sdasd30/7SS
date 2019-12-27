@@ -12,13 +12,17 @@ public class LevelSelectUI : MonoBehaviour
     public Text LevelName;
     public Text LevelDescription;
     public Button StartLevelButton;
+    public Scrollbar Scroll;
 
     public LevelCard CurrentSelectedCard;
     private int m_lastHighlightedCard;
     // Start is called before the first frame update
     void Start()
     {
-        
+        initializeCards();
+        HighlightCard(AllLevelCards[0]);
+        m_lastHighlightedCard = 0;
+        Scroll.value = 0f;
     }
 
     // Update is called once per frame
@@ -40,7 +44,7 @@ public class LevelSelectUI : MonoBehaviour
     public void OnScroll(Vector2 scroll)
     {
         int i = CalculatedHighlishtedCard(scroll);
-        if (i != m_lastHighlightedCard && i < AllLevelCards.Count)
+        if (i != m_lastHighlightedCard && i <= AllLevelCards.Count)
         {
             m_lastHighlightedCard = i;
             HighlightCard(AllLevelCards[i]);
@@ -49,7 +53,11 @@ public class LevelSelectUI : MonoBehaviour
 
     private int CalculatedHighlishtedCard(Vector2 scroll)
     {
-        return 0;
+        int numSelections = AllLevelCards.Count;
+        float sel = (1.0f / numSelections);
+        int cardID = Mathf.RoundToInt(scroll.x / sel);
+        //Debug.Log(scroll.x + " : " + cardID + " : " + numSelections + " : " + (scroll.x / sel));
+        return cardID;
     }
     private void HighlightCard(LevelCard lc)
     {
@@ -61,7 +69,7 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (CurrentSelectedCard != null)
         {
-            FindObjectOfType<LevelManager>().LastLevelSelected = CurrentSelectedCard.AssociatedScene.name;
+            FindObjectOfType<LevelManager>().LastLevelSelected = CurrentSelectedCard.AssociatedSceneName;
             SceneManager.LoadScene("CardSelection");
         }
             

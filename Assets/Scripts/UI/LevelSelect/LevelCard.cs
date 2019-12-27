@@ -7,7 +7,7 @@ public class LevelCard : MonoBehaviour
 {
     public string NameOfLevel;
     public string Description;
-    public Scene AssociatedScene;
+    public string AssociatedSceneName;
     // Start is called before the first frame update
     void Start()
     {
