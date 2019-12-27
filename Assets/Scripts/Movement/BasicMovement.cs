@@ -25,6 +25,7 @@ public class BasicMovement : MonoBehaviour {
 	PhysicsSS m_physics;
 
 	public bool canDoubleJump = true;
+    public bool doubleJumpAvailable = true;
 
 	float inputX = 0.0f;
 	float inputY = 0.0f;
@@ -108,7 +109,7 @@ public class BasicMovement : MonoBehaviour {
 
     internal void baseMovement(InputPacket ip)
     {
-        if (m_physics.onGround) { canDoubleJump = true; }
+        if (m_physics.onGround && doubleJumpAvailable) { canDoubleJump = true; }
         inputX = 0.0f;
         inputY = 0.0f;
         if (!autonomy && m_physics.canMove && targetSet)
@@ -214,4 +215,18 @@ public class BasicMovement : MonoBehaviour {
 		followObj = null;
 		minDistance = 0.2f;
 	}
+
+    #region Jump Power Scripts
+    public void EnableDoubleJumps(float seconds)
+    {
+        StartCoroutine(TemporaryDoubleJumps(seconds));
+    }
+
+    IEnumerator TemporaryDoubleJumps(float seconds)
+    {
+        doubleJumpAvailable = true;
+        yield return new WaitForSeconds(seconds);
+        doubleJumpAvailable = false;
+    }
+    #endregion
 }

@@ -9,7 +9,7 @@ public class Difficulty : MonoBehaviour
     private int requiredScore;
     private int sumOfScore;
 
-    //private int tmp;
+    private int tmp;
 
     private void Start()
     {
@@ -22,10 +22,10 @@ public class Difficulty : MonoBehaviour
     void Update()
     {
         //Debug.Log(getDifficulty());
-        //tmp = requiredScore + sumOfScore;
-        //Debug.Log((49 * difficultyLevel));
-        //Debug.Log("rs:" + requiredScore);
-        //Debug.Log("tm:" + tmp);
+        tmp = requiredScore + sumOfScore;
+        Debug.Log((plrScore.currentScore));
+        Debug.Log("rs:" + requiredScore);
+        Debug.Log("tm:" + tmp);
         //requiredScore = 49 * difficultyLevel;
         if (requiredScore <= plrScore.currentScore-sumOfScore)
         {

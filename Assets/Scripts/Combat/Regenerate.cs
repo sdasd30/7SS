@@ -27,21 +27,23 @@ public class Regenerate : MonoBehaviour
         myAttackable.hp += regenRate * Time.deltaTime;
     }
 
-    /*private void Regen()
+    public float getRegen()
     {
-        regenCooldown -= Time.deltaTime;
-        if (regenCooldown <= 0)
-        {
-            if (myAttackable.hp <= myAttackable.maxHP)
-            {
-                myAttackable.hp += regenRate;
-                if (myAttackable.hp > myAttackable.maxHP)
-                {
-                    myAttackable.hp = myAttackable.maxHP;
-                }
-            }
-            regenCooldown = regenCooldownMax;
-        }
+        return regenRate;
     }
-    */
+
+    public void TemporaryRegenChange(float time, float newRate)
+    {
+        StartCoroutine(crTemporaryRegenChange(time,newRate));
+    }
+
+    IEnumerator crTemporaryRegenChange(float time, float newRate)
+    {
+        float oldRate = regenRate;
+        regenRate = newRate;
+        Debug.Log("New rate is " + newRate);
+        yield return new WaitForSeconds(time);
+        regenRate = oldRate;
+        Debug.Log("New rate is " + oldRate);
+    }
 }

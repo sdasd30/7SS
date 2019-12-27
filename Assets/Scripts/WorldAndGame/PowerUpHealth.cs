@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class PowerUpHealth : PowerUpBase
 {
-    public float Health = 4.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public float newRate = 4.0f;
+    public float length = 1f;
+
+
+    public override void TriggerEffect(GameObject target) {
+        if (target.GetComponent<Regenerate>() != null)
+        {
+            target.GetComponent<Regenerate>().TemporaryRegenChange(length, newRate);            
+        }    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public override void TriggerEffect(GameObject target) {
-        if (target.GetComponent<Attackable>() != null)
-            target.GetComponent<Attackable>().TakeDamage(-Health);
-    }
+    
 }

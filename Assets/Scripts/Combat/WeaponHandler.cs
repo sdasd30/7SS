@@ -10,25 +10,32 @@ public class WeaponHandler : MonoBehaviour {
 	public float cooldown;
 
 	void Start(){
-		cooldown = weaponSwitchDelay;    
-		nextWeapon = weapons [Random.Range (0, weapons.Count)];
-		currWeapon = GameObject.Instantiate (nextWeapon, transform.position + new Vector3(.75f,0,-1f), Quaternion.identity);
-		currWeapon.transform.parent = transform;
-		nextWeaponLoad();
+        begin();
         //fillLoadout();
     }
 
 	void Update(){
 		cooldown -= Time.deltaTime;
-        if (nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name) nextWeaponLoad();
+        if (nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name)
+            NextWeaponLoad();
         if (cooldown <= 0){
             //Debug.Log("Cooldown Low");
-            fillLoadout();
+            FillLoadout();
 		}
 
 	}
 
-    private void fillLoadout()
+    public void begin()
+    {
+
+        cooldown = weaponSwitchDelay;
+        nextWeapon = weapons[Random.Range(0, weapons.Count)];
+        currWeapon = GameObject.Instantiate(nextWeapon, transform.position + new Vector3(.75f, 0, -1f), Quaternion.identity);
+        currWeapon.transform.parent = transform;
+        NextWeaponLoad();
+    }
+
+    private void FillLoadout()
     {
         cooldown = weaponSwitchDelay;
         GameObject temp = currWeapon;
@@ -36,12 +43,12 @@ public class WeaponHandler : MonoBehaviour {
         currWeapon = GameObject.Instantiate(nextWeapon, temp.transform.position, Quaternion.identity);
         currWeapon.transform.parent = transform;
         currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-        nextWeaponLoad();
+        NextWeaponLoad();
 
 
     }
 
-    private void nextWeaponLoad()
+    private void NextWeaponLoad()
     {
         nextWeapon = weapons[Random.Range(0, weapons.Count)];
         while (nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name)
@@ -49,5 +56,28 @@ public class WeaponHandler : MonoBehaviour {
             nextWeapon = weapons[Random.Range(0, weapons.Count)];
         }
         return;
+    }
+
+    public void RandomizeWeapons()
+    {
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            weapons[i] = null;
+        }
+
+        Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
+        GameObject loadedWeapon;
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            loadedWeapon = (GameObject)loadedObjs[Random.Range(0, loadedObjs.Length)];
+            while (weapons.Contains(loadedWeapon))
+            {
+                loadedWeapon = (GameObject)loadedObjs[Random.Range(0, loadedObjs.Length)];
+            }
+            weapons[i] = loadedWeapon;
+        }
+        GameObject.Destroy(currWeapon.gameObject);
+        begin();
+
     }
 }
