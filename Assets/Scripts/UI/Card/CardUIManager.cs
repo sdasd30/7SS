@@ -158,13 +158,15 @@ public class CardUIManager : MonoBehaviour
     }
     public void InitializeGame()
     {
-        Debug.Log("Starting the game yajhufwhufh");
         List<GameObject> finalHand = new List<GameObject>();
         foreach (GameObject go in m_handObjs)
         {
             finalHand.Add(go.GetComponent<Card>().Weapon);
         }
         m_CardManager.CurrentHand = finalHand;
-        SceneManager.LoadScene("SampleScene");
+        if (FindObjectOfType<LevelManager>() != null)
+            SceneManager.LoadScene(FindObjectOfType<LevelManager>().LastLevelSelected);
+        else
+            SceneManager.LoadScene("SampleScene");
     }
 }

@@ -21,6 +21,7 @@ public class CurrentWeaponUI : MonoBehaviour {
         if (player != null) updateSprite();
     }
 
+    
     private void updateSprite()
     {
         theWeapon = playerHandler.currWeapon;
