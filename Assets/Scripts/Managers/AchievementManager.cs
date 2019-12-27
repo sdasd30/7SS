@@ -5,7 +5,7 @@ using UnityEngine;
 public class AchievementManager : MonoBehaviour
 {
     private static AchievementManager m_instance;
-
+    public GameObject UnlockNotificationPrefab;
     public List<string> AchievementsAlreadyUnlocked;
     void Awake()
     {
@@ -34,7 +34,7 @@ public class AchievementManager : MonoBehaviour
         
     }
 
-    public bool CheckIfAchievementIsMet(Achievement a)
+    public bool CheckIfAchievementIsMet(Achievement a, Transform notificationTransform=null)
     {
         if (AchievementsAlreadyUnlocked.Contains(a.DisplayName))
             return a;
@@ -42,7 +42,17 @@ public class AchievementManager : MonoBehaviour
         {
             bool met = a.CheckAchievementMet();
             if (met)
+            {
                 AchievementsAlreadyUnlocked.Add(a.DisplayName);
+                if (notificationTransform != null)
+                {
+                    GameObject g = Instantiate(UnlockNotificationPrefab, notificationTransform);
+                    string d = (a.Description.Length > 0) ? a.Description : a.AutoGenDescription();
+                    g.GetComponent<UnlockNotification>().SetInfo(a.GetComponent<WeaponStats>().Icon, a.GetComponent<WeaponStats>().name, a.DisplayName, d);
+                }
+                
+            }
+                
             return met;
         }
     }

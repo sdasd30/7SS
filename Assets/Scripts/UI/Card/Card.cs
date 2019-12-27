@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; // 1
 
-public class Card : MonoBehaviour, IPointerEnterHandler
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public CardUIManager UIManager;
     public bool InHand = false;
@@ -46,8 +46,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler
     public void SetLockCardInfo(string AchievementName, string AchievementDescription)
     {
         MyCardImage.sprite = LockSprite;
-        MyCardName.text = AchievementName;
-        MyCardCost.text = "LOCKED";
+        MyCardName.text = "LOCKED" ;
+        MyCardCost.text = AchievementName;
         m_description = AchievementDescription;
         locked = true;
     }
@@ -56,5 +56,10 @@ public class Card : MonoBehaviour, IPointerEnterHandler
     {
         if (UIManager != null && m_description != "")
             UIManager.ExtraMessage.text = MyCardName.text + ": " + m_description;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (UIManager != null && m_description != "")
+            UIManager.ExtraMessage.text = "";
     }
 }

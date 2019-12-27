@@ -16,6 +16,7 @@ public class CardUIManager : MonoBehaviour
     public Button StartGameButton;
 
 
+
     private int CardTarget = 7;
     private int MaxCost = 7;
 
@@ -64,7 +65,7 @@ public class CardUIManager : MonoBehaviour
             {
                 if (inHand(g.GetComponent<WeaponStats>()))
                     continue;
-                if (g.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(g.GetComponent<Achievement>())) {
+                if (g.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(g.GetComponent<Achievement>(),transform)) {
                     GameObject lockCard = createLockCard(g.GetComponent<Achievement>());
                     m_poolObjs.Add(lockCard);
                     lockCard.transform.SetParent(PoolTransform);
