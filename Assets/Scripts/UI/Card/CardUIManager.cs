@@ -148,7 +148,10 @@ public class CardUIManager : MonoBehaviour
     private GameObject createLockCard(Achievement a)
     {
         GameObject gi = Instantiate(CardPrefab);
-        gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName,a.Description);
+        if (a.Description.Length == 0)
+            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName, a.AutoGenDescription());
+        else
+            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName,a.Description);
         gi.GetComponent<Card>().UIManager = this;
         return gi;
     }

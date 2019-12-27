@@ -212,4 +212,13 @@ public class StatTracker : MonoBehaviour
         MaxWeaponUsedAtLevel = oldSave.savMaxWeaponUsedAtLevel;
         FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked = oldSave.savAchivementsDone;
     }
+
+    public bool IsAchievementMet(Dictionary<string,int> d,string key, int criteria)
+    {
+        if (d.ContainsKey(key))
+            return d[key] >= criteria;
+        else
+            d[key] = 0;
+        return false;
+    }
 }

@@ -15,7 +15,7 @@ public class Achievement : MonoBehaviour
     void Start()
     {
         if (Description.Length == 0)
-            Description = autoGenDescription();
+            Description = AutoGenDescription();
     }
 
     // Update is called once per frame
@@ -24,14 +24,40 @@ public class Achievement : MonoBehaviour
         
     }
 
-    private string autoGenDescription()
+    public string AutoGenDescription()
     {
         string s = "";
         if (typeOfAchievement == AchievementType.WEAPON_KILLS)
         {
-            s += "Kill " + value + " enemies ";
+            s += "Destroy " + value + " enemies ";
             if (WithObject != null)
-                s = s + " with the " + WithObject.GetComponent<WeaponStats>().name + " ";
+                s = s + "with the " + WithObject.GetComponent<WeaponStats>().name + " ";
+            if (InOneLife)
+                s += "in one life";
+        } else if (typeOfAchievement == AchievementType.SCORE)
+        {
+            s += "Score " + value + " points ";
+            if (WithObject != null)
+                s = s + "with the " + WithObject.GetComponent<WeaponStats>().name + " ";
+            if (InOneLife)
+                s += "in one life";
+        }
+        else if (typeOfAchievement == AchievementType.ENEMY_KILLED)
+        {
+            s += "Destroy " + value;
+            if (WithObject != null)
+                s = WithObject.GetComponent<Score>().TrackName + "s ";
+            else
+                s = "enemies ";
+            if (InOneLife)
+                s += "in one life";
+        }
+        else if (typeOfAchievement == AchievementType.WEAPON_SWITCHES)
+        {
+            if (WithObject != null)
+                s = "Use the " + WithObject.GetComponent<WeaponStats>().name + " " + value + " times ";
+            else
+                s = "Switch weapons " + value + " times ";
             if (InOneLife)
                 s += "in one life";
         }
@@ -56,7 +82,7 @@ public class Achievement : MonoBehaviour
                     return st.maxScore > value;
                 } else
                 {
-                    return st.MaxWeaponScores[withName] >= value;
+                    return st.IsAchievementMet(st.MaxWeaponScores,withName, (int)value);
                 }
             } else
             {
@@ -66,7 +92,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.LifetimeWeaponScores[withName] >= value;
+                    return st.IsAchievementMet(st.LifetimeWeaponScores,withName, (int)value);
                 }
             }
         }
@@ -80,7 +106,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.MaxWeaponKills[withName] >= value;
+                    return st.IsAchievementMet(st.MaxWeaponKills,withName, (int)value);
                 }
             }
             else
@@ -91,7 +117,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.LifetimeWeaponScores[withName] >= value;
+                    return st.IsAchievementMet(st.LifetimeWeaponScores,withName,(int)value);
                 }
             }
         }
@@ -103,7 +129,7 @@ public class Achievement : MonoBehaviour
             }
             else
             {
-                return st.MaxWeaponUsedAtLevel[withName] >= value;
+                return st.IsAchievementMet(st.MaxWeaponUsedAtLevel,withName,(int)value);
             }
         } else if (typeOfAchievement == AchievementType.WEAPON_SWITCHES)
         {
@@ -115,7 +141,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.MaxWeaponSwitches[withName] >= value;
+                    return st.IsAchievementMet(st.MaxWeaponSwitches, withName, (int)value);
                 }
             }
             else
@@ -126,7 +152,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.LifetimeWeaponSwitches[withName] >= value;
+                    return st.IsAchievementMet(st.LifetimeWeaponSwitches,withName,(int)value);
                 }
             }
         }
@@ -140,7 +166,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.MaxEnemykills[withName] >= value;
+                    return st.IsAchievementMet(st.MaxEnemykills,withName, (int) value);
                 }
             }
             else
@@ -151,7 +177,7 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.LifetimeEnemykills[withName] >= value;
+                    return st.IsAchievementMet(st.LifetimeEnemykills,withName, (int)value);
                 }
             }
         }
