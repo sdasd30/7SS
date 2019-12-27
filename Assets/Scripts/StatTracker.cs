@@ -149,4 +149,40 @@ public class StatTracker : MonoBehaviour
         CurrentWeaponKills = new Dictionary<string, int>();
         CurrentWeaponScores = new Dictionary<string, int>();
     }
+
+    public SaveObject TransferToSaveObject()
+    {
+        SaveObject newSave = new SaveObject
+        {
+            savLifetimeEnemykills = LifetimeEnemykills,
+            savLifetimeWeaponKills = LifetimeWeaponKills,
+            savLifetimeWeaponScores = LifetimeWeaponScores,
+            savLifetimeWeaponSwitches = LifetimeWeaponSwitches,
+
+            savMaxEnemykills = MaxEnemykills,
+            savmaxScore = maxScore,
+            savMaxWeaponKills = MaxWeaponKills,
+            savMaxWeaponScores = MaxWeaponScores,
+            savMaxWeaponSwitches = MaxWeaponSwitches,
+            savMaxWeaponUsedAtLevel = MaxWeaponUsedAtLevel
+        };
+
+
+        return newSave;
+    }
+
+    public void LoadFromSaveObject(SaveObject oldSave)
+    {
+        LifetimeEnemykills = oldSave.savLifetimeEnemykills;
+        LifetimeWeaponKills = oldSave.savLifetimeWeaponKills;
+        LifetimeWeaponScores = oldSave.savLifetimeWeaponScores;
+        LifetimeWeaponSwitches = oldSave.savLifetimeWeaponSwitches;
+
+        MaxEnemykills = oldSave.savMaxEnemykills;
+        maxScore = oldSave.savmaxScore;
+        MaxWeaponKills = oldSave.savMaxWeaponKills;
+        MaxWeaponScores = oldSave.savMaxWeaponScores;
+        MaxWeaponSwitches = oldSave.savMaxWeaponSwitches;
+        MaxWeaponUsedAtLevel = oldSave.savMaxWeaponUsedAtLevel;
+    }
 }
