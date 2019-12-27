@@ -41,6 +41,7 @@ public class Attackable : MonoBehaviour {
 
 	public void TakeDamage(float damage){
 		hp -= damage;
+        hp = Mathf.Max(0f, Mathf.Min(maxHP, hp));
 	}
 
     public void TakeKnockback(Vector2 vec)
