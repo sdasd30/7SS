@@ -33,5 +33,9 @@ public class FactionHolder : MonoBehaviour
         if (go.GetComponent<FactionHolder>() == null)
             go.AddComponent<FactionHolder>();
         go.GetComponent<FactionHolder>().Faction = Faction;
+        for(int i =0;i < go.transform.childCount;i++)
+        {
+            SetFaction(go.transform.GetChild(i).gameObject);
+        }
     }
 }

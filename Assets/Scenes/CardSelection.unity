@@ -181,6 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: 0
   maxScore: 0
+  currentKills: 0
+  maxKills: 0
+  currentSwitches: 0
+  maxSwitches: 0
 --- !u!114 &126647128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5bd2ae64a066e48b08f4f18c1a1cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UnlockNotificationPrefab: {fileID: 2721040147041860671, guid: 7f1f411f92c51e840803e75ed1d0f0fe,
+    type: 3}
   AchievementsAlreadyUnlocked: []
 --- !u!1 &303763792
 GameObject:
