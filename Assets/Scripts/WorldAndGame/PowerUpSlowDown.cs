@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpScramble : PowerUpBase
+public class PowerUpSlowDown : PowerUpBase
 {
+    public float LongCooldown = 14f;
+
     public override void TriggerEffect(GameObject target)
     {
         if (target.GetComponentInChildren<WeaponHandler>() != null)
         {
-            //GameObject.Destroy(target.GetComponentInChildren<WeaponHandler>().currWeapon.gameObject);
-            target.GetComponentInChildren<WeaponHandler>().begin();
+            target.GetComponentInChildren<WeaponHandler>().SlowDown(LongCooldown);
         }
 
     }

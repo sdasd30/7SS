@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7457555227022642678}
   - component: {fileID: 7457555227022642681}
   - component: {fileID: 7457555227022642680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapon Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,9 +58,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
+  - {fileID: 1357241947132668247, guid: a021f5c9471c48845ba703499ca2ceed, type: 3}
+  - {fileID: 1616467649620937505, guid: 984fa4aefcbd7444b83fc33da35803fd, type: 3}
   - {fileID: 234205443385772468, guid: 6d376fa1c691fd640bb340ef9c6f23dd, type: 3}
+  - {fileID: 6305337551200706560, guid: efee45d4612c56e47bd404bba8da13b2, type: 3}
+  - {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e, type: 3}
+  - {fileID: 7134458166870073486, guid: be5feae16c1da7a4d93da70753667649, type: 3}
   - {fileID: 3911655489491922923, guid: 0a80f0acbc2c3da44be817c75e736b3f, type: 3}
-  - {fileID: 1935454864474655953, guid: 01797ec6b25db9a4bad7a1a57ba55afe, type: 3}
   weaponSwitchDelay: 7
   nextWeapon: {fileID: 0}
   currWeapon: {fileID: 0}
@@ -87,7 +91,9 @@ GameObject:
   - component: {fileID: 1812678192}
   - component: {fileID: 8118849365731181571}
   - component: {fileID: 6267473724469059893}
-  m_Layer: 0
+  - component: {fileID: 1012108895255747345}
+  - component: {fileID: 5463291938445705817}
+  m_Layer: 11
   m_Name: you_irl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,6 +361,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Faction: 1
 --- !u!114 &6267473724469059893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56762e73f109774f96030af1df21bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapon: {fileID: 0}
+  Offset: {x: 0, y: 0}
+--- !u!114 &1012108895255747345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a573bd068fa2f7444b705f1c1ae65aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faction: 1
+--- !u!114 &5463291938445705817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
