@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9148126439839270889
+--- !u!1001 &4340737510120623201
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3500076459514152108, guid: 11835dbedaffe4048b339172474e051c,
+      objectReference: {fileID: 8402110963858618648, guid: 11835dbedaffe4048b339172474e051c,
         type: 3}
     - target: {fileID: 7929950897424701850, guid: 8f7324d7c7ddf0447b90c70b339d0a32,
         type: 3}
@@ -68,20 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8461251260827124755, guid: 8f7324d7c7ddf0447b90c70b339d0a32,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 8461251260827124755, guid: 8f7324d7c7ddf0447b90c70b339d0a32,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.32
-      objectReference: {fileID: 0}
     - target: {fileID: 8624327360001643603, guid: 8f7324d7c7ddf0447b90c70b339d0a32,
         type: 3}
       propertyPath: m_Name
-      value: Rock Projectile
+      value: Science Projectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7324d7c7ddf0447b90c70b339d0a32, type: 3}

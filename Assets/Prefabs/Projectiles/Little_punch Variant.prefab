@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 5347101240727990869, guid: f519b822099ebf2478c51be65eb3423f,
         type: 3}
       propertyPath: m_Name
-      value: Little_punch
+      value: Little_punch Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6023463786092625820, guid: f519b822099ebf2478c51be65eb3423f,
         type: 3}

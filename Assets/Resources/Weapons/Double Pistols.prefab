@@ -80,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,9 +106,11 @@ MonoBehaviour:
   speed: 16
   duration: 5
   shots: 2
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: 1351822815657765007, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 1

@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 3589977215018366301, guid: 402a9d5bc30276440831c97be9c8e795,
         type: 3}
       propertyPath: m_Name
-      value: Star
+      value: Star Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 3679874630611608861, guid: 402a9d5bc30276440831c97be9c8e795,
         type: 3}

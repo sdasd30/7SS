@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 234205443385772467}
   - component: {fileID: 4925753231073894025}
   m_Layer: 0
-  m_Name: grenad
+  m_Name: Grenade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,6 +105,7 @@ MonoBehaviour:
   speed: 20
   duration: 4
   shots: 1
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate:
   - Item: {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d, type: 3}
@@ -124,6 +125,7 @@ MonoBehaviour:
     ExcludeCategory: 0
     InheritFaction: 0
   GravityScale: 1
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: -2014131868727140717, guid: 11835dbedaffe4048b339172474e051c, type: 3}
   Cost: 1

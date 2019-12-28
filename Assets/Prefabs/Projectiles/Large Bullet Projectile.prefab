@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f,
         type: 3}
       propertyPath: m_Name
-      value: Large Bullet
+      value: Large Bullet Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 1553813668979101540, guid: a61fdaf840533c64fb4778fb6707f53f,
         type: 3}

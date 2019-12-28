@@ -73,15 +73,16 @@ SpriteRenderer:
   m_SortingLayerID: 1017380951
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2072479081674806793, guid: 73b19f8afbc522f449fcb46b2922c752,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5451205341026801973
@@ -110,7 +111,7 @@ MonoBehaviour:
   GravityScale: 0
   timeToGravity: 0
   RecoilDamage: 0
-  Icon: {fileID: 4214331609956449179, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
+  Icon: {fileID: -2072479081674806793, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 2
   auto: 0
 --- !u!114 &5451205341026801974
