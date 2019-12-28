@@ -41,9 +41,9 @@ public class Regenerate : MonoBehaviour
     {
         float oldRate = regenRate;
         regenRate = newRate;
-        Debug.Log("New rate is " + newRate);
+        //Debug.Log("New rate is " + newRate);
         yield return new WaitForSeconds(time);
         regenRate = oldRate;
-        Debug.Log("New rate is " + oldRate);
+        //Debug.Log("New rate is " + oldRate);
     }
 }

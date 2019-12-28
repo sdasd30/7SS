@@ -61,7 +61,7 @@ public class AIHeadTowardsPlayer : AIBase
                 if (Random.Range(0, 100) < JumpProbabilityPercent)
                 {
                     m_jumpingHoldTime = t + 0.5f;
-                    Debug.Log("Trying to Jump");
+                    //Debug.Log("Trying to Jump");
                 }
                     
             }
