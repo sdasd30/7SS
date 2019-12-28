@@ -24,7 +24,7 @@ public class BasicMovement : MonoBehaviour {
 	//-------------------
 	PhysicsSS m_physics;
 
-	public bool canDoubleJump = true;
+	public bool canDoubleJump = false;
     public bool doubleJumpAvailable = true;
 
 	float inputX = 0.0f;
@@ -135,7 +135,7 @@ public class BasicMovement : MonoBehaviour {
                 {
                     GetComponent<PhysicsSS>().setDropTime(1.0f);
                 }
-                else if (m_physics.m_collisions.below)
+                else if (m_physics.onGround)
                 {
                     m_physics.addSelfForce(m_jumpVector, 0f);
                     jumpPersist = 0.2f;
@@ -227,6 +227,7 @@ public class BasicMovement : MonoBehaviour {
         doubleJumpAvailable = true;
         yield return new WaitForSeconds(seconds);
         doubleJumpAvailable = false;
+        canDoubleJump = false;
     }
     #endregion
 }

@@ -265,7 +265,8 @@ MonoBehaviour:
   JumpHeight: 4
   TimeToJumpApex: 0.4
   MoveSpeed: 8
-  canDoubleJump: 1
+  canDoubleJump: 0
+  doubleJumpAvailable: 0
   autonomy: 1
   minDistance: 1
   abandonDistance: 10
