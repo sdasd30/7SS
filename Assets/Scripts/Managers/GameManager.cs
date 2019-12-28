@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 [RequireComponent(typeof(CameraFollow))]
 public class GameManager : MonoBehaviour
 {
     public GameObject CurrentPlayer;
     public Text GameOverText;
+    public GameObject LoseMenu;
     private bool m_startedGameOver = false;
     private float m_timeSinceGameOver = 0.0f;
 
@@ -36,10 +40,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = Mathf.Max(0f, 1f - (m_timeSinceGameOver / 2f));
         m_timeSinceGameOver += Time.unscaledDeltaTime;
         GameOverText.color = new Color(1f, 1f, 1f, Mathf.Max(0f, Mathf.Min(1f, m_timeSinceGameOver - 1f)));
-        if (m_timeSinceGameOver > 5f)
+        if (m_timeSinceGameOver > 3f)
         {
             Time.timeScale = 1.0f;
-            SceneManager.LoadScene("TempTitle");
+            LoseMenu.SetActive(true);
         }
     }
     private void findATarget()
@@ -64,5 +68,37 @@ public class GameManager : MonoBehaviour
         GetComponentInChildren<NextWeaponUI>().init(go);
         GetComponentInChildren<HPText>().init(go);
         FindObjectOfType<StatTracker>().SetPlayerObj(go);
+    }
+
+    public void RetryLevel()
+    {
+        WriteSaveToFile();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void WeaponSelection()
+    {
+        WriteSaveToFile();
+        SceneManager.LoadScene("CardSelection");
+    }
+    public void TitleScreen()
+    {
+        WriteSaveToFile();
+        SceneManager.LoadScene("TempTitle");
+    }
+    // Update is called once per frame
+    public void WriteSaveToFile()
+    {
+        if (FindObjectOfType<StatTracker>() == null)
+            return;
+        SaveObject newSave = FindObjectOfType<StatTracker>().TransferToSaveObject();
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "\\gamesave.sav"); //
+        Debug.Log("Saved Game to " + Application.persistentDataPath + "\\gamesave.sav");
+        bf.Serialize(file, newSave);
+        file.Close();
+
+        Debug.Log("Game Saved");
     }
 }
