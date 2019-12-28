@@ -58,6 +58,25 @@ public class WeaponHandler : MonoBehaviour {
         return;
     }
 
+    #region Power Up Functions
+
+    public void GiveSuperWeapon(float seconds)
+    {
+        Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
+        List<GameObject> ptWeapons = new List<GameObject>();
+        foreach (GameObject weapon in loadedObjs)
+        {
+            if (weapon.GetComponent<WeaponStats>().Cost == 5) ptWeapons.Add(weapon);
+        }
+        GameObject temp = currWeapon.gameObject;
+        GameObject.Destroy(currWeapon.gameObject);
+        GameObject newWeapon = ptWeapons[Random.Range(0, ptWeapons.Count)];
+        currWeapon = GameObject.Instantiate(newWeapon, temp.transform.position, Quaternion.identity);
+        currWeapon.transform.parent = transform;    
+        cooldown = seconds;
+
+    }
+
     public void RandomizeWeapons()
     {
         for (int i = 0; i < weapons.Count; i++)
@@ -80,4 +99,6 @@ public class WeaponHandler : MonoBehaviour {
         begin();
 
     }
+
+    #endregion
 }
