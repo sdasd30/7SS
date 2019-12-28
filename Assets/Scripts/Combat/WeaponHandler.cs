@@ -27,11 +27,21 @@ public class WeaponHandler : MonoBehaviour {
 
     public void begin()
     {
-
         cooldown = weaponSwitchDelay;
         nextWeapon = weapons[Random.Range(0, weapons.Count)];
-        currWeapon = GameObject.Instantiate(nextWeapon, transform.position + new Vector3(.75f, 0, -1f), Quaternion.identity);
-        currWeapon.transform.parent = transform;
+        if (currWeapon != null)
+        {
+            GameObject temp = currWeapon;
+            GameObject.Destroy(currWeapon.gameObject);
+            currWeapon = GameObject.Instantiate(nextWeapon, temp.transform.position, Quaternion.identity);
+            currWeapon.transform.parent = transform;
+            currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        }
+        else
+        {
+            currWeapon = GameObject.Instantiate(nextWeapon, transform.position + new Vector3(.75f, 0, -1f), Quaternion.identity);
+            currWeapon.transform.parent = transform;
+        }
         NextWeaponLoad();
     }
 
@@ -59,6 +69,17 @@ public class WeaponHandler : MonoBehaviour {
     }
 
     #region Power Up Functions
+
+
+    public void SlowDown(float seconds)
+    {
+        cooldown = seconds;
+    }
+
+    public void SpeedUp(float seconds, float cooldown)
+    {
+        StartCoroutine(setCoolDown(seconds, cooldown));
+    }
 
     public void GiveSuperWeapon(float seconds)
     {
@@ -95,9 +116,18 @@ public class WeaponHandler : MonoBehaviour {
             }
             weapons[i] = loadedWeapon;
         }
-        GameObject.Destroy(currWeapon.gameObject);
-        begin();
+        FillLoadout();
+    }
 
+    IEnumerator setCoolDown(float length, float newCool)
+    {
+        float oldCool = weaponSwitchDelay;
+        cooldown = newCool;
+        weaponSwitchDelay = newCool;
+        if (cooldown > weaponSwitchDelay)
+            cooldown = weaponSwitchDelay;
+        yield return new WaitForSeconds(length);
+        weaponSwitchDelay = oldCool;
     }
 
     #endregion
