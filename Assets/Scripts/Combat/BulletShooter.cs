@@ -114,6 +114,7 @@ public class BulletShooter : OffensiveTemplate
         newProjectile.SetAimPoint(targetPoint); // (m_physics == null) ? targetPoint : m_physics.OrientVectorToDirection(targetPoint);
         newProjectile.Init();
         newProjectile.GravityScale = wps.GravityScale;
+        newProjectile.timeToGravity = wps.timeToGravity;
         OnDeathDrop odi = go.AddComponent<OnDeathDrop>();
         odi.DeathItems = wps.OnDeathCreate;
         return newProjectile;

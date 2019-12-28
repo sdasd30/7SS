@@ -16,6 +16,7 @@ public class WeaponStats : MonoBehaviour {
     public float knockbackMult = 1; //Multiplier of knockback. 1 is mean does base knockback.
     public List<DeathDropItem> OnDeathCreate;
     public float GravityScale = 0f;
+    public float timeToGravity = 0f; //How many seconds of flat travel before it begins to fall to gravity?
     public float RecoilDamage = 0f;
     public Sprite Icon;
     public int Cost;

@@ -100,8 +100,8 @@ MonoBehaviour:
   bullet: {fileID: 674247526058955706, guid: cfd4e8ac382736d40a62255020c8c770, type: 3}
   name: Rocks
   spread: 0
-  firerate: 1000
-  damage: 2
+  firerate: 300
+  damage: 1
   speed: 20
   duration: 4
   shots: 1
@@ -109,10 +109,11 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 1
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: 21300000, guid: 2e6b8c228eb9dde4daf6a9a0cd5dda3a, type: 3}
   Cost: -1
-  auto: 1
+  auto: 0
 --- !u!114 &3890615958076796444
 MonoBehaviour:
   m_ObjectHideFlags: 0

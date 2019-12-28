@@ -10,11 +10,21 @@ public class Projectile : Hitbox
     public bool TravelThroughWalls = false;
     public bool OrientToSpeed = true;
     public float GravityScale = 0.0f;
+    public float timeToGravity = 0f;
 
     int m_numPenetrated = 0;
 
     private const float TERMINAL_VELOCITY = -10f;
     private Vector3 m_velocity;
+
+    private void Start()
+    {
+        if (timeToGravity != 0f)
+        {
+            StartCoroutine(StartGravity(timeToGravity,GravityScale));
+            
+        }
+    }
     new virtual internal void Update()
     {
         Tick();
@@ -84,5 +94,12 @@ public class Projectile : Hitbox
     {
         m_velocity = new Vector3(ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.x,
             ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.y, 0f);
+    }
+
+    IEnumerator StartGravity(float seconds, float gravityScale)
+    {
+        GravityScale = 0f;
+        yield return new WaitForSeconds(seconds);
+        GravityScale = gravityScale;
     }
 }

@@ -93,7 +93,8 @@ public class WeaponHandler : MonoBehaviour {
         GameObject.Destroy(currWeapon.gameObject);
         GameObject newWeapon = ptWeapons[Random.Range(0, ptWeapons.Count)];
         currWeapon = GameObject.Instantiate(newWeapon, temp.transform.position, Quaternion.identity);
-        currWeapon.transform.parent = transform;    
+        currWeapon.transform.parent = transform;
+        currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         cooldown = seconds;
 
     }

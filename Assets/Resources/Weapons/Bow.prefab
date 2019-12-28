@@ -109,6 +109,7 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 1
+  timeToGravity: 0.2
   RecoilDamage: 0
   Icon: {fileID: 3285001444667275259, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 0
