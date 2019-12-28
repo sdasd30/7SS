@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8491421875805596147}
   - component: {fileID: 8491421875805596144}
-  - component: {fileID: 8491421875805596146}
   - component: {fileID: 8491421875805596157}
   m_Layer: 0
   m_Name: CardManager
@@ -46,24 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHand: []
---- !u!114 &8491421875805596146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8491421875805596145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d6eb60dd6bbd045bf6de381f76e7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
-  maxScore: 0
-  currentKills: 0
-  maxKills: 0
-  currentSwitches: 0
-  maxSwitches: 0
 --- !u!114 &8491421875805596157
 MonoBehaviour:
   m_ObjectHideFlags: 0

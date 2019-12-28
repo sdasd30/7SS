@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             setPlayerCharacter(CurrentPlayer);
         }
+        WriteSaveToFile();
     }
 
     // Update is called once per frame

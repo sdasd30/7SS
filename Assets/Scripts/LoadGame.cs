@@ -13,6 +13,7 @@ public class LoadGame : MonoBehaviour
     void Start()
     {
         stats = FindObjectOfType<StatTracker>();
+        LoadSaveFromFile();
     }
 
     // Update is called once per frame
