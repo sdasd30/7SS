@@ -44,7 +44,7 @@ public class Difficulty : MonoBehaviour
 
     public int getScoreNeeded()
     {
-        return requiredScore - sumOfScore;
+        return requiredScore;
     }
 
     public int getSumOfScore()

@@ -7,12 +7,12 @@ public class ScoreText : MonoBehaviour
 {
     // Start is called before the first frame update
     Difficulty dif;
-    PlayerScore scr;
+    StatTracker scr;
     Text mText;
     void Start()
     {
         dif = FindObjectOfType<Difficulty>();
-        scr = FindObjectOfType<PlayerScore>();
+        scr = FindObjectOfType<StatTracker>();
         mText = GetComponent<Text>();
     }
 
@@ -20,6 +20,6 @@ public class ScoreText : MonoBehaviour
     void Update()
     {
        
-        mText.text = "Score: " + scr.score + "\nDifficulty: " + dif.getDifficulty();
+        mText.text = "Score: " + scr.currentScore + "\nDifficulty: " + dif.getDifficulty();
     }
 }
