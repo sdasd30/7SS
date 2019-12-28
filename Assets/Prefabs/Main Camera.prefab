@@ -2769,6 +2769,10 @@ MonoBehaviour:
   - {fileID: 5984054227554796209, guid: 61ddcee72e9ed884fb9ff5ee4385dde9, type: 3}
   - {fileID: 1796919630272550348, guid: 2f87247bff376ee4f9adf1f6f1c6a03e, type: 3}
   - {fileID: 3331552278932581196, guid: adcb87af776b6e246a30f1ee3c8e5ab6, type: 3}
+  - {fileID: 6825065320747222234, guid: d17612e56d146b646a2913ae967c9c95, type: 3}
+  - {fileID: 6303718734239560748, guid: c90a0125fc81db642b27fa77a3ffd5c3, type: 3}
+  - {fileID: 2715755458628834803, guid: 3304972ecd4d4f24186f512053fdb28d, type: 3}
+  - {fileID: 3493381247505724042, guid: 5da66a9ffcd84a74882be230be1c9c81, type: 3}
   nextEnemy: {fileID: 0}
 --- !u!114 &8238262808234313409
 MonoBehaviour:
