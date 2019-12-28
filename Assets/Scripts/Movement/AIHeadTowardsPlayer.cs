@@ -43,7 +43,8 @@ public class AIHeadTowardsPlayer : AIBase
         float t = Time.timeSinceLevelLoad;
         if (m_targetObj != null && t > m_nextMoveOKTime)
         {
-            Vector2 target = new Vector2(m_targetObj.transform.position.x + TargetOffset.x, m_targetObj.transform.position.y + TargetOffset.y);
+            float moddedOffX = (m_targetObj.transform.position.x > transform.position.x) ? TargetOffset.x : -TargetOffset.x ;
+            Vector2 target = new Vector2(m_targetObj.transform.position.x + moddedOffX, m_targetObj.transform.position.y + TargetOffset.y);
             float d = Vector2.Distance(target, transform.position);
             if (d > TargetTolerance)
             {
