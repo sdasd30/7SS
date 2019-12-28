@@ -23,9 +23,9 @@ public class Difficulty : MonoBehaviour
     {
         //Debug.Log(getDifficulty());
         tmp = requiredScore + sumOfScore;
-        Debug.Log((plrScore.currentScore));
-        Debug.Log("rs:" + requiredScore);
-        Debug.Log("tm:" + tmp);
+        //Debug.Log((plrScore.currentScore));
+        //Debug.Log("rs:" + requiredScore);
+        //Debug.Log("tm:" + tmp);
         //requiredScore = 49 * difficultyLevel;
         if (requiredScore <= plrScore.currentScore-sumOfScore)
         {
@@ -40,5 +40,15 @@ public class Difficulty : MonoBehaviour
     public int getDifficulty()
     {
         return difficultyLevel;
+    }
+
+    public int getScoreNeeded()
+    {
+        return requiredScore - sumOfScore;
+    }
+
+    public int getSumOfScore()
+    {
+        return sumOfScore;
     }
 }

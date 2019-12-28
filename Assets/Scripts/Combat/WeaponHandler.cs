@@ -31,7 +31,6 @@ public class WeaponHandler : MonoBehaviour {
         nextWeapon = weapons[Random.Range(0, weapons.Count)];
         if (currWeapon != null)
         {
-            Debug.Log("I found a weapon");
             GameObject temp = currWeapon;
             GameObject.Destroy(currWeapon.gameObject);
             currWeapon = GameObject.Instantiate(nextWeapon, temp.transform.position, Quaternion.identity);
@@ -40,7 +39,6 @@ public class WeaponHandler : MonoBehaviour {
         }
         else
         {
-            Debug.Log("I found no weapon");
             currWeapon = GameObject.Instantiate(nextWeapon, transform.position + new Vector3(.75f, 0, -1f), Quaternion.identity);
             currWeapon.transform.parent = transform;
         }
