@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
-  hp: 10
+  maxHP: 2
+  hp: 2
 --- !u!114 &6825065320747222227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,9 +292,11 @@ MonoBehaviour:
   speed: 10
   duration: 5
   shots: 1
+  pierce: 0
   knockbackMult: 1
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: 0}
   Cost: 0
