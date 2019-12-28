@@ -16,7 +16,7 @@ public class PowerUpBase : MonoBehaviour
     }
     internal void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<FactionHolder>() != null)
+        if (other.GetComponent<FactionHolder>() != null && other.GetComponent<Attackable>() != null)
         {
             if (GetComponent<FactionHolder>() != null)
             {
