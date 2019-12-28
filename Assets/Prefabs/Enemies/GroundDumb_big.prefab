@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3331552278932581199}
   - component: {fileID: -2614997536169740934}
   - component: {fileID: -6642061138553813278}
+  - component: {fileID: 7436565488246838021}
   m_Layer: 0
   m_Name: GroundDumb_big
   m_TagString: Untagged
@@ -234,6 +235,7 @@ MonoBehaviour:
   TimeToJumpApex: 0.4
   MoveSpeed: 4
   canDoubleJump: 1
+  doubleJumpAvailable: 1
   autonomy: 1
   minDistance: 1
   abandonDistance: 10
@@ -280,3 +282,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: 2
+--- !u!114 &7436565488246838021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331552278932581196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f970af80ad03428dba3be2b7b5242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathItems:
+  - Item: {fileID: 2418170019560450485, guid: fbf57ad84cd466447a352bdb5299c34c, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 2
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 499474714480864500, guid: b388838aa0e9fd14ca62b1c9a544a45c, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 10
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 8777084312880036366, guid: e336ea540a8ebcc43a8a27cde466722d, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 0.5
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 1710176626575807345, guid: 93698dbfc488dbd42b0edea54a9c5ef0, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 2
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 728513998738873467, guid: e1e9e924de68259478163953141cc1e6, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 0
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 1395642086705996398, guid: 991b236244f8940489a1d70292469d68, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 2
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 227921994661373693, guid: f0f3e0083f204f843aca5557534e86f0, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 2
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0

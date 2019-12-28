@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4586572493465753823}
   - component: {fileID: 8700142536737820645}
   m_Layer: 0
-  m_Name: Shotgun
+  m_Name: shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,8 @@ MonoBehaviour:
   damage: 1
   speed: 14
   duration: 3
-  shots: 6
+  shots: 8
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0

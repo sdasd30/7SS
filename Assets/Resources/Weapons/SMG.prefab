@@ -99,12 +99,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
   name: SMG
-  spread: 5
+  spread: 6
   firerate: 200
   damage: 1
   speed: 15
   duration: 5
   shots: 1
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0

@@ -100,11 +100,12 @@ MonoBehaviour:
   bullet: {fileID: 543158920998827678, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
   name: Acclimator
   spread: 0
-  firerate: 2000
+  firerate: 1000
   damage: 1
   speed: 20
   duration: 3
   shots: 1
+  pierce: 0
   knockbackMult: 2
   OnDeathCreate:
   - Item: {fileID: 527719213308957513, guid: 0b5adf7b3896683499adf2b82653ee4a, type: 3}

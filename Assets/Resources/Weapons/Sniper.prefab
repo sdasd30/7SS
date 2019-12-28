@@ -105,12 +105,13 @@ MonoBehaviour:
   speed: 30
   duration: 3
   shots: 1
+  pierce: 2
   knockbackMult: 20
   OnDeathCreate: []
   GravityScale: 0
   RecoilDamage: 0
   Icon: {fileID: -859302592743651864, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
-  Cost: 1
+  Cost: 2
   auto: 0
 --- !u!114 &113342055392346229
 MonoBehaviour:

@@ -95,6 +95,7 @@ public class BulletShooter : OffensiveTemplate
         newProjectile.Damage = damage;
         newProjectile.Duration = projectileDuration;
         newProjectile.OriginWeapon = Weapon;
+        newProjectile.PenetrativePower = wps.pierce;
         if (fixedKnockback)
             newProjectile.Knockback = (GetComponent<Orientation>() == null) ? knockback : GetComponent<Orientation>().OrientVectorToDirection2D(knockback);
         else

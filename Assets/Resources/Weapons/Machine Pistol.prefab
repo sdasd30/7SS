@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7134458166870073481}
   - component: {fileID: 4207846375726883403}
   m_Layer: 0
-  m_Name: oozee
+  m_Name: Machine Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,14 +96,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
+  bullet: {fileID: 674247526058955706, guid: cfd4e8ac382736d40a62255020c8c770, type: 3}
   name: oozee
   spread: 12
-  firerate: 60
-  damage: 0.75
+  firerate: 100
+  damage: 0.5
   speed: 11
-  duration: 3
+  duration: 0.7
   shots: 1
+  pierce: 0
   knockbackMult: 2
   OnDeathCreate: []
   GravityScale: 0

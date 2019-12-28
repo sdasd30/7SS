@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1935454864474655958}
   - component: {fileID: 4880767208942276116}
   m_Layer: 0
-  m_Name: mimigun
+  m_Name: Minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   GravityScale: 0
   RecoilDamage: 0
   Icon: {fileID: -8238903011902725875, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
-  Cost: 3
+  Cost: 5
   auto: 1
 --- !u!114 &1935454864474655958
 MonoBehaviour:

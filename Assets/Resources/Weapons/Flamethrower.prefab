@@ -101,10 +101,11 @@ MonoBehaviour:
   name: Flame Thrower
   spread: 18
   firerate: 20
-  damage: 0.2
-  speed: 7
-  duration: 1
+  damage: 0.1
+  speed: 8
+  duration: 1.25
   shots: 2
+  pierce: 0
   knockbackMult: 1
   OnDeathCreate: []
   GravityScale: 0

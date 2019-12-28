@@ -153,6 +153,9 @@ public class StatTracker : MonoBehaviour
         CurrentEnemykills = new Dictionary<string, int>();
         CurrentWeaponKills = new Dictionary<string, int>();
         CurrentWeaponScores = new Dictionary<string, int>();
+        currentScore = 0;
+        currentKills = 0;
+        currentSwitches = 0;
     }
 
 

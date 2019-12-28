@@ -47,7 +47,7 @@ public class OnDeathDrop : MonoBehaviour
         if (item.InheritFaction)
         {
             GetComponent<FactionHolder>().SetFaction(go);
-        } else
+        } else if (go.GetComponent<FactionHolder>() == null)
         {
             go.AddComponent<FactionHolder>();
             go.GetComponent<FactionHolder>().Faction = FactionType.NEUTRAL;

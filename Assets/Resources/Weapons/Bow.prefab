@@ -105,6 +105,7 @@ MonoBehaviour:
   speed: 30
   duration: 4
   shots: 1
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 1

@@ -12,6 +12,7 @@ public class WeaponStats : MonoBehaviour {
 	public float speed = 10; //Projectile Speed.
 	public float duration = 5; //How long the bullet lasts in seconds.
 	public int shots = 1; //How many shots does the gun shoot at once?
+    public int pierce = 0; //How many enemies can this gun pierce;
     public float knockbackMult = 1; //Multiplier of knockback. 1 is mean does base knockback.
     public List<DeathDropItem> OnDeathCreate;
     public float GravityScale = 0f;

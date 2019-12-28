@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 728513998738873458}
   - component: {fileID: 7024934615351885533}
   m_Layer: 0
-  m_Name: PowerUpWeapon 1
+  m_Name: PowerUpSlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b562c98a8dabe4f43ac1dc9b2128848f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 30
+  duration: 21
   toDisappear: 1
 --- !u!50 &728513998738873459
 Rigidbody2D:
