@@ -101,7 +101,7 @@ MonoBehaviour:
   name: Flame Thrower
   spread: 18
   firerate: 20
-  damage: 0.1
+  damage: 0.15
   speed: 8
   duration: 1.25
   shots: 2
