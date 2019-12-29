@@ -9,35 +9,46 @@ public class AchievementManager : MonoBehaviour
     public List<string> AchievementsAlreadyUnlocked;
     void Awake()
     {
-
         if (m_instance == null)
         {
-            m_instance = this;
+            m_instance = this;  
+            //Debug.Log("List looks like null, trying to make a new list");
+            //Debug.Log(AchievementsAlreadyUnlocked.ToString());
         }
         else if (m_instance != this)
         {
+            Debug.Log("Function 2");
             Destroy(gameObject);
             return;
         }
 
         DontDestroyOnLoad(gameObject);
+
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (AchievementsAlreadyUnlocked == null)
+        {
+            AchievementsAlreadyUnlocked = new List<string>();
+        }
     }
 
     public bool CheckIfAchievementIsMet(Achievement a, Transform notificationTransform=null)
     {
+        //Debug.Log(AchievementsAlreadyUnlocked);
+        //Debug.Log(a.DisplayName);
+        //Debug.Log(AchievementsAlreadyUnlocked[0]);
         if (AchievementsAlreadyUnlocked.Contains(a.DisplayName))
+        {
             return a;
+        }
         else
         {
             bool met = a.CheckAchievementMet();
@@ -50,9 +61,9 @@ public class AchievementManager : MonoBehaviour
                     string d = (a.Description.Length > 0) ? a.Description : a.AutoGenDescription();
                     g.GetComponent<UnlockNotification>().SetInfo(a.GetComponent<WeaponStats>().Icon, a.GetComponent<WeaponStats>().name, a.DisplayName, d);
                 }
-                
+
             }
-                
+
             return met;
         }
     }

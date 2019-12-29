@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1720769669559322419}
   - component: {fileID: 1720769669559322420}
   - component: {fileID: 1720769669559322417}
-  - component: {fileID: 1720769669559322418}
+  - component: {fileID: -8400197676861479831}
   - component: {fileID: 5835183039189422088}
   m_Layer: 0
   m_Name: Acclimator
@@ -122,7 +122,7 @@ MonoBehaviour:
   Icon: {fileID: 7780902796599373939, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 5
   auto: 0
---- !u!114 &1720769669559322418
+--- !u!114 &-8400197676861479831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

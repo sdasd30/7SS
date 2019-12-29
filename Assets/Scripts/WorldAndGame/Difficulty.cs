@@ -30,7 +30,7 @@ public class Difficulty : MonoBehaviour
         if (requiredScore <= plrScore.currentScore-sumOfScore)
         {
             sumOfScore += requiredScore;
-            requiredScore = (int) ((double)requiredScore * 1.3);
+            requiredScore = (int) ((double)requiredScore * 1.1);
             difficultyLevel++;
         }
             

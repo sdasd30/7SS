@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1115220257158614438}
   - component: {fileID: 1115220257158614433}
   - component: {fileID: 1115220257158614436}
-  - component: {fileID: 1115220257158614439}
+  - component: {fileID: 7852574025907272282}
   - component: {fileID: 5215682945009769117}
   m_Layer: 0
-  m_Name: knife
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   Icon: {fileID: 6225312705900018534, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 0
   auto: 0
---- !u!114 &1115220257158614439
+--- !u!114 &7852574025907272282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

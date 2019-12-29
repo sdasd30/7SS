@@ -452,19 +452,19 @@ PrefabInstance:
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 680740020207793191, guid: 2aac55a64ebc4594ba7233028990766b,
+      objectReference: {fileID: 95446509206254394, guid: 6074999c89e965d4bb209db9490399ab,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[2]
       value: 
-      objectReference: {fileID: 5451205341026801969, guid: 94bb87d7f864c014099e9bfaca4f4dc5,
+      objectReference: {fileID: 1317845421882228812, guid: be177182f6488bb488fd1a3aecdc4b9d,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
@@ -494,7 +494,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[1]
       value: 
-      objectReference: {fileID: 1720769669559322421, guid: 7bcc3c3c181d3bb49bdadf9be00f011a,
+      objectReference: {fileID: 1115220257158614432, guid: aa03e9f55f9995b459caeedaa56b597f,
         type: 3}
     - target: {fileID: 7457555227399086764, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
@@ -530,6 +530,16 @@ PrefabInstance:
         type: 3}
       propertyPath: collisionMaskList.Array.data[1].m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457555227399086770, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: maxHP
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457555227399086770, guid: 052f386f6d8c81a4e8eda38b34843576,
+        type: 3}
+      propertyPath: hp
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 7457555227399086771, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
@@ -1525,16 +1535,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 299919613, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
-      propertyPath: HPBoxLeft
-      value: 
-      objectReference: {fileID: 5556611921732958305, guid: 6b9d0963003bdfc42a04f021095c0c4c,
-        type: 3}
-    - target: {fileID: 299919613, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
-      propertyPath: HPBoxRight
-      value: 
-      objectReference: {fileID: 885232182411342548, guid: ee9e53d407cdb2a4fb82d3c520714efa,
-        type: 3}
+    - target: {fileID: 533171347, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: incrementby
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1790790557, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

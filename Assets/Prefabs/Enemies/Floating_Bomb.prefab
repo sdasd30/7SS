@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70872c174922de5499f1545e90a7a957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   coolDownTime: 0.5
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackName: Floating Bomb
   scoreValue: 7
-  value: 3
+  value: 5
 --- !u!114 &5897093146705640139
 MonoBehaviour:
   m_ObjectHideFlags: 0

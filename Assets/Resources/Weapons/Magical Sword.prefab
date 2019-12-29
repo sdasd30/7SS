@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 95446509206254396}
   - component: {fileID: 95446509206254395}
   - component: {fileID: 95446509206254398}
+  - component: {fileID: -1138864557314714148}
   - component: {fileID: 5064512131124601863}
   m_Layer: 0
   m_Name: Magical Sword
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95446509206254394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.527, y: -1.84, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,8 +112,20 @@ MonoBehaviour:
   RecoilDamage: 0
   Icon: {fileID: 92524008511846308, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 3
-  Melee: 0
   auto: 1
+--- !u!114 &-1138864557314714148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95446509206254394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f2bf1cd189d3d4d9e592462af64964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0}
 --- !u!114 &5064512131124601863
 MonoBehaviour:
   m_ObjectHideFlags: 0

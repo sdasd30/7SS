@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackName: Bomb Cart
   scoreValue: 7
-  value: 2
+  value: 3
 --- !u!114 &8600114224874290489
 MonoBehaviour:
   m_ObjectHideFlags: 0
