@@ -124,12 +124,11 @@ public class CardUIManager : MonoBehaviour
         foreach(GameObject g in m_handObjs)
         {
             cost += g.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().Cost;
-            if (cost > MaxCost)
-            {
-                ExtraMessage.text = "You are Over Budget!";
-                valid = false;
-            }
-                
+        }
+        if (cost > MaxCost)
+        {
+            ExtraMessage.text = "You are Over Budget!";
+            valid = false;
         }
         PointCounter.text = "Points Used: " + cost + " / " + MaxCost;
         return valid;

@@ -14,28 +14,37 @@ public class AIHeadTowardsPlayer : AIBase
     public Vector2 TargetOffset = new Vector2();
     public float TargetTolerance = 0.2f;
 
-    private Transform m_targetObj;
+    public Transform m_targetObj;
     private BasicMovement m_playerChar;
     private float m_nextMoveOKTime = 0.0f;
     private float m_nextJumpTime = 0.0f;
     private float m_jumpingHoldTime = 0.0f;
+
+    private float m_nextRecheck = 0.0f;
+
+    private const float TARGET_RESEEK_TIME = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
-        BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
-        foreach ( BasicMovement bm in ListMovements)
-        {
-            if (bm.IsCurrentPlayer)
-            {
-                m_targetObj = bm.transform;
-            }
-        }
+        //BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
+        //foreach ( BasicMovement bm in ListMovements)
+        //{
+        //    if (bm.IsCurrentPlayer)
+        //    {
+        //        m_targetObj = bm.transform;
+        //    }
+        //}
+        m_nextRecheck = Time.timeSinceLevelLoad + Random.Range(0f, TARGET_RESEEK_TIME);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (m_targetObj == null || Time.timeSinceLevelLoad > m_nextRecheck)
+        {
+            m_targetObj = GetComponent<FactionHolder>().GetNearestEnemy();
+            m_nextRecheck = Time.timeSinceLevelLoad + TARGET_RESEEK_TIME;
+        }
     }
     public override InputPacket AITemplate()
     {
