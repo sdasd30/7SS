@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1317845421882228811}
   - component: {fileID: 6148037493002786673}
   m_Layer: 0
-  m_Name: katana
+  m_Name: Katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   name: Katana
   spread: 360
   firerate: 60
-  damage: 3
+  damage: 2
   speed: 20
   duration: 0.1
   shots: 3

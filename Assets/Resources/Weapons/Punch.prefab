@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 296906758819773162, guid: de3b98841d25059419d5187137ea3e0b, type: 3}
+  bullet: {fileID: 8350008188702618651, guid: ce9fd131d577f034699d3fb638fc1ab1, type: 3}
   name: Punch
   spread: 6
   firerate: 500
@@ -139,3 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

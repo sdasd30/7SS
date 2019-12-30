@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1115220257158614439}
   - component: {fileID: 5215682945009769117}
   m_Layer: 0
-  m_Name: knife
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   spread: 15
   firerate: 250
   damage: 3
-  speed: 20
+  speed: 5
   duration: 0.1
   shots: 1
   pierce: 2

@@ -119,9 +119,10 @@ MonoBehaviour:
   GravityScale: 1
   timeToGravity: 0
   RecoilDamage: 0
-  Icon: {fileID: -3087948670725542470, guid: 11835dbedaffe4048b339172474e051c, type: 3}
+  Icon: {fileID: 8310713079796583774, guid: 11835dbedaffe4048b339172474e051c, type: 3}
   Cost: 2
   auto: 0
+  deflector: 0
 --- !u!114 &1560693041685880857
 MonoBehaviour:
   m_ObjectHideFlags: 0

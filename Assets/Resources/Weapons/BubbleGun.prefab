@@ -100,11 +100,11 @@ MonoBehaviour:
   bullet: {fileID: 1284245335966166247, guid: c50528b1ea8d83640bce4d5c2ea3d6ab, type: 3}
   name: Bubble Gun
   spread: 12
-  firerate: 100
+  firerate: 50
   damage: 0.05
   speed: 11
   duration: 0.7
-  shots: 2
+  shots: 3
   pierce: 0
   knockbackMult: 3
   OnDeathCreate: []
@@ -114,6 +114,7 @@ MonoBehaviour:
   Icon: {fileID: -9112354226912352529, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: -1
   auto: 1
+  deflector: 0
 --- !u!114 &8099301756548209036
 MonoBehaviour:
   m_ObjectHideFlags: 0

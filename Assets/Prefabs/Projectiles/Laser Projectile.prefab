@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 6140348126409299291, guid: 7a6380cfe9e23da468e796d64513a749,
         type: 3}
       propertyPath: m_Name
-      value: Laser Variant
+      value: Laser Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 6338048114005722395, guid: 7a6380cfe9e23da468e796d64513a749,
         type: 3}
@@ -76,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338048114005722395, guid: 7a6380cfe9e23da468e796d64513a749,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7344755074159993020, guid: 7a6380cfe9e23da468e796d64513a749,
         type: 3}

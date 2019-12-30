@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &990708713490042197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115923640719026738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasParent: 0
 --- !u!1001 &8264414647132579999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15,7 +28,7 @@ PrefabInstance:
     - target: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f,
         type: 3}
       propertyPath: m_Name
-      value: MusicProjectile
+      value: MusicProjectile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1553813668979101540, guid: a61fdaf840533c64fb4778fb6707f53f,
         type: 3}
@@ -76,7 +89,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3247423240367016429, guid: 11835dbedaffe4048b339172474e051c,
+      objectReference: {fileID: -3087948670725542470, guid: 11835dbedaffe4048b339172474e051c,
         type: 3}
+    - target: {fileID: 4388886275993286474, guid: a61fdaf840533c64fb4778fb6707f53f,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388886275993286474, guid: a61fdaf840533c64fb4778fb6707f53f,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
+--- !u!1 &9115923640719026738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8264414647132579999}
+  m_PrefabAsset: {fileID: 0}

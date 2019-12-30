@@ -675,25 +675,25 @@ PrefabInstance:
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 3702042750767309850, guid: d13e027d96a3a4c42837ca5d34f4597c,
+      objectReference: {fileID: 8509088598537275517, guid: 4b17dfd4696116c41a50693fcedfb27e,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[2]
       value: 
-      objectReference: {fileID: 8975238157546218077, guid: c1377ab6061e7fa4cadd75b6350136f1,
+      objectReference: {fileID: 2371741568061958327, guid: 06e0911f98231094aa94e31f2640e3e9,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
       propertyPath: weapons.Array.data[3]
       value: 
-      objectReference: {fileID: 2371741568061958327, guid: 06e0911f98231094aa94e31f2640e3e9,
+      objectReference: {fileID: 1115220257158614432, guid: aa03e9f55f9995b459caeedaa56b597f,
         type: 3}
     - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}
@@ -717,19 +717,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[1]
       value: 
-      objectReference: {fileID: 95446509206254394, guid: 6074999c89e965d4bb209db9490399ab,
-        type: 3}
-    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
-        type: 3}
-      propertyPath: nextWeapon
-      value: 
       objectReference: {fileID: 1560693041685880862, guid: f4996ba080f2910409a7184f9d3f3b9b,
-        type: 3}
-    - target: {fileID: 7457555227022642680, guid: 052f386f6d8c81a4e8eda38b34843576,
-        type: 3}
-      propertyPath: currWeapon
-      value: 
-      objectReference: {fileID: 1000860736852575028, guid: 9e56c7e59b5bf9b41a9f413c420524ca,
         type: 3}
     - target: {fileID: 7457555227399086764, guid: 052f386f6d8c81a4e8eda38b34843576,
         type: 3}

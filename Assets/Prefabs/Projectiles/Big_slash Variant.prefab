@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 289755506424316471, guid: f519b822099ebf2478c51be65eb3423f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 289755506424316471, guid: f519b822099ebf2478c51be65eb3423f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 289755506424316471, guid: f519b822099ebf2478c51be65eb3423f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1073628603872291896, guid: f519b822099ebf2478c51be65eb3423f,
         type: 3}
       propertyPath: TravelThroughWalls

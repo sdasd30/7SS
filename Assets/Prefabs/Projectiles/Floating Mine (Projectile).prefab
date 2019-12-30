@@ -68,10 +68,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3170496981185134219, guid: 363d0869502ecae4e954b8c05a8bdfcd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170496981185134219, guid: 363d0869502ecae4e954b8c05a8bdfcd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503626058980893442, guid: 363d0869502ecae4e954b8c05a8bdfcd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 3628989173364585282, guid: 363d0869502ecae4e954b8c05a8bdfcd,
         type: 3}
       propertyPath: m_Name
-      value: FloatProjectile
+      value: FloatProjectile Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 363d0869502ecae4e954b8c05a8bdfcd, type: 3}

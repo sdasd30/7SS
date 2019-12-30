@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3087948670725542470, guid: 11835dbedaffe4048b339172474e051c,
+  m_Sprite: {fileID: 8310713079796583774, guid: 11835dbedaffe4048b339172474e051c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Cost: 0
   auto: 0
+  deflector: 0
 --- !u!114 &1225009456418190740
 MonoBehaviour:
   m_ObjectHideFlags: 0
