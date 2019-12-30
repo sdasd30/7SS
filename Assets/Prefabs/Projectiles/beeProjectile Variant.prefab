@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 674247526058955706, guid: cfd4e8ac382736d40a62255020c8c770,
         type: 3}
       propertyPath: m_Name
-      value: beeProjectile
+      value: beeProjectile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1222855755425685107, guid: cfd4e8ac382736d40a62255020c8c770,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3807375907713261857, guid: 11835dbedaffe4048b339172474e051c,
+      objectReference: {fileID: 6038820150044729495, guid: 917adc5b74efb5b499b83d9ff90c8f9e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd4e8ac382736d40a62255020c8c770, type: 3}

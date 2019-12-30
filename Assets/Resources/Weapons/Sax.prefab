@@ -100,7 +100,7 @@ MonoBehaviour:
   bullet: {fileID: 9115923640719026738, guid: a4c695d04b6ca534b9a4ab3b5b7c3bbd, type: 3}
   name: Saxophone
   spread: 360
-  firerate: 100
+  firerate: 60
   damage: 1
   speed: 8
   duration: 2

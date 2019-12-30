@@ -272,7 +272,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackName: Tank
   scoreValue: 7
+<<<<<<< HEAD
+  value: 4
+=======
   value: 6
+>>>>>>> 123dd8a9efb5c37ca61407a090175dad628b96c3
 --- !u!114 &3493381247505724038
 MonoBehaviour:
   m_ObjectHideFlags: 0

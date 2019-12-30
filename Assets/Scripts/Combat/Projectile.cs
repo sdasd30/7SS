@@ -69,7 +69,7 @@ public class Projectile : Hitbox
         if (other.gameObject != Creator && !other.isTrigger && !JumpThruTag(other.gameObject)
             && other.GetComponent<Attackable>() == null)
         {
-            Duration = 0f;
+            m_remainingDuration = 0f;
         }
     }
     void orientToSpeed(Vector2 speed)

@@ -60,7 +60,7 @@ public class Hitbox : MonoBehaviour
     private float m_duration = 1.0f;
     public float Duration { get { return m_duration; } set { m_duration = value; } }
 
-    private float m_remainingDuration = 1.0f;
+    protected float m_remainingDuration = 1.0f;
 
     [SerializeField]
     protected bool m_hasDuration = true;

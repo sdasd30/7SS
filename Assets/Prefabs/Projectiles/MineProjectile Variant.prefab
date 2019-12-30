@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 5810021413738297264, guid: b824b7a34b68bbd49baf1b166c4143d6,
         type: 3}
       propertyPath: m_Name
-      value: MineProjectile
+      value: MineProjectile Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936576132440745968, guid: b824b7a34b68bbd49baf1b166c4143d6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 6952008013714145879, guid: b824b7a34b68bbd49baf1b166c4143d6,
         type: 3}

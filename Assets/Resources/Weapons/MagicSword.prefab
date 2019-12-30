@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 92524008511846308, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
@@ -97,12 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2766953384402458152, guid: 612de060264501e4186dec161a264b00, type: 3}
-  name: Revolver
+  name: Magic Sword
   spread: 3
   firerate: 500
   damage: 2
   speed: 20
-  duration: 0.4
+  duration: 0.35
   shots: 1
   pierce: 1
   knockbackMult: 25

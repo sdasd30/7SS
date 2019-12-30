@@ -5,8 +5,8 @@ using UnityEngine;
 public class WeaponHandler : MonoBehaviour {
 	public List<GameObject> weapons;
 	public float weaponSwitchDelay;
-	public GameObject nextWeapon;
-	public GameObject currWeapon;
+	[HideInInspector] public GameObject nextWeapon;
+    [HideInInspector] public GameObject currWeapon;
 	public float cooldown;
 
 	void Start(){
