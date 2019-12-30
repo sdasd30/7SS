@@ -19,6 +19,7 @@ public class OnDeathDrop : MonoBehaviour
     public List<DeathDropItem> DeathItems = new List<DeathDropItem>();
 
     private List<DeathDropItem> no_exclude_items = new List<DeathDropItem>();
+    private Dictionary<int, List<DeathDropItem>> m_excludeItems = new Dictionary<int, List<DeathDropItem>>();
     // Start is called before the first frame update
 
     private void Start()
@@ -27,6 +28,12 @@ public class OnDeathDrop : MonoBehaviour
         {
             if (!item.UseExcludeCategory)
                 no_exclude_items.Add(item);
+            else
+            {
+                if (!m_excludeItems.ContainsKey(item.ExcludeCategory))
+                    m_excludeItems[item.ExcludeCategory] = new List<DeathDropItem>();
+                m_excludeItems[item.ExcludeCategory].Add(item);
+            }
         }
     }
     private void OnDestroy()
@@ -37,6 +44,29 @@ public class OnDeathDrop : MonoBehaviour
             {
                 spawnItem(item);
             }      
+        }
+        foreach(int i in m_excludeItems.Keys)
+        {
+            SpawnExcludeItems(m_excludeItems[i]);
+        }
+    }
+    private void SpawnExcludeItems(List<DeathDropItem> list)
+    {
+        float maxProbability = 0f;
+        foreach( DeathDropItem it in list)
+        {
+            maxProbability += it.Probability;
+        }
+        float roll = Random.Range(0f, Mathf.Max(100f, maxProbability));
+        float total = 0f;
+        foreach(DeathDropItem it in list)
+        {
+            total += it.Probability;
+            if (roll < total)
+            {
+                spawnItem(it);
+                break;
+            }
         }
     }
     private void spawnItem(DeathDropItem item)

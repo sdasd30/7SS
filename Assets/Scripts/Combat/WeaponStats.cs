@@ -23,4 +23,5 @@ public class WeaponStats : MonoBehaviour {
 	//public int burstShots = 1;
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?
+    public bool deflector = false;
 }

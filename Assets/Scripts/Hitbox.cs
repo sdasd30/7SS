@@ -60,6 +60,8 @@ public class Hitbox : MonoBehaviour
     private float m_duration = 1.0f;
     public float Duration { get { return m_duration; } set { m_duration = value; } }
 
+    private float m_remainingDuration = 1.0f;
+
     [SerializeField]
     protected bool m_hasDuration = true;
 
@@ -86,6 +88,8 @@ public class Hitbox : MonoBehaviour
     [SerializeField]
     private float m_FreezeTime = 0f;
     public float FreezeTime { get { return m_FreezeTime; } set { m_FreezeTime = value; } }
+
+    public bool Deflector = false;
 
     //private ElementType m_element = ElementType.PHYSICAL;
     [SerializeField]
@@ -123,6 +127,7 @@ public class Hitbox : MonoBehaviour
         m_hasDuration = m_duration > 0;
         Tick();
         //Debug.Log ("Hitbox initialized");
+        m_remainingDuration = m_duration;
         if (m_elementList.Count == 0)
             m_elementList.Add(ElementType.PHYSICAL);
     }
@@ -179,14 +184,17 @@ public class Hitbox : MonoBehaviour
     //}
     private void MaintainOrDestroyHitbox()
     {
-        if (m_duration <= 0.0f)
+        if (m_remainingDuration <= 0.0f)
         {
             //Debug.Log ("Hitbox destroyed!" + m_duration);
             GameObject.Destroy(gameObject);
         }
-        Duration -= Time.deltaTime;
+        m_remainingDuration -= Time.deltaTime;
     }
-
+    public void ResetDuration()
+    {
+        m_remainingDuration = m_duration;
+    }
     private void FollowObj()
     {
         transform.position = new Vector3(m_followObj.transform.position.x + m_followOffset.x, m_followObj.transform.position.y + m_followOffset.y, 0);
@@ -254,9 +262,19 @@ public class Hitbox : MonoBehaviour
         if (!m_hitboxActive)
             return HitResult.NONE;
         OnHitObject(other);
+        if (Deflector && other.gameObject.GetComponent<Projectile>() != null &&
+            GetComponent<FactionHolder>().CanAttack(other.gameObject))
+            OnDeflectProjectile(other.gameObject.GetComponent<Projectile>());
         if (other.gameObject.GetComponent<Attackable>() == null)
             return HitResult.NONE;
         return OnAttackable(other.gameObject.GetComponent<Attackable>());
+    }
+    protected virtual void OnDeflectProjectile(Projectile projectile)
+    {
+        GetComponent<FactionHolder>().SetFaction(projectile.gameObject);
+        Vector2 ap = projectile.AimPoint;
+        projectile.SetAimPoint(new Vector2(-ap.x, -ap.y));
+        projectile.ResetDuration();
     }
     protected virtual void OnHitObject(Collider2D other)
     {

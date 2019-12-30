@@ -113,6 +113,7 @@ MonoBehaviour:
   Icon: {fileID: 4214331609956449179, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: -1
   auto: 0
+  deflector: 1
 --- !u!114 &7366613531129294204
 MonoBehaviour:
   m_ObjectHideFlags: 0

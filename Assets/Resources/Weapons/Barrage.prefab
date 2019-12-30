@@ -128,7 +128,7 @@ MonoBehaviour:
   timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: 2079532655873222854, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
-  Cost: 2
+  Cost: 1
   auto: 0
 --- !u!114 &7616695279003037448
 MonoBehaviour:

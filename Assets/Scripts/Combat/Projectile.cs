@@ -90,10 +90,11 @@ public class Projectile : Hitbox
         m_numPenetrated = 0;
     }
 
-    public void SetAimPoint(Vector2 AimPoint)
+    public void SetAimPoint(Vector2 ap)
     {
-        m_velocity = new Vector3(ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.x,
-            ProjectileSpeed * Time.fixedDeltaTime * AimPoint.normalized.y, 0f);
+        m_velocity = new Vector3(ProjectileSpeed * Time.fixedDeltaTime * ap.normalized.x,
+            ProjectileSpeed * Time.fixedDeltaTime * ap.normalized.y, 0f);
+        AimPoint = ap;
     }
 
     IEnumerator StartGravity(float seconds, float gravityScale)

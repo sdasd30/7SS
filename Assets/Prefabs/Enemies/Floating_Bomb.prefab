@@ -182,6 +182,7 @@ MonoBehaviour:
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
   recoilDamage: 2
+  MinimumArmTime: 0
 --- !u!114 &7707958200302580777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +219,7 @@ MonoBehaviour:
   YAccessMove: 1
   TargetOffset: {x: 0, y: 0}
   TargetTolerance: 0.2
+  m_targetObj: {fileID: 0}
 --- !u!114 &6645073660975388526
 MonoBehaviour:
   m_ObjectHideFlags: 0

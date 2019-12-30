@@ -103,7 +103,7 @@ MonoBehaviour:
   firerate: 60
   damage: 3
   speed: 20
-  duration: 0.125
+  duration: 0.1
   shots: 3
   pierce: 2
   knockbackMult: 30
@@ -114,6 +114,7 @@ MonoBehaviour:
   Icon: {fileID: -1309747597210603629, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 5
   auto: 1
+  deflector: 1
 --- !u!114 &1317845421882228811
 MonoBehaviour:
   m_ObjectHideFlags: 0

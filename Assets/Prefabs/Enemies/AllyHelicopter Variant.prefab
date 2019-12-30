@@ -26,6 +26,41 @@ PrefabInstance:
       propertyPath: Faction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[6].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[5].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[4].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[3].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[0].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[2].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511266813240212013, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+      propertyPath: DeathItems.Array.data[1].UseExcludeCategory
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6303718734239560746, guid: c90a0125fc81db642b27fa77a3ffd5c3,
         type: 3}
       propertyPath: m_LocalPosition.x
