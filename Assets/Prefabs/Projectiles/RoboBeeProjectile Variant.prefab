@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7056058655592172511, guid: 11835dbedaffe4048b339172474e051c,
+      objectReference: {fileID: -4434019508940067513, guid: 917adc5b74efb5b499b83d9ff90c8f9e,
         type: 3}
     - target: {fileID: 3161507876284624356, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 3638049712022872109, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
         type: 3}
       propertyPath: m_Name
-      value: RoboBeeProjectile
+      value: RoboBeeProjectile Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff46e49aa5d1664eac471ab2cab7ab5, type: 3}

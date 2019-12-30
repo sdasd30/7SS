@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3087948670725542470, guid: 11835dbedaffe4048b339172474e051c,
+      objectReference: {fileID: 8310713079796583774, guid: 11835dbedaffe4048b339172474e051c,
         type: 3}
     - target: {fileID: 3161507876284624356, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
         type: 3}
@@ -68,10 +68,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3161507876284624356, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161507876284624356, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512616168758980717, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3512616168758980717, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3638049712022872109, guid: 3ff46e49aa5d1664eac471ab2cab7ab5,
         type: 3}
       propertyPath: m_Name
-      value: Toolkit
+      value: Toolkit Projectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff46e49aa5d1664eac471ab2cab7ab5, type: 3}
