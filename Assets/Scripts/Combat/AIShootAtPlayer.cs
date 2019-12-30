@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIShootAtPlayer : AIBase 
 {
-    private Transform m_targetObj;
+    public Transform m_targetObj;
     public float StartShootingRange;
     public float ShootProbability = 0.0f;
     public float ShootCheckInterval = 1.0f;
@@ -13,18 +13,31 @@ public class AIShootAtPlayer : AIBase
     public Vector2 RandomRangeX = new Vector2();
     public Vector2 RandomRangeY = new Vector2();
     private float m_nextShootTime = 0.0f;
-
+    private float m_nextRecheck = 0.0f;
     private float m_fireHoldTime;
+
+    private const float TARGET_RESEEK_TIME = 0.25f;
     void Start()
     {
-        BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
-        foreach (BasicMovement bm in ListMovements)
+        //BasicMovement[] ListMovements = FindObjectsOfType<BasicMovement>();
+        //foreach (BasicMovement bm in ListMovements)
+        //{
+        //    if (bm.IsCurrentPlayer)
+        //    {
+        //        m_targetObj = bm.transform;
+        //    }
+        //}
+        m_nextRecheck = Time.timeSinceLevelLoad + Random.Range(0f, TARGET_RESEEK_TIME);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (m_targetObj == null || Time.timeSinceLevelLoad > m_nextRecheck)
         {
-            if (bm.IsCurrentPlayer)
-            {
-                m_targetObj = bm.transform;
-            }
+            m_targetObj = GetComponent<FactionHolder>().GetNearestEnemy();
+            m_nextRecheck = Time.timeSinceLevelLoad + TARGET_RESEEK_TIME;
         }
+            
     }
     public override InputPacket AITemplate()
     {
@@ -32,7 +45,6 @@ public class AIShootAtPlayer : AIBase
         float t = Time.timeSinceLevelLoad;
         if (m_targetObj != null)
         {
-
             float d = Vector2.Distance(m_targetObj.transform.position, transform.position);
             if (d < StartShootingRange)
             {

@@ -10,12 +10,15 @@ public class EnemyContactHurt : MonoBehaviour
     public Vector2 knockback = new Vector2(10f, 0);
     public Vector2 recoilKnockback = new Vector2(5f, 5f);
     public float recoilDamage = 0.0f;
+    public float MinimumArmTime = 0.0f;
     private float m_nextRefreshTime;
     private FactionHolder m_factionHolder;
+    private float m_toArmTime;
     // Start is called before the first frame update
     void Start()
     {
         m_factionHolder = GetComponent<FactionHolder>();
+        m_toArmTime = Time.timeSinceLevelLoad + MinimumArmTime;
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class EnemyContactHurt : MonoBehaviour
         if (Time.timeSinceLevelLoad < m_nextRefreshTime)
             return;
 
-        if (other.gameObject.GetComponent<Attackable>() != null)
+        if (other.gameObject.GetComponent<Attackable>() != null && Time.timeSinceLevelLoad > m_toArmTime)
         {
             Attackable a = other.gameObject.GetComponent<Attackable>();
             Vector2 kb = new Vector2( knockback.x * ((a.transform.position.x > transform.position.x) ? 1f : -1f),knockback.y);

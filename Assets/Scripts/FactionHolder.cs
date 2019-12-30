@@ -7,6 +7,16 @@ public enum FactionType { IMMUNE, ALLIES, ENEMIES, NEUTRAL };
 
 public class FactionHolder : MonoBehaviour
 {
+    void Start()
+    {
+        if (FindObjectOfType<FactionManager>() != null && GetComponent<Attackable>() != null)
+            FindObjectOfType<FactionManager>().RegisterAttackable(this);
+    }
+    void OnDestroy()
+    {
+        if (FindObjectOfType<FactionManager>() != null && GetComponent<Attackable>() != null)
+            FindObjectOfType<FactionManager>().DeregisterAttackable(this);
+    }
     public FactionType Faction = FactionType.NEUTRAL;
     public bool CanAttack(FactionType otherFaction)
     {
@@ -37,5 +47,22 @@ public class FactionHolder : MonoBehaviour
         {
             SetFaction(go.transform.GetChild(i).gameObject);
         }
+    }
+    public List<FactionType> GetOpposingFactions()
+    {
+        List<FactionType> ft = new List<FactionType>();
+        ft.Add(FactionType.NEUTRAL);
+        if (Faction == FactionType.ALLIES)
+            ft.Add(FactionType.ENEMIES);
+        else if (Faction == FactionType.ENEMIES)
+            ft.Add(FactionType.ALLIES);
+        return ft;
+    }
+    public Transform GetNearestEnemy()
+    {
+        FactionHolder go = FindObjectOfType<FactionManager>().GetClosestOpposingFactionObj(this);
+        if (go != null)
+            return go.transform;
+        return null;
     }
 }
