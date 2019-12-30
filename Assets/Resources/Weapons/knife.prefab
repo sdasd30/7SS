@@ -103,7 +103,7 @@ MonoBehaviour:
   firerate: 250
   damage: 3
   speed: 20
-  duration: 0.05
+  duration: 0.1
   shots: 1
   pierce: 2
   knockbackMult: 25

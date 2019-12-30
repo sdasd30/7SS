@@ -80101,6 +80101,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 533171348, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> 123dd8a9efb5c37ca61407a090175dad628b96c3
     - target: {fileID: 1790790557, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -80195,5 +80202,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4988847229077361789, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b15d2173ab9bb6e418ff2ad86f448095, type: 3}
