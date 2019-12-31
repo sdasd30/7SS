@@ -1,14 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FactionManager : MonoBehaviour
 {
     private Dictionary<FactionType, List<FactionHolder>> allFactionedObjects = new Dictionary<FactionType, List<FactionHolder>>();
-    // Start is called before the first frame update
-    void Start()
+    private static FactionManager m_instance;
+
+    void Awake()
     {
-        
+
+        if (m_instance == null)
+        {
+            m_instance = this;
+            SceneManager.sceneLoaded += onSceneLoad;
+        }
+        else if (m_instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+    private void onSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        allFactionedObjects = new Dictionary<FactionType, List<FactionHolder>>();
     }
 
     // Update is called once per frame
