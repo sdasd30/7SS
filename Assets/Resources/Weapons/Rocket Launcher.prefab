@@ -99,12 +99,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1145310422289480940, guid: 4af06ee3109a6874390bda607b5818c0, type: 3}
   name: Rocket Launcher
-  spread: 0
+  spread: 2
   firerate: 1000
   damage: 1
-  speed: 20
+  speed: 30
   duration: 3
-  shots: 1
+  shots: 2
   pierce: 0
   knockbackMult: 20
   OnDeathCreate:
@@ -130,6 +130,7 @@ MonoBehaviour:
   Icon: {fileID: -5629194940795328781, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 2
   auto: 0
+  deflector: 0
 --- !u!114 &6305337551200706567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

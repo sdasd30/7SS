@@ -99,7 +99,7 @@ MonoBehaviour:
   bullet: {fileID: 8350008188702618651, guid: ce9fd131d577f034699d3fb638fc1ab1, type: 3}
   name: Punch
   spread: 6
-  firerate: 500
+  firerate: 200
   damage: 2
   speed: 20
   duration: 0.1

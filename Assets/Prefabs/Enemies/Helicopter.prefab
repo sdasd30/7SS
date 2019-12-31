@@ -199,6 +199,7 @@ MonoBehaviour:
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
   recoilDamage: 0
+  MinimumArmTime: 0
 --- !u!114 &6303718734239560740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ MonoBehaviour:
   YAccessMove: 1
   TargetOffset: {x: 0, y: 4}
   TargetTolerance: 1
+  m_targetObj: {fileID: 0}
 --- !u!114 &6303718734239560743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackName: Chopper
-  scoreValue: 7
-  value: 7
+  scoreValue: 21
+  value: 8
 --- !u!114 &6303718734239560736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Cost: 0
   auto: 0
+  deflector: 0
 --- !u!114 &6303718734239560749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e1d5b9ad7bcf644b52472825372e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_targetObj: {fileID: 0}
   StartShootingRange: 6
   ShootProbability: 100
   ShootCheckInterval: 1.5

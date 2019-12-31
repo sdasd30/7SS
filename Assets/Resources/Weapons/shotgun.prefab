@@ -99,20 +99,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 674247526058955706, guid: cfd4e8ac382736d40a62255020c8c770, type: 3}
   name: Shotgun
-  spread: 5
+  spread: 8
   firerate: 1000
   damage: 1
-  speed: 14
+  speed: 20
   duration: 3
-  shots: 8
+  shots: 10
   pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: -8070387335800257015, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 1
   auto: 0
+  deflector: 0
 --- !u!114 &4586572493465753823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8877115737268123830, guid: eb012c5954bf4904194c86af5c3aae07, type: 3}
   name: Musket
-  spread: 10
+  spread: 6
   firerate: 2500
   damage: 5
   speed: 15
@@ -114,6 +114,7 @@ MonoBehaviour:
   Icon: {fileID: -1632883484105139077, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: -1
   auto: 0
+  deflector: 0
 --- !u!114 &9170305793942443865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

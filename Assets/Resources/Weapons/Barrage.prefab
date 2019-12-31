@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8624327360001643603, guid: 8f7324d7c7ddf0447b90c70b339d0a32, type: 3}
   name: Grenade Barrage
-  spread: 30
-  firerate: 1000
+  spread: 15
+  firerate: 2000
   damage: 1
   speed: 20
   duration: 4
@@ -125,7 +125,7 @@ MonoBehaviour:
     ExcludeCategory: 0
     InheritFaction: 0
   GravityScale: 1
-  timeToGravity: 0
+  timeToGravity: 0.2
   RecoilDamage: 0
   Icon: {fileID: 2079532655873222854, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: 1

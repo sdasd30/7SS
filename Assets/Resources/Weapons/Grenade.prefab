@@ -128,8 +128,9 @@ MonoBehaviour:
   timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: -2014131868727140717, guid: 11835dbedaffe4048b339172474e051c, type: 3}
-  Cost: 1
+  Cost: 0
   auto: 0
+  deflector: 0
 --- !u!114 &234205443385772467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

@@ -102,17 +102,19 @@ MonoBehaviour:
   spread: 0
   firerate: 1000
   damage: 5
-  speed: 30
+  speed: 40
   duration: 3
   shots: 1
-  pierce: 2
+  pierce: 10
   knockbackMult: 20
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: -859302592743651864, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 2
   auto: 0
+  deflector: 0
 --- !u!114 &113342055392346229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
