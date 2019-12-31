@@ -2559,16 +2559,11 @@ GameObject:
   - component: {fileID: 8994709058253228582}
   - component: {fileID: 8994709058253228581}
   - component: {fileID: 4027366174074475956}
-  - component: {fileID: 1793197985249184141}
   - component: {fileID: 8994709058253228762}
   - component: {fileID: 159889451}
   - component: {fileID: 533171343}
   - component: {fileID: 533171347}
   - component: {fileID: 533171348}
-  - component: {fileID: 8238262808234313409}
-  - component: {fileID: 7831461448687616523}
-  - component: {fileID: 4988847229077361789}
-  - component: {fileID: 2780279577403277008}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2677,19 +2672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
---- !u!114 &1793197985249184141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57f4ab1235320b4dbcfb06c8fa54b1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficultyLevel: 0
 --- !u!114 &8994709058253228762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2744,7 +2726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cedb03d3bf201647947e1cdbf5b3edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditMod: 0.1
+  creditMod: 0.05
   creditPool: 0
   incrementby: 1
   knownDifficulty: 1
@@ -2755,7 +2737,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b34647d3131e834494ad3daf0a3baa5, type: 3}
   m_Name: 
@@ -2773,72 +2755,7 @@ MonoBehaviour:
   - {fileID: 6825065320747222234, guid: d17612e56d146b646a2913ae967c9c95, type: 3}
   - {fileID: 6303718734239560748, guid: c90a0125fc81db642b27fa77a3ffd5c3, type: 3}
   - {fileID: 2715755458628834803, guid: 3304972ecd4d4f24186f512053fdb28d, type: 3}
-  - {fileID: 3493381247505724042, guid: 5da66a9ffcd84a74882be230be1c9c81, type: 3}
   nextEnemy: {fileID: 0}
---- !u!114 &8238262808234313409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57f4ab1235320b4dbcfb06c8fa54b1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficultyLevel: 0
---- !u!114 &7831461448687616523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cedb03d3bf201647947e1cdbf5b3edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creditMod: 0.1
-  creditPool: 0
-  incrementby: 1
-  knownDifficulty: 1
---- !u!114 &4988847229077361789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b34647d3131e834494ad3daf0a3baa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 9075143508853035561, guid: fd9433d7178c7d1448cb3ddc6142e796, type: 3}
-  - {fileID: 8514619932770599800, guid: abf5419ca2793fa43ad94c487628eee4, type: 3}
-  - {fileID: 6645073660975388517, guid: 8e3dd4d7e406e8a4a8777ccfba64e3f0, type: 3}
-  - {fileID: 3791979255579543048, guid: 1e69d2223a1c75e4f9bd81825e93bdac, type: 3}
-  - {fileID: 4749055537247360727, guid: 3b24ff51c19af5b42ac093304faddb04, type: 3}
-  - {fileID: 8842567054819315863, guid: 4a8b25a7b6eb576408a59f6f19b96a1c, type: 3}
-  - {fileID: 5984054227554796209, guid: 61ddcee72e9ed884fb9ff5ee4385dde9, type: 3}
-  - {fileID: 1796919630272550348, guid: 2f87247bff376ee4f9adf1f6f1c6a03e, type: 3}
-  - {fileID: 3331552278932581196, guid: adcb87af776b6e246a30f1ee3c8e5ab6, type: 3}
-  nextEnemy: {fileID: 0}
---- !u!114 &2780279577403277008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994709058253228583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c3125d992139af4790f1365f975c092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1486971508436632768
 PrefabInstance:
   m_ObjectHideFlags: 0
