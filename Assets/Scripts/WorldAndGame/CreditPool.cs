@@ -51,7 +51,7 @@ public class CreditPool : MonoBehaviour
 
     private void newIncrement(float inc)
     {
-        incrementby = inc + (inc * .21f);
+        incrementby = inc + (inc * .12f);
     }
 
     private void moreCredits(float inc)
