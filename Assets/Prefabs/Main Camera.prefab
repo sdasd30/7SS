@@ -2726,7 +2726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cedb03d3bf201647947e1cdbf5b3edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditMod: 0.05
+  creditMod: 0.1
   creditPool: 0
   incrementby: 1
   knownDifficulty: 1
