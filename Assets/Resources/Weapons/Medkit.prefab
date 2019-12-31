@@ -109,7 +109,7 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate:
   - Item: {fileID: 499474714480864500, guid: b388838aa0e9fd14ca62b1c9a544a45c, type: 3}
-    Offset: {x: 0, y: 0.5}
+    Offset: {x: 0, y: 1}
     XOffsetRange: {x: -0.5, y: 0.5}
     YOffsetRange: {x: 0, y: 0}
     Probability: 100

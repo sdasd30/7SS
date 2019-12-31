@@ -101,12 +101,12 @@ MonoBehaviour:
   name: Manga Book
   spread: 25
   firerate: 60
-  damage: 1
+  damage: 2
   speed: 20
-  duration: 0.125
+  duration: 0.15
   shots: 1
   pierce: 2
-  knockbackMult: 25
+  knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0
