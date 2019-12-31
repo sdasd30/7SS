@@ -54,7 +54,7 @@ public class Projectile : Hitbox
     {
         m_numPenetrated++;
         if (m_numPenetrated > PenetrativePower)
-            Duration = 0f;
+            m_remainingDuration = 0f;
     }
 
     private void processGravity()

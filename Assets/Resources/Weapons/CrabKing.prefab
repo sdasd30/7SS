@@ -109,7 +109,7 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate:
   - Item: {fileID: 4442863109441688074, guid: bbf5ad1be802fad458a10914cd1c55df, type: 3}
-    Offset: {x: 0, y: 0}
+    Offset: {x: 0, y: 1.5}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
     Probability: 100
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
