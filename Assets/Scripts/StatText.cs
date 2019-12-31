@@ -19,7 +19,7 @@ public class StatText : MonoBehaviour
     void Update()
     {
         mText.text = "Your Stats:" +
-            "\nLifetime Enemies Killed:" + stats.LifetimeEnemykills +
+            "\nLifetime Enemies Killed:" + stats.LifetimeEnemyKills +
             "\nLifetime Weapon Kills" + stats.LifetimeWeaponKills +
             "\nLifetime Weapon Scores" + stats.LifetimeWeaponScores +
             "\nLifetime Weapon Switches" + stats.LifetimeWeaponSwitches +

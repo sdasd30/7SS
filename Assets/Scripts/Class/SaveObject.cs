@@ -11,7 +11,7 @@ public class SaveObject
     public Dictionary<string, int> savMaxWeaponKills;
     public Dictionary<string, int> savMaxWeaponScores;
 
-    public Dictionary<string, Dictionary<string, int>> savLifetimeEnemykills;
+    public Dictionary<string, Dictionary<string, int>> savLifetimeEnemyKills;
     public Dictionary<string, int> savLifetimeWeaponKills;
     public Dictionary<string, int> savLifetimeWeaponScores;
 

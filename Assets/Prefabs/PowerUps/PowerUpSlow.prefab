@@ -223,4 +223,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135be1e5e824a41af66b6babff3ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpID: Timer Lock
   LongCooldown: 14
