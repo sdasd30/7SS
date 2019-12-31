@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUpBase : MonoBehaviour
 {
+    string PowerUpID = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +24,15 @@ public class PowerUpBase : MonoBehaviour
                 if (GetComponent<FactionHolder>().Faction == FactionType.NEUTRAL || 
                     GetComponent<FactionHolder>().Faction == other.GetComponent<FactionHolder>().Faction)
                 {
+                    if (FindObjectOfType<StatTracker>() != null && PowerUpID.Length > 0)
+                        FindObjectOfType<StatTracker>().TrackPowerUp(PowerUpID);
                     TriggerEffect(other.gameObject);
                     Destroy(gameObject);
                 }
             } else
             {
+                if (FindObjectOfType<StatTracker>() != null && PowerUpID.Length > 0)
+                    FindObjectOfType<StatTracker>().TrackPowerUp(PowerUpID);
                 TriggerEffect(other.gameObject);
                 Destroy(gameObject);
             }

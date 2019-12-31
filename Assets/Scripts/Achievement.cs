@@ -10,6 +10,7 @@ public class Achievement : MonoBehaviour
     public AchievementType typeOfAchievement;
     public float value;
     public GameObject WithObject;
+    public GameObject WithObject2;
     public bool InOneLife;
     // Start is called before the first frame update
     void Start()
@@ -29,16 +30,17 @@ public class Achievement : MonoBehaviour
         string s = "";
         if (typeOfAchievement == AchievementType.WEAPON_KILLS)
         {
-            s += "Destroy " + value + " enemies ";
+            string sf = (value > 1) ? "enemies " : "enemy ";
+            s += "Destroy " + value + " " + sf;
             if (WithObject != null)
-                s = s + "with the " + WithObject.GetComponent<WeaponStats>().name + " ";
+                s = s + "with the " + getWeaponName(WithObject) + " ";
             if (InOneLife)
                 s += "in one life";
         } else if (typeOfAchievement == AchievementType.SCORE)
         {
             s += "Score " + value + " points ";
             if (WithObject != null)
-                s = s + "with the " + WithObject.GetComponent<WeaponStats>().name + " ";
+                s = s + "with the " + getWeaponName(WithObject) + " ";
             if (InOneLife)
                 s += "in one life";
         }
@@ -46,22 +48,38 @@ public class Achievement : MonoBehaviour
         {
             s += "Destroy " + value;
             if (WithObject != null)
-                s = WithObject.GetComponent<Score>().TrackName + "s ";
+            {
+                if (value > 1)
+                    s += WithObject.GetComponent<Score>().TrackName + "s ";
+                else
+                    s += WithObject.GetComponent<Score>().TrackName;
+            }
             else
-                s = "enemies ";
+                s += "enemies ";
+            if (WithObject2 != null)
+                s += "with the " + getWeaponName(WithObject2) + " ";
             if (InOneLife)
                 s += "in one life";
         }
         else if (typeOfAchievement == AchievementType.WEAPON_SWITCHES)
         {
             if (WithObject != null)
-                s = "Use the " + WithObject.GetComponent<WeaponStats>().name + " " + value + " times ";
+                s = "Use the " + getWeaponName(WithObject) + " " + value + " times ";
             else
                 s = "Switch weapons " + value + " times ";
             if (InOneLife)
                 s += "in one life";
         }
         return s;
+    }
+
+    private string getWeaponName(GameObject go)
+    {
+        if (go.GetComponent<WeaponStats>() == null)
+            return "";
+        if (go.GetComponent<Achievement>() == null || go.GetComponent<Achievement>().CheckAchievementMet())
+            return go.GetComponent<Achievement>().DisplayName;
+        return "??????";
     }
     public bool CheckAchievementMet()
     {
@@ -166,18 +184,24 @@ public class Achievement : MonoBehaviour
                 }
                 else
                 {
-                    return st.IsAchievementMet(st.MaxEnemykills,withName, (int) value);
+                    if (WithObject2 != null)
+                        return st.IsAchievementMet(st.MaxEnemyWeaponKills, withName,WithObject2.GetComponent<WeaponStats>().name, (int)value);
+                    else
+                        return st.IsAchievementMet(st.MaxEnemyKills,withName, (int) value);
                 }
             }
             else
             {
                 if (WithObject == null)
                 {
-                    return st.SumStat(st.LifetimeEnemykills) >= value;
+                    return st.SumStat(st.LifetimeEnemyKills) >= value;
                 }
                 else
                 {
-                    return st.IsAchievementMet(st.LifetimeEnemykills,withName, (int)value);
+                    if (WithObject2 != null)
+                        return st.IsAchievementMet(st.LifetimeEnemyKills, withName, WithObject2.GetComponent<WeaponStats>().name, (int)value);
+                    else
+                        return st.IsAchievementMet(st.LifetimeEnemyKills,withName, (int)value);
                 }
             }
         }
