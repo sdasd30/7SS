@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1000860736852575027}
   - component: {fileID: 5402102262919549961}
   m_Layer: 0
-  m_Name: Mines
+  m_Name: Mines (Weapon)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   bullet: {fileID: 3628989173364585282, guid: 363d0869502ecae4e954b8c05a8bdfcd, type: 3}
   name: Mines
   spread: 0
-  firerate: 1500
+  firerate: 1000
   damage: 1
   speed: 20
   duration: 4
@@ -109,7 +109,7 @@ MonoBehaviour:
   knockbackMult: 5
   OnDeathCreate:
   - Item: {fileID: 3099681786231820915, guid: a74f5e1d7d26f234aac89fe6dd3e8cc1, type: 3}
-    Offset: {x: 0, y: 0}
+    Offset: {x: 0, y: 2}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
     Probability: 100
@@ -122,6 +122,7 @@ MonoBehaviour:
   Icon: {fileID: -2809455010412781522, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: 1
   auto: 0
+  deflector: 0
 --- !u!114 &1000860736852575027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +148,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

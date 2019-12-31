@@ -71,8 +71,8 @@ public class OnDeathDrop : MonoBehaviour
     }
     private void spawnItem(DeathDropItem item)
     {
-        Vector3 pos = new Vector3(transform.position.x + Random.Range(item.XOffsetRange.x, item.XOffsetRange.y),
-                    transform.position.y + Random.Range(item.YOffsetRange.x, item.YOffsetRange.y), transform.position.z);
+        Vector3 pos = new Vector3(transform.position.x + item.Offset.x + Random.Range(item.XOffsetRange.x, item.XOffsetRange.y),
+                    transform.position.y + item.Offset.y + Random.Range(item.YOffsetRange.x, item.YOffsetRange.y), transform.position.z);
         GameObject go = Instantiate(item.Item, pos, Quaternion.identity);
         if (item.InheritFaction)
         {

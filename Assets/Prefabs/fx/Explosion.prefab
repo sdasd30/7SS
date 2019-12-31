@@ -75,17 +75,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a46787416583f545a5242c11184da4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damage: 5
+  m_damage: 4
   m_focusDamage: -1
   m_penetration: 0
   m_duration: 0.25
   m_hasDuration: 1
   m_isFixedKnockback: 0
   m_resetKnockback: 0
-  m_knockback: {x: 0, y: 40}
+  m_knockback: {x: 0, y: 25}
   m_stun: 0
   m_isRandomKnockback: 0
   m_FreezeTime: 0
+  Deflector: 0
   m_elementList: 
   m_followObj: {fileID: 0}
   m_followOffset: {x: 0, y: 0}
