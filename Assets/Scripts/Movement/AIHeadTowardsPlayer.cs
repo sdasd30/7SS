@@ -5,6 +5,7 @@ using UnityEngine;
 public class AIHeadTowardsPlayer : AIBase
 {
     public float ChaseDistance = 10f;
+    public float MaxYDistanceChase = -1f;
     public float AbandonDistance = 15f;
     public float DelayAfterAttack = 1.0f;
     public float JumpProbabilityPercent = 0.0f;
@@ -42,7 +43,7 @@ public class AIHeadTowardsPlayer : AIBase
     {
         if (m_targetObj == null || Time.timeSinceLevelLoad > m_nextRecheck)
         {
-            m_targetObj = GetComponent<FactionHolder>().GetNearestEnemy();
+            m_targetObj = GetComponent<FactionHolder>().GetNearestEnemy(MaxYDistanceChase);
             m_nextRecheck = Time.timeSinceLevelLoad + TARGET_RESEEK_TIME;
         }
     }

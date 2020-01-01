@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: 2
   AbandonDistance: 15
   DelayAfterAttack: 0.5
   JumpProbabilityPercent: 0

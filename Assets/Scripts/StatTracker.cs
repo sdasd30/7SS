@@ -37,6 +37,7 @@ public class StatTracker : MonoBehaviour
 
     private string m_currentWeaponName = "";
     private GameObject m_currentPlayer;
+    private bool Disabled = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -71,6 +72,8 @@ public class StatTracker : MonoBehaviour
     }
     private void CheckWeaponUpdate()
     {
+        if (Disabled)
+            return;
         WeaponStats realWeapon = m_currentPlayer.transform.GetChild(0).GetChild(0).gameObject.GetComponent<WeaponStats>();
 
         if (m_currentWeaponName == "")
@@ -85,6 +88,8 @@ public class StatTracker : MonoBehaviour
 
     private void OnWeaponSwitch(WeaponStats weapon)
     {
+        if (Disabled)
+            return;
         currentSwitches++;
         maxSwitches = Mathf.Max(maxSwitches, currentSwitches);
         incrementOrCreate(MaxWeaponSwitches, weapon.name, 1);
@@ -150,6 +155,8 @@ public class StatTracker : MonoBehaviour
     }
     public void TrackKill(Score killedObject, WeaponStats originWeapon)
     {
+        if (Disabled)
+            return;
         currentScore += (int)killedObject.scoreValue;
         currentKills++;
         maxScore = Mathf.Max(currentScore, maxScore);
@@ -170,6 +177,8 @@ public class StatTracker : MonoBehaviour
 
     public void TrackPowerUp(string powerUpID)
     {
+        if (Disabled)
+            return;
         incrementOrCreate(CurrentPowerUps, powerUpID, 1);
         maxOrCreate(MaxPowerUps, powerUpID, CurrentPowerUps[powerUpID]);
     }
@@ -182,6 +191,7 @@ public class StatTracker : MonoBehaviour
         currentScore = 0;
         currentKills = 0;
         currentSwitches = 0;
+        Disabled = (SceneManager.GetActiveScene().name == "TempTitle");
     }
 
     public int SumStat(Dictionary<string, Dictionary<string,int>> list)
