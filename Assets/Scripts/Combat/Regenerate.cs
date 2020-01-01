@@ -8,10 +8,15 @@ public class Regenerate : MonoBehaviour
     private Attackable myAttackable;
     //public float regenCooldown = .05f; //In seconds. Default is every 50 miliseconds
     public float regenRate; //Howmuch heals after one second
+    private float defaultRate;
+    public bool powered;
+    public float powerUpCooling;
+
     //private float regenCooldownMax;
     void Start()
     {
         myAttackable = GetComponent<Attackable>();
+        defaultRate = regenRate;
         //regenCooldownMax = regenCooldown;
     }
 
@@ -19,6 +24,16 @@ public class Regenerate : MonoBehaviour
     void Update()
     {
         if (myAttackable != null) Regen();
+        if (powered)
+        {
+            powerUpCooling -= Time.deltaTime;
+            if (powerUpCooling <= 0)
+            {
+                powered = false;
+                regenRate = defaultRate;
+                FindObjectOfType<PowerUpUI>().DestroyHealth();
+            }
+        }
     }
 
 
@@ -34,16 +49,15 @@ public class Regenerate : MonoBehaviour
 
     public void TemporaryRegenChange(float time, float newRate)
     {
-        StartCoroutine(crTemporaryRegenChange(time,newRate));
+        regenRate = newRate;
+        powerUpCooling = time;
+        powered = true;
+        FindObjectOfType<PowerUpUI>().CreateHealth();
     }
 
-    IEnumerator crTemporaryRegenChange(float time, float newRate)
+    public float returnPowerUpCooling()
     {
-        float oldRate = regenRate;
-        regenRate = newRate;
-        //Debug.Log("New rate is " + newRate);
-        yield return new WaitForSeconds(time);
-        regenRate = oldRate;
-        //Debug.Log("New rate is " + oldRate);
+        return powerUpCooling;
     }
+
 }

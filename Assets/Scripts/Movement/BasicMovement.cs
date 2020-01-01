@@ -66,9 +66,22 @@ public class BasicMovement : MonoBehaviour {
         baseMovement(ip);
         foreach (OffensiveTemplate ot in m_offensiveTemplates)
             ot.HandleInput(ip);
-	}
 
-	internal InputPacket playerMovement() {
+        #region powers
+        if (poweredUp)
+        {
+            powerUpCooldown -= Time.deltaTime;
+            if (powerUpCooldown <= 0)
+            {
+                poweredUp = false;
+                doubleJumpAvailable = false;
+                FindObjectOfType<PowerUpUI>().DestroyJump();
+            }
+        }
+        #endregion
+    }
+
+    internal InputPacket playerMovement() {
         InputPacket ip = new InputPacket();
         ip.movementInput.x = Input.GetAxis("Horizontal");
         ip.movementInput.y = Input.GetAxis("Vertical");
@@ -217,17 +230,27 @@ public class BasicMovement : MonoBehaviour {
 	}
 
     #region Jump Power Scripts
+    private bool poweredUp;
+    private float powerUpCooldown;
+
     public void EnableDoubleJumps(float seconds)
     {
-        StartCoroutine(TemporaryDoubleJumps(seconds));
+        poweredUp = true;
+        powerUpCooldown = seconds;
+        doubleJumpAvailable = true;
+        FindObjectOfType<PowerUpUI>().CreateJump();
     }
 
-    IEnumerator TemporaryDoubleJumps(float seconds)
+    public float returnPowerUpCooling()
     {
-        doubleJumpAvailable = true;
-        yield return new WaitForSeconds(seconds);
-        doubleJumpAvailable = false;
-        canDoubleJump = false;
+        return powerUpCooldown;
     }
+    //IEnumerator TemporaryDoubleJumps(float seconds)
+    //{
+    //    doubleJumpAvailable = true;
+    //    yield return new WaitForSeconds(seconds);
+    //    doubleJumpAvailable = false;
+    //    canDoubleJump = false;
+    //}
     #endregion
 }
