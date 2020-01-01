@@ -9,7 +9,9 @@ public class WeaponHandler : MonoBehaviour {
     [HideInInspector] public GameObject currWeapon;
 	public float cooldown;
 
-	void Start(){
+    const float DELAY = 7;
+
+    void Start(){
         begin();
         //fillLoadout();
     }
@@ -22,6 +24,16 @@ public class WeaponHandler : MonoBehaviour {
             //Debug.Log("Cooldown Low");
             FillLoadout();
 		}
+        if (poweredUpFast)
+        {
+            speedPowerUpCooldown -= Time.deltaTime;
+            if (speedPowerUpCooldown <= 0)
+            {
+                poweredUpFast = false;
+                weaponSwitchDelay = DELAY;
+                FindObjectOfType<PowerUpUI>().DestroySpeed();
+            }
+        }
 
 	}
 
@@ -54,12 +66,16 @@ public class WeaponHandler : MonoBehaviour {
         currWeapon.transform.parent = transform;
         currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         NextWeaponLoad();
-
-
     }
 
     private void NextWeaponLoad()
     {
+        if (poweredUpSlow)
+        {
+            FindObjectOfType<PowerUpUI>().DestroySlow();
+            poweredUpSlow = false;
+        }
+
         nextWeapon = weapons[Random.Range(0, weapons.Count)];
         while (nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name)
         {
@@ -69,20 +85,45 @@ public class WeaponHandler : MonoBehaviour {
     }
 
     #region Power Up Functions
-
+    private bool poweredUpSlow;
+    private bool poweredUpFast;
+    private float speedPowerUpCooldown;
 
     public void SlowDown(float seconds)
     {
         cooldown = seconds;
+        poweredUpSlow = true;
+        FindObjectOfType<PowerUpUI>().CreateSlow();
+        if (poweredUpFast)
+        {
+            FindObjectOfType<PowerUpUI>().DestroySpeed();
+            poweredUpFast = false;
+        }
+        
     }
 
-    public void SpeedUp(float seconds, float cooldown)
+    public void SpeedUp(float seconds, float ncooldown)
     {
-        StartCoroutine(setCoolDown(seconds, cooldown));
+        poweredUpFast = true;
+        speedPowerUpCooldown = seconds;
+        weaponSwitchDelay = ncooldown;
+        if (cooldown > weaponSwitchDelay)
+            cooldown = weaponSwitchDelay;
+        FindObjectOfType<PowerUpUI>().CreateSpeed();
+        if (poweredUpSlow)
+        {
+            FindObjectOfType<PowerUpUI>().DestroySlow();
+            poweredUpSlow = false;
+        }
     }
 
     public void GiveSuperWeapon(float seconds)
     {
+        if (poweredUpSlow)
+        {
+            FindObjectOfType<PowerUpUI>().DestroySlow();
+            poweredUpSlow = false;
+        }
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
         List<GameObject> ptWeapons = new List<GameObject>();
         foreach (GameObject weapon in loadedObjs)
@@ -101,6 +142,12 @@ public class WeaponHandler : MonoBehaviour {
 
     public void RandomizeWeapons()
     {
+        if (poweredUpSlow)
+        {
+            FindObjectOfType<PowerUpUI>().DestroySlow();
+            poweredUpSlow = false;
+        }
+
         for (int i = 0; i < weapons.Count; i++)
         {
             weapons[i] = null;
@@ -120,16 +167,20 @@ public class WeaponHandler : MonoBehaviour {
         FillLoadout();
     }
 
-    IEnumerator setCoolDown(float length, float newCool)
+    public float ReturnPowerCooldownSpeed()
     {
-        float oldCool = weaponSwitchDelay;
-        cooldown = newCool;
-        weaponSwitchDelay = newCool;
-        if (cooldown > weaponSwitchDelay)
-            cooldown = weaponSwitchDelay;
-        yield return new WaitForSeconds(length);
-        weaponSwitchDelay = oldCool;
+        return speedPowerUpCooldown;
     }
+    //IEnumerator setCoolDown(float length, float newCool)
+    //{
+    //    float oldCool = weaponSwitchDelay;
+    //    cooldown = newCool;
+    //    weaponSwitchDelay = newCool;
+    //    if (cooldown > weaponSwitchDelay)
+    //        cooldown = weaponSwitchDelay;
+    //    yield return new WaitForSeconds(length);
+    //    weaponSwitchDelay = oldCool;
+    //}
 
     #endregion
 }

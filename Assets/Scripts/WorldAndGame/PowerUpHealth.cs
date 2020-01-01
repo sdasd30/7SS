@@ -11,7 +11,7 @@ public class PowerUpHealth : PowerUpBase
     public override void TriggerEffect(GameObject target) {
         if (target.GetComponent<Regenerate>() != null)
         {
-            target.GetComponent<Regenerate>().TemporaryRegenChange(length, newRate);            
+            FindObjectOfType<Regenerate>().TemporaryRegenChange(length, newRate);
         }    
     }
 

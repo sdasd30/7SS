@@ -89,10 +89,6 @@ GameObject:
   - component: {fileID: 5852829575971247989}
   - component: {fileID: 1812678189}
   - component: {fileID: 1812678192}
-  - component: {fileID: 8118849365731181571}
-  - component: {fileID: 6267473724469059893}
-  - component: {fileID: 1012108895255747345}
-  - component: {fileID: 5463291938445705817}
   m_Layer: 11
   m_Name: you_irl
   m_TagString: Untagged
@@ -304,6 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenRate: 0.14285715
+  powered: 0
+  powerUpCooling: 0
 --- !u!114 &5852829575971247989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,60 +332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Faction: 1
 --- !u!114 &1812678192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7457555227399086765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56762e73f109774f96030af1df21bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weapon: {fileID: 0}
-  Offset: {x: 0, y: 0}
---- !u!114 &8118849365731181571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7457555227399086765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a573bd068fa2f7444b705f1c1ae65aa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Faction: 1
---- !u!114 &6267473724469059893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7457555227399086765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56762e73f109774f96030af1df21bd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weapon: {fileID: 0}
-  Offset: {x: 0, y: 0}
---- !u!114 &1012108895255747345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7457555227399086765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a573bd068fa2f7444b705f1c1ae65aa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Faction: 1
---- !u!114 &5463291938445705817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
