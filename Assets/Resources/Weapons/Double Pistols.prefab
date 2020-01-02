@@ -115,6 +115,7 @@ MonoBehaviour:
   Icon: {fileID: 1351822815657765007, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 1
   auto: 0
+  deflector: 0
 --- !u!114 &1616467649620937510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
 --- !u!114 &-3743847839305039842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: You Murderer
-  Description: 
+  Description: Go getem
   typeOfAchievement: 1
   value: 3
   WithObject: {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e,
     type: 3}
+  WithObject2: {fileID: 0}
   InOneLife: 1

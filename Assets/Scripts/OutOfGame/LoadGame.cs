@@ -32,7 +32,7 @@ public class LoadGame : MonoBehaviour
 
         else
         {
-            Debug.LogError("Load Failed! Maybe you need to create a savegame first?");
+            Debug.LogWarning("Load Failed!");
         }
     }
 }
