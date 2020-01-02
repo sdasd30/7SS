@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: You Murderer
-  Description: Go getem
+  Description: 
   typeOfAchievement: 1
   value: 3
   WithObject: {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e,

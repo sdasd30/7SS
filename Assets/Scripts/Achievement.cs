@@ -78,7 +78,7 @@ public class Achievement : MonoBehaviour
         if (go.GetComponent<WeaponStats>() == null)
             return "";
         if (go.GetComponent<Achievement>() == null || go.GetComponent<Achievement>().CheckAchievementMet())
-            return go.GetComponent<Achievement>().DisplayName;
+            return go.GetComponent<WeaponStats>().name;
         return "??????";
     }
     public bool CheckAchievementMet()

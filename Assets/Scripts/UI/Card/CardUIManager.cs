@@ -67,7 +67,7 @@ public class CardUIManager : MonoBehaviour
                 if (inHand(g.GetComponent<WeaponStats>()))
                     continue;
                 if (g.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(g.GetComponent<Achievement>(),transform)) {
-                    GameObject lockCard = createLockCard(g.GetComponent<Achievement>());
+                    GameObject lockCard = createLockCard(g.GetComponent<Achievement>(),g);
                     AddCardPrefix(lockCard);
                     m_poolObjs.Add(lockCard);
                     insertCard(lockCard.transform, PoolTransform, lockCard.gameObject.name);
@@ -91,15 +91,16 @@ public class CardUIManager : MonoBehaviour
         }
         return false;
     }
-    private void AddCardPrefix(GameObject go)
+    private void AddCardPrefix(GameObject card)
     {
-        if (go.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(go.GetComponent<Achievement>(), transform))
+        GameObject w = card.GetComponent<Card>().Weapon;
+        if (w.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(w.GetComponent<Achievement>(), transform))
         {
-            go.name = "9" + go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().name;
+            card.name = "9" + w.GetComponent<WeaponStats>().name;
             return;
         }
-        int i = go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().Cost + 1;
-        go.name = i + go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().name;
+        int i = w.GetComponent<WeaponStats>().Cost + 1;
+        card.name = i + w.GetComponent<WeaponStats>().name;
     }
     public void SwapCard(Card c)
     {
@@ -171,13 +172,13 @@ public class CardUIManager : MonoBehaviour
         gi.GetComponent<Card>().UIManager = this;
         return gi;
     }
-    private GameObject createLockCard(Achievement a)
+    private GameObject createLockCard(Achievement a, GameObject weapon)
     {
         GameObject gi = Instantiate(CardPrefab);
         if (a.Description.Length == 0)
-            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName, a.AutoGenDescription());
+            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName, a.AutoGenDescription(), weapon);
         else
-            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName,a.Description);
+            gi.GetComponent<Card>().SetLockCardInfo(a.DisplayName,a.Description, weapon);
         gi.GetComponent<Card>().UIManager = this;
         return gi;
     }

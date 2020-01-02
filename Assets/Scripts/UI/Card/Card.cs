@@ -43,12 +43,13 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         m_description = "";
         Weapon = wp;
     }
-    public void SetLockCardInfo(string AchievementName, string AchievementDescription)
+    public void SetLockCardInfo(string AchievementName, string AchievementDescription, GameObject wp)
     {
         MyCardImage.sprite = LockSprite;
         MyCardName.text = "LOCKED" ;
         MyCardCost.text = AchievementName;
         m_description = AchievementDescription;
+        Weapon = wp;
         locked = true;
     }
     
