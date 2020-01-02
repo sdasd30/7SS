@@ -223,5 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04c1a83f9094e8498ff4e68713a280f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpID: Timer Speedup
   lengthOfEffect: 14
   desiredCooldown: 4.5

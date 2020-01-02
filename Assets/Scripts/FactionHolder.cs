@@ -58,7 +58,7 @@ public class FactionHolder : MonoBehaviour
             ft.Add(FactionType.ALLIES);
         return ft;
     }
-    public Transform GetNearestEnemy()
+    public Transform GetNearestEnemy(float MaxYDiff = -1f)
     {
         FactionHolder go = FindObjectOfType<FactionManager>().GetClosestOpposingFactionObj(this);
         if (go != null)

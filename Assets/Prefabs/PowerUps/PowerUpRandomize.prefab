@@ -223,3 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb94a3373962fee4fab093c9a92d5f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpID: Full Random

@@ -223,5 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19a8223d9ebe7d4fad6956e6cfd884a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpID: Health
   newRate: 0.4285713
   length: 7

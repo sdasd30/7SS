@@ -223,3 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab224a51e0c6224881e1207f92d8243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUpID: Shuffle

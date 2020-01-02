@@ -6,11 +6,12 @@ using UnityEngine;
 public class SaveObject
 {
     public List<string> savAchivementsDone;
+    public Dictionary<string, Dictionary<string, int>> savMaxEnemyWeaponKills;
     public Dictionary<string, int> savMaxEnemykills;
     public Dictionary<string, int> savMaxWeaponKills;
     public Dictionary<string, int> savMaxWeaponScores;
 
-    public Dictionary<string, int> savLifetimeEnemykills;
+    public Dictionary<string, Dictionary<string, int>> savLifetimeEnemyKills;
     public Dictionary<string, int> savLifetimeWeaponKills;
     public Dictionary<string, int> savLifetimeWeaponScores;
 
@@ -18,6 +19,8 @@ public class SaveObject
     public Dictionary<string, int> savLifetimeWeaponSwitches;
 
     public Dictionary<string, int> savMaxWeaponUsedAtLevel;
+
+    public Dictionary<string, int> savMaxPowerups;
 
     public int savmaxScore;
     public int savmaxKills;
