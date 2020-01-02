@@ -86,11 +86,35 @@ public class StatScreenManager : MonoBehaviour
                     continue;
                 }
                 GameObject newCard = createCard(g);
+                AddCardPrefix(newCard);
                 m_poolObjs.Add(newCard);
-                newCard.transform.SetParent(PoolTransform);
+                insertCard(newCard.transform, PoolTransform, newCard.gameObject.name);
                 PoolTransform.sizeDelta = new Vector2(PoolTransform.rect.width, (32 + (Mathf.Ceil(m_poolObjs.Count / 7f)) * 136));
             }
         }
+    }
+    private void insertCard(Transform child, Transform newParent, string name)
+    {
+        for (int i = 0; i < newParent.childCount; i++)
+        {
+            if (name.CompareTo(newParent.GetChild(i).gameObject.name) < 0)
+            {
+                child.SetParent(newParent);
+                child.SetSiblingIndex(i);
+                return;
+            }
+        }
+        child.SetParent(newParent);
+    }
+    private void AddCardPrefix(GameObject go)
+    {
+        if (go.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(go.GetComponent<Achievement>(), transform))
+        {
+            go.name = "9" + go.GetComponent<StatCard>().Weapon.GetComponent<WeaponStats>().name;
+            return;
+        }
+        int i = go.GetComponent<StatCard>().Weapon.GetComponent<WeaponStats>().Cost + 1;
+        go.name = i + go.GetComponent<StatCard>().Weapon.GetComponent<WeaponStats>().name;
     }
     private GameObject createCard(GameObject wi)
     {
