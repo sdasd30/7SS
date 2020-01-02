@@ -102,7 +102,7 @@ MonoBehaviour:
   spread: 15
   firerate: 250
   damage: 3
-  speed: 5
+  speed: 10
   duration: 0.15
   shots: 1
   pierce: 2

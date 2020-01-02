@@ -50,6 +50,7 @@ public class CardUIManager : MonoBehaviour
         foreach (GameObject go in m_CardManager.CurrentHand)
         {
             GameObject newCard = createCard(go);
+            AddCardPrefix(newCard);
             newCard.GetComponent<Card>().InHand = true;
             m_handObjs.Add(newCard);
             newCard.transform.SetParent(HandTransform);
@@ -67,14 +68,16 @@ public class CardUIManager : MonoBehaviour
                     continue;
                 if (g.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(g.GetComponent<Achievement>(),transform)) {
                     GameObject lockCard = createLockCard(g.GetComponent<Achievement>());
+                    AddCardPrefix(lockCard);
                     m_poolObjs.Add(lockCard);
-                    lockCard.transform.SetParent(PoolTransform);
+                    insertCard(lockCard.transform, PoolTransform, lockCard.gameObject.name);
                     PoolTransform.sizeDelta = new Vector2(PoolTransform.rect.width, (32 + (Mathf.Ceil(m_poolObjs.Count / 7f)) * 136));
                     continue;
                 }
                 GameObject newCard = createCard(g);
+                AddCardPrefix(newCard);
                 m_poolObjs.Add(newCard);
-                newCard.transform.SetParent(PoolTransform);
+                insertCard(newCard.transform, PoolTransform, newCard.gameObject.name);
                 PoolTransform.sizeDelta = new Vector2 (PoolTransform.rect.width, (32 + (Mathf.Ceil(m_poolObjs.Count / 7f)) * 136));
             }
         }
@@ -88,6 +91,16 @@ public class CardUIManager : MonoBehaviour
         }
         return false;
     }
+    private void AddCardPrefix(GameObject go)
+    {
+        if (go.GetComponent<Achievement>() && !m_AchievementManager.CheckIfAchievementIsMet(go.GetComponent<Achievement>(), transform))
+        {
+            go.name = "9" + go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().name;
+            return;
+        }
+        int i = go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().Cost + 1;
+        go.name = i + go.GetComponent<Card>().Weapon.GetComponent<WeaponStats>().name;
+    }
     public void SwapCard(Card c)
     {
         if (c.InHand)
@@ -95,8 +108,8 @@ public class CardUIManager : MonoBehaviour
             
             m_handObjs.Remove(c.gameObject);
             m_poolObjs.Add(c.gameObject);
-            c.transform.SetParent(PoolTransform);
-            
+
+            insertCard(c.transform, PoolTransform, c.gameObject.name);
         } else
         {
             if (m_handObjs.Count >= 7)
@@ -104,11 +117,24 @@ public class CardUIManager : MonoBehaviour
             m_poolObjs.Remove(c.gameObject);
             m_handObjs.Add(c.gameObject);
             c.transform.SetParent(HandTransform);
+            
         }
         c.InHand = !c.InHand;
         UpdateButton(CheckValid());
     }
-
+    
+    private void insertCard( Transform child, Transform newParent, string name)
+    {
+        for (int i = 0; i < newParent.childCount; i++)
+        {
+            if (name.CompareTo(newParent.GetChild(i).gameObject.name) < 0 ) {
+                child.SetParent(newParent);
+                child.SetSiblingIndex(i);
+                return;
+            }
+        }
+        child.SetParent(newParent);
+    }
     private bool CheckValid()
     {
         bool valid = true;

@@ -238,7 +238,8 @@ public class BasicMovement : MonoBehaviour {
         poweredUp = true;
         powerUpCooldown = seconds;
         doubleJumpAvailable = true;
-        FindObjectOfType<PowerUpUI>().CreateJump();
+        if (FindObjectOfType<PowerUpUI>() != null)
+            FindObjectOfType<PowerUpUI>().CreateJump();
     }
 
     public float returnPowerUpCooling()
