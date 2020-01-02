@@ -126,7 +126,7 @@ public class StatTracker : MonoBehaviour
         LifetimeEnemyKills = new Dictionary<string, Dictionary<string, int>>();
         LifetimeWeaponKills = new Dictionary<string, int>();
         LifetimeWeaponScores = new Dictionary<string, int>();
-
+            
         MaxWeaponSwitches = new Dictionary<string, int>();
         CurrentWeaponSwitches = new Dictionary<string, int>();
         LifetimeWeaponSwitches = new Dictionary<string, int>();

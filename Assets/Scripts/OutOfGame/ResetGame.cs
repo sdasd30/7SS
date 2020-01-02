@@ -29,7 +29,7 @@ public class ResetGame : MonoBehaviour
 
         else
         {
-            Debug.LogError("Deletion Failed! Maybe you need to create a savegame first?");
+            Debug.LogWarning("Deletion Failed! Maybe you need to create a savegame first?");
         }
     }
 
