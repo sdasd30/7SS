@@ -21,6 +21,7 @@ public class StatTracker : MonoBehaviour
     public Dictionary<string, int> LifetimeWeaponScores;
 
     public Dictionary<string, int> MaxWeaponSwitches;
+    public Dictionary<string, int> CurrentWeaponSwitches;
     public Dictionary<string, int> LifetimeWeaponSwitches;
 
     public Dictionary<string, int> MaxWeaponUsedAtLevel;
@@ -92,7 +93,9 @@ public class StatTracker : MonoBehaviour
             return;
         currentSwitches++;
         maxSwitches = Mathf.Max(maxSwitches, currentSwitches);
-        incrementOrCreate(MaxWeaponSwitches, weapon.name, 1);
+        
+        incrementOrCreate(CurrentWeaponSwitches, weapon.name, 1);
+        maxOrCreate(MaxWeaponSwitches, weapon.name, CurrentWeaponSwitches[weapon.name]);
         incrementOrCreate(LifetimeWeaponSwitches, weapon.name, 1);
         maxOrCreate(MaxWeaponUsedAtLevel, weapon.name, FindObjectOfType<Difficulty>().getDifficulty());
     }
@@ -125,6 +128,7 @@ public class StatTracker : MonoBehaviour
         LifetimeWeaponScores = new Dictionary<string, int>();
 
         MaxWeaponSwitches = new Dictionary<string, int>();
+        CurrentWeaponSwitches = new Dictionary<string, int>();
         LifetimeWeaponSwitches = new Dictionary<string, int>();
 
         MaxWeaponUsedAtLevel = new Dictionary<string, int>();
@@ -188,6 +192,7 @@ public class StatTracker : MonoBehaviour
         CurrentWeaponKills = new Dictionary<string, int>();
         CurrentWeaponScores = new Dictionary<string, int>();
         CurrentPowerUps = new Dictionary<string, int>();
+        CurrentWeaponSwitches = new Dictionary<string, int>();
         currentScore = 0;
         currentKills = 0;
         currentSwitches = 0;
@@ -215,6 +220,26 @@ public class StatTracker : MonoBehaviour
         foreach (int i in list.Values)
             n = Mathf.Max(n, i);
         return n;
+    }
+    public int GetVal(Dictionary<string, int> list, string key)
+    {
+        if (!list.ContainsKey(key))
+        {
+            list[key] = 0;
+            return 0;
+        }
+        return list[key];
+    }
+    public string MaxValString(Dictionary<string, int> list)
+    {
+        int n = 0;
+        string ret = "";
+        foreach (string s in list.Keys)
+        {
+            n = Mathf.Max(n, list[s]);
+            ret = s;
+        }
+        return ret;
     }
     public SaveObject TransferToSaveObject()
     {

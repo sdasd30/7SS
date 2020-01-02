@@ -55,9 +55,9 @@ public class LevelSelectUI : MonoBehaviour
     {
         int numSelections = AllLevelCards.Count;
         float sel = (1.0f / numSelections);
-        int cardID = Mathf.RoundToInt(scroll.x / sel);
+        int cardID = Mathf.FloorToInt(scroll.x / sel);
         //Debug.Log(scroll.x + " : " + cardID + " : " + numSelections + " : " + (scroll.x / sel));
-        return cardID;
+        return Mathf.Max(0,Mathf.Min(numSelections - 1, cardID));
     }
     private void HighlightCard(LevelCard lc)
     {

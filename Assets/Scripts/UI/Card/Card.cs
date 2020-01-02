@@ -62,4 +62,6 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (UIManager != null && m_description != "")
             UIManager.ExtraMessage.text = "";
     }
+
+
 }

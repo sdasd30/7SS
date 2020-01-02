@@ -9,7 +9,7 @@ public class StatScreen : MonoBehaviour
     // Start is called before the first frame update
     public void LoadStatScreen()
     {
-        SceneManager.LoadScene("Statistics");
+        SceneManager.LoadScene("StatScreen");
     }
 
 }
