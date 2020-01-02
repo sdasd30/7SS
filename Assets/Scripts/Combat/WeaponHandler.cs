@@ -126,13 +126,33 @@ public class WeaponHandler : MonoBehaviour {
         }
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
         List<GameObject> ptWeapons = new List<GameObject>();
+
+
         foreach (GameObject weapon in loadedObjs)
         {
-            if (weapon.GetComponent<WeaponStats>().Cost == 5) ptWeapons.Add(weapon);
+            if (weapon.GetComponent<WeaponStats>().Cost == 5)
+            {
+                ptWeapons.Add(weapon);
+            }
         }
+
+        List<GameObject> possibleWeapons = new List<GameObject>();
+        foreach (GameObject item in ptWeapons)
+        {
+            if (item.GetComponent<Achievement>() != null)
+            {
+                if (item.GetComponent<Achievement>().CheckAchievementMet())
+                {
+                    possibleWeapons.Add(item);
+                }
+            }
+            else
+                possibleWeapons.Add(item);
+        }
+
         GameObject temp = currWeapon.gameObject;
         GameObject.Destroy(currWeapon.gameObject);
-        GameObject newWeapon = ptWeapons[Random.Range(0, ptWeapons.Count)];
+        GameObject newWeapon = possibleWeapons[Random.Range(0, possibleWeapons.Count)];
         currWeapon = GameObject.Instantiate(newWeapon, temp.transform.position, Quaternion.identity);
         currWeapon.transform.parent = transform;
         currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
@@ -155,12 +175,27 @@ public class WeaponHandler : MonoBehaviour {
 
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
         GameObject loadedWeapon;
+        List<GameObject> possibleWeapons = new List<GameObject>();
+
+        foreach (GameObject item in loadedObjs)
+        {
+            if (item.GetComponent<Achievement>() != null)
+            {
+                if (item.GetComponent<Achievement>().CheckAchievementMet())
+                {
+                    possibleWeapons.Add(item);
+                }
+            }
+            else
+                possibleWeapons.Add(item);
+        }
+
         for (int i = 0; i < weapons.Count; i++)
         {
-            loadedWeapon = (GameObject)loadedObjs[Random.Range(0, loadedObjs.Length)];
+            loadedWeapon = (GameObject)possibleWeapons[Random.Range(0, possibleWeapons.Count)];
             while (weapons.Contains(loadedWeapon))
             {
-                loadedWeapon = (GameObject)loadedObjs[Random.Range(0, loadedObjs.Length)];
+                loadedWeapon = (GameObject)possibleWeapons[Random.Range(0, possibleWeapons.Count)];
             }
             weapons[i] = loadedWeapon;
         }

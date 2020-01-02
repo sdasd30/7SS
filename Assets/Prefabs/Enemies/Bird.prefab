@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 6825065320747222231}
   - component: {fileID: 4018753783026640028}
   - component: {fileID: 3987923408441297627}
+  - component: {fileID: 9184550821582185578}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -420,3 +422,19 @@ MonoBehaviour:
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
+--- !u!114 &9184550821582185578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825065320747222234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61128054a209244099ef1244b908d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathBarrier: -99
+  fallPenalty: 0
+  important: 0
+  returnPoint: {x: 0, y: 0, z: 0}

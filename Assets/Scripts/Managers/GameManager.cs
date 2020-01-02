@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         WriteSaveToFile();
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<CardManager>().resetWeapons();
     }
 
     public void WeaponSelection()

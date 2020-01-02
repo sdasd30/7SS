@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1098525774227181217}
   - component: {fileID: 8600114224874290489}
   - component: {fileID: 8842567054819315862}
+  - component: {fileID: 8220098296421967965}
   m_Layer: 0
   m_Name: Ground_Bomb
   m_TagString: Untagged
@@ -314,3 +315,19 @@ MonoBehaviour:
     UseExcludeCategory: 0
     ExcludeCategory: 0
     InheritFaction: 1
+--- !u!114 &8220098296421967965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842567054819315863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61128054a209244099ef1244b908d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathBarrier: -99
+  fallPenalty: 0
+  important: 0
+  returnPoint: {x: 0, y: 0, z: 0}
