@@ -101,7 +101,7 @@ MonoBehaviour:
   name: Flame Thrower
   spread: 18
   firerate: 20
-  damage: 0.15
+  damage: 0.125
   speed: 8
   duration: 1.25
   shots: 2
@@ -114,6 +114,7 @@ MonoBehaviour:
   Icon: {fileID: -6723459420062227548, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 3
   auto: 1
+  deflector: 0
 --- !u!114 &4297970527236253600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

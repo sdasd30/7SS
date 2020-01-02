@@ -101,7 +101,7 @@ MonoBehaviour:
   bullet: {fileID: 8415522688561758504, guid: 34225518ea8ed9c4eb0ce3acd5c2521f, type: 3}
   name: Sentry
   spread: 0
-  firerate: 2000
+  firerate: 2500
   damage: 1
   speed: 20
   duration: 4

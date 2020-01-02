@@ -99,13 +99,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8877115737268123830, guid: eb012c5954bf4904194c86af5c3aae07, type: 3}
   name: Musket
-  spread: 6
+  spread: 4
   firerate: 2500
   damage: 5
-  speed: 15
+  speed: 20
   duration: 3
   shots: 1
-  pierce: 2
+  pierce: 3
   knockbackMult: 20
   OnDeathCreate: []
   GravityScale: 0

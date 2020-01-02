@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2766953384402458152, guid: 612de060264501e4186dec161a264b00, type: 3}
-  name: Laser Sword
+  name: Magic Sword
   spread: 20
   firerate: 500
   damage: 2

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1284245335966166247, guid: c50528b1ea8d83640bce4d5c2ea3d6ab, type: 3}
+  bullet: {fileID: 543158920998827678, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
   name: Medkit
   spread: 0
   firerate: 500
