@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6928760236982509371}
   - component: {fileID: 6928760236982509368}
   - component: {fileID: 2827200992576866306}
+  - component: {fileID: 2363665344321720251}
   m_Layer: 0
   m_Name: CrossBow
   m_TagString: Untagged
@@ -113,6 +114,7 @@ MonoBehaviour:
   Icon: {fileID: 314187233492111961, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 1
   auto: 0
+  deflector: 0
 --- !u!114 &6928760236982509368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +140,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &2363665344321720251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928760236982509375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Fast Castle
+  Description: 
+  typeOfAchievement: 5
+  value: 5
+  WithObject: {fileID: 227921994661373693, guid: f0f3e0083f204f843aca5557534e86f0,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

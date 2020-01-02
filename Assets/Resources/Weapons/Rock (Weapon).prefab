@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3890615958076796447}
   - component: {fileID: 3890615958076796444}
   - component: {fileID: 8279274672004970790}
+  - component: {fileID: -5374807829196119590}
   m_Layer: 0
   m_Name: Rock (Weapon)
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 2e6b8c228eb9dde4daf6a9a0cd5dda3a, type: 3}
   Cost: -1
   auto: 0
+  deflector: 0
 --- !u!114 &3890615958076796444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-5374807829196119590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890615958076796443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: With one stone
+  Description: 
+  typeOfAchievement: 3
+  value: 2
+  WithObject: {fileID: 6825065320747222234, guid: d17612e56d146b646a2913ae967c9c95,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 1

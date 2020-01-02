@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3702042750767309854}
   - component: {fileID: 3702042750767309853}
   - component: {fileID: 8393468009348805415}
+  - component: {fileID: 2080645482279133519}
   m_Layer: 0
   m_Name: CrabKing
   m_TagString: Untagged
@@ -149,3 +150,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &2080645482279133519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702042750767309850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Haute Cuisine
+  Description: 
+  typeOfAchievement: 3
+  value: 3
+  WithObject: {fileID: 4749055537247360727, guid: 3b24ff51c19af5b42ac093304faddb04,
+    type: 3}
+  WithObject2: {fileID: 4297970527236253607, guid: e79a28933c3e47f48b3a8ed2888b8c9e,
+    type: 3}
+  InOneLife: 1

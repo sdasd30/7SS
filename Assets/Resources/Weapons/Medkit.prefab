@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7797646456638571713}
   - component: {fileID: 7797646456638571714}
   - component: {fileID: 3111165767213257720}
+  - component: {fileID: -7079347243340728975}
   m_Layer: 0
   m_Name: Medkit
   m_TagString: Untagged
@@ -149,3 +150,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &-7079347243340728975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797646456638571717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Instant M.D
+  Description: 
+  typeOfAchievement: 5
+  value: 5
+  WithObject: {fileID: 499474714480864500, guid: b388838aa0e9fd14ca62b1c9a544a45c,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

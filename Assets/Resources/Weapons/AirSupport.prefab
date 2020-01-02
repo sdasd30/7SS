@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8335151630709692796}
   - component: {fileID: 8335151630709692799}
   - component: {fileID: 3798701435477331525}
+  - component: {fileID: -7924671757124735703}
   m_Layer: 0
   m_Name: AirSupport
   m_TagString: Untagged
@@ -122,6 +123,7 @@ MonoBehaviour:
   Icon: {fileID: -4106068816247126713, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: 3
   auto: 0
+  deflector: 0
 --- !u!114 &8335151630709692799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-7924671757124735703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335151630709692792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: On a Killstreak
+  Description: 
+  typeOfAchievement: 3
+  value: 7
+  WithObject: {fileID: 2715755458628834803, guid: 3304972ecd4d4f24186f512053fdb28d,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 1

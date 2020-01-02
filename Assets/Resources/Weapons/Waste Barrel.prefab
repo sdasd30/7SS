@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3214384668466199644}
   - component: {fileID: 3214384668466199647}
   - component: {fileID: 7746212491046103909}
+  - component: {fileID: 1796073411548720323}
   m_Layer: 0
   m_Name: Waste Barrel
   m_TagString: Untagged
@@ -105,13 +106,16 @@ MonoBehaviour:
   speed: 8
   duration: 2
   shots: 2
+  pierce: 0
   knockbackMult: 5
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0.05
   Icon: {fileID: -1682704966425736533, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: -1
   auto: 1
+  deflector: 0
 --- !u!114 &3214384668466199647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &1796073411548720323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214384668466199640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Questionable Ethics
+  Description: 
+  typeOfAchievement: 1
+  value: 15
+  WithObject: {fileID: 1720769669559322421, guid: 7bcc3c3c181d3bb49bdadf9be00f011a,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

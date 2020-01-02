@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7616695279003037451}
   - component: {fileID: 7616695279003037448}
   - component: {fileID: 3361984311564859442}
+  - component: {fileID: -1665399555998302949}
   m_Layer: 0
   m_Name: Barrage
   m_TagString: Untagged
@@ -157,3 +158,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &-1665399555998302949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616695279003037455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Soup Can Buriel
+  Description: 
+  typeOfAchievement: 3
+  value: 20
+  WithObject: {fileID: 8842567054819315863, guid: 4a8b25a7b6eb576408a59f6f19b96a1c,
+    type: 3}
+  WithObject2: {fileID: 234205443385772468, guid: 6d376fa1c691fd640bb340ef9c6f23dd,
+    type: 3}
+  InOneLife: 0

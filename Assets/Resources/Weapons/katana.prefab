@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1317845421882228808}
   - component: {fileID: 1317845421882228811}
   - component: {fileID: 6148037493002786673}
+  - component: {fileID: 7501177704022818847}
   m_Layer: 0
-  m_Name: Katana
+  m_Name: katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,3 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &7501177704022818847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317845421882228812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Studied the Blade
+  Description: 
+  typeOfAchievement: 2
+  value: 10
+  WithObject: {fileID: 1115220257158614432, guid: aa03e9f55f9995b459caeedaa56b597f,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

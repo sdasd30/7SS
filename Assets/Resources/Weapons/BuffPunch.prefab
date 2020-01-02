@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5451205341026801973}
   - component: {fileID: 5451205341026801974}
   - component: {fileID: 917969662392782348}
+  - component: {fileID: 4341510827918815259}
   m_Layer: 0
   m_Name: BuffPunch
   m_TagString: Untagged
@@ -141,3 +142,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &4341510827918815259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451205341026801969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Fist of Steel
+  Description: 
+  typeOfAchievement: 3
+  value: 1
+  WithObject: {fileID: 2366366923679879817, guid: 07a2810d2fd744e45b84d05d22e78b32,
+    type: 3}
+  WithObject2: {fileID: 7366613531129294203, guid: 10067204713799748b147917d98ab5e9,
+    type: 3}
+  InOneLife: 0

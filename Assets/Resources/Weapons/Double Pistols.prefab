@@ -154,10 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: You Murderer
+  DisplayName: Pistol Round Ace
   Description: 
   typeOfAchievement: 1
-  value: 3
+  value: 5
   WithObject: {fileID: 2834987892926104134, guid: 9315bae6f4643604893bc237ff85d58e,
     type: 3}
   WithObject2: {fileID: 0}

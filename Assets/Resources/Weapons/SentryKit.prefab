@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1560693041685880858}
   - component: {fileID: 1560693041685880857}
   - component: {fileID: 5959222069345449763}
+  - component: {fileID: 1722420027759947905}
   m_Layer: 0
   m_Name: SentryKit
   m_TagString: Untagged
@@ -149,3 +150,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &1722420027759947905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560693041685880862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Big Mean Mother Hubbard
+  Description: 
+  typeOfAchievement: 1
+  value: 10
+  WithObject: {fileID: 1935454864474655953, guid: 01797ec6b25db9a4bad7a1a57ba55afe,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 1

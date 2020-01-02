@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AchievementType {SCORE,WEAPON_KILLS,LEVEL,ENEMY_KILLED,WEAPON_SWITCHES}
+public enum AchievementType {SCORE,WEAPON_KILLS,LEVEL,ENEMY_KILLED,WEAPON_SWITCHES, POWER_UP}
 public class Achievement : MonoBehaviour
 {
     public string DisplayName;
@@ -36,6 +36,8 @@ public class Achievement : MonoBehaviour
                 s = s + "with the " + getWeaponName(WithObject) + " ";
             if (InOneLife)
                 s += "in one life";
+            else
+                s += "in total";
         } else if (typeOfAchievement == AchievementType.SCORE)
         {
             s += "Score " + value + " points ";
@@ -43,16 +45,18 @@ public class Achievement : MonoBehaviour
                 s = s + "with the " + getWeaponName(WithObject) + " ";
             if (InOneLife)
                 s += "in one life";
+            else
+                s += "in total";
         }
         else if (typeOfAchievement == AchievementType.ENEMY_KILLED)
         {
-            s += "Destroy " + value;
+            s += "Destroy " + value + " ";
             if (WithObject != null)
             {
                 if (value > 1)
                     s += WithObject.GetComponent<Score>().TrackName + "s ";
                 else
-                    s += WithObject.GetComponent<Score>().TrackName;
+                    s += WithObject.GetComponent<Score>().TrackName + " ";
             }
             else
                 s += "enemies ";
@@ -60,6 +64,8 @@ public class Achievement : MonoBehaviour
                 s += "with the " + getWeaponName(WithObject2) + " ";
             if (InOneLife)
                 s += "in one life";
+            else
+                s += "in total";
         }
         else if (typeOfAchievement == AchievementType.WEAPON_SWITCHES)
         {
@@ -69,6 +75,19 @@ public class Achievement : MonoBehaviour
                 s = "Switch weapons " + value + " times ";
             if (InOneLife)
                 s += "in one life";
+            else
+                s += "in total";
+        }
+        else if (typeOfAchievement == AchievementType.POWER_UP)
+        {
+            if (WithObject != null)
+                s = "Pick up the " + WithObject.GetComponent<PowerUpBase>().PowerUpID + " item " + value + " times in one life";
+        }
+        else if (typeOfAchievement == AchievementType.LEVEL)
+        {
+            s += "Reach Level " + value + " ";
+            if (WithObject != null)
+                s += "with the " + getWeaponName(WithObject);       
         }
         return s;
     }
@@ -88,7 +107,7 @@ public class Achievement : MonoBehaviour
         if (WithObject != null) {
             if (WithObject.GetComponent<Score>() != null)
                 withName = WithObject.GetComponent<Score>().TrackName;
-            else
+            else if (WithObject.GetComponent<WeaponStats>() != null)
                 withName = WithObject.GetComponent<WeaponStats>().name;
         }
         if (typeOfAchievement == AchievementType.SCORE)
@@ -203,6 +222,17 @@ public class Achievement : MonoBehaviour
                     else
                         return st.IsAchievementMet(st.LifetimeEnemyKills,withName, (int)value);
                 }
+            }
+        }
+        else if (typeOfAchievement == AchievementType.POWER_UP)
+        {
+            if (WithObject == null)
+            {
+                return false;
+            }
+            else
+            {
+                 return st.IsAchievementMet(st.MaxPowerUps, WithObject.GetComponent<PowerUpBase>().PowerUpID, (int)value);
             }
         }
         return false;

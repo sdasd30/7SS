@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 680740020207793190}
   - component: {fileID: 680740020207793187}
   - component: {fileID: 5650227091295970074}
+  - component: {fileID: -3823246994461611142}
   m_Layer: 0
   m_Name: ScienceGrenade
   m_TagString: Untagged
@@ -121,6 +122,7 @@ MonoBehaviour:
   Icon: {fileID: -7864609983425001368, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 3
   auto: 0
+  deflector: 0
 --- !u!114 &5650227091295970074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +135,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-3823246994461611142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680740020207793191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: What Tech Tree?
+  Description: 
+  typeOfAchievement: 3
+  value: 1
+  WithObject: {fileID: 6303718734239560748, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+    type: 3}
+  WithObject2: {fileID: 1357241947132668247, guid: a021f5c9471c48845ba703499ca2ceed,
+    type: 3}
+  InOneLife: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5751796322824043748}
   - component: {fileID: 5751796322824043751}
   - component: {fileID: 633220443348642781}
+  - component: {fileID: 4033072722697274589}
   m_Layer: 0
   m_Name: Trebuchet
   m_TagString: Untagged
@@ -141,3 +142,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &4033072722697274589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5751796322824043744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Catapults Hate him
+  Description: 
+  typeOfAchievement: 3
+  value: 2
+  WithObject: {fileID: 6825065320747222234, guid: d17612e56d146b646a2913ae967c9c95,
+    type: 3}
+  WithObject2: {fileID: 3890615958076796443, guid: 933b7bfb5dae96648935979d02e68f93,
+    type: 3}
+  InOneLife: 1

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1357241947132668243}
   - component: {fileID: 1357241947132668240}
   - component: {fileID: 6182948295217167978}
+  - component: {fileID: 4217832553831841312}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   Icon: {fileID: 3285001444667275259, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 0
   auto: 0
+  deflector: 0
 --- !u!114 &1357241947132668240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +141,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &4217832553831841312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357241947132668247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Getting Started
+  Description: 
+  typeOfAchievement: 2
+  value: 3
+  WithObject: {fileID: 0}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

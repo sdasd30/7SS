@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1000860736852575024}
   - component: {fileID: 1000860736852575027}
   - component: {fileID: 5402102262919549961}
+  - component: {fileID: 463384554972827878}
   m_Layer: 0
   m_Name: Mines (Weapon)
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3628989173364585282, guid: 363d0869502ecae4e954b8c05a8bdfcd, type: 3}
-  name: Mines
+  name: Decoy
   spread: 0
   firerate: 1000
   damage: 1
@@ -149,3 +150,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &463384554972827878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000860736852575028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Crudely Drawn Buddy
+  Description: 
+  typeOfAchievement: 1
+  value: 20
+  WithObject: {fileID: 113342055392346226, guid: 56095786ac6ee5d499079fc9243eb366,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 1

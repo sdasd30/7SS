@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4399999326548224189}
   - component: {fileID: 4399999326548224190}
   - component: {fileID: 8796703217384816516}
+  - component: {fileID: 2295826961832136617}
   m_Layer: 0
   m_Name: Pepperbox
   m_TagString: Untagged
@@ -141,3 +142,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasParent: 0
+--- !u!114 &2295826961832136617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399999326548224185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Back to Washington times
+  Description: 
+  typeOfAchievement: 1
+  value: 2
+  WithObject: {fileID: 9170305793942443870, guid: a14124d78b2e4914c9a20d4a9b37c71e,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 1

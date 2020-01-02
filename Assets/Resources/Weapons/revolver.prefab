@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7115681507902628676}
   - component: {fileID: 7115681507902628679}
   - component: {fileID: 2712328381563057277}
+  - component: {fileID: -3322654708210447826}
   m_Layer: 0
   m_Name: revolver
   m_TagString: Untagged
@@ -108,10 +109,12 @@ MonoBehaviour:
   knockbackMult: 25
   OnDeathCreate: []
   GravityScale: 0
+  timeToGravity: 0
   RecoilDamage: 0
   Icon: {fileID: -41900689054536152, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 0
   auto: 0
+  deflector: 0
 --- !u!114 &7115681507902628679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +140,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-3322654708210447826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115681507902628672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: You're Pretty Good
+  Description: 
+  typeOfAchievement: 2
+  value: 7
+  WithObject: {fileID: 0}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

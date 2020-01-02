@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8203464738980530624}
   - component: {fileID: 8203464738980530627}
   - component: {fileID: 3946091553113251577}
+  - component: {fileID: -6241929073132579595}
   m_Layer: 0
   m_Name: Robobee Hive
   m_TagString: Untagged
@@ -122,6 +123,7 @@ MonoBehaviour:
   Icon: {fileID: -4434019508940067513, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: 5
   auto: 1
+  deflector: 0
 --- !u!114 &8203464738980530627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-6241929073132579595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203464738980530628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Nanomachines Son
+  Description: 
+  typeOfAchievement: 1
+  value: 50
+  WithObject: {fileID: 1317845421882228812, guid: be177182f6488bb488fd1a3aecdc4b9d,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

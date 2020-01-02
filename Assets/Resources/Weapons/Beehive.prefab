@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2525316637409841417}
   - component: {fileID: 2525316637409841418}
   - component: {fileID: 7210369593673385520}
+  - component: {fileID: -1351667869280622792}
   m_Layer: 0
   m_Name: Beehive
   m_TagString: Untagged
@@ -122,6 +123,7 @@ MonoBehaviour:
   Icon: {fileID: 6038820150044729495, guid: 917adc5b74efb5b499b83d9ff90c8f9e, type: 3}
   Cost: 3
   auto: 1
+  deflector: 0
 --- !u!114 &2525316637409841418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &-1351667869280622792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2525316637409841421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ya Like Jazz
+  Description: 
+  typeOfAchievement: 1
+  value: 20
+  WithObject: {fileID: 2371741568061958327, guid: 06e0911f98231094aa94e31f2640e3e9,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0
