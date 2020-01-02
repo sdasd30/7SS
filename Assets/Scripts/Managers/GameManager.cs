@@ -74,17 +74,20 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         WriteSaveToFile();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void WeaponSelection()
     {
         WriteSaveToFile();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("CardSelection");
     }
     public void TitleScreen()
     {
         WriteSaveToFile();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("TempTitle");
     }
     // Update is called once per frame

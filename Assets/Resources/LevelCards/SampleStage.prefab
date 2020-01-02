@@ -10,22 +10,22 @@ PrefabInstance:
     - target: {fileID: 1198263028829948065, guid: dbac5ade558b6974a8be5bdc8a60b64b,
         type: 3}
       propertyPath: m_Name
-      value: LevelCard Variant
+      value: SampleStage
       objectReference: {fileID: 0}
     - target: {fileID: 5732531111394773608, guid: dbac5ade558b6974a8be5bdc8a60b64b,
         type: 3}
       propertyPath: NameOfLevel
-      value: Testing Ground
+      value: Hill
       objectReference: {fileID: 0}
     - target: {fileID: 5732531111394773608, guid: dbac5ade558b6974a8be5bdc8a60b64b,
         type: 3}
       propertyPath: Description
-      value: Used only for testing new features
+      value: Watch out for the Bottomless Pits
       objectReference: {fileID: 0}
     - target: {fileID: 5732531111394773608, guid: dbac5ade558b6974a8be5bdc8a60b64b,
         type: 3}
       propertyPath: AssociatedSceneName
-      value: TestingGround
+      value: Hill
       objectReference: {fileID: 0}
     - target: {fileID: 5820489552130538961, guid: dbac5ade558b6974a8be5bdc8a60b64b,
         type: 3}

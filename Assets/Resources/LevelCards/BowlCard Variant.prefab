@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 3878458881813659985, guid: 1b26e593fec4f4144962397915f73fb3,
         type: 3}
       propertyPath: Description
-      value: AnotherTestStage
+      value: Training Grounds
       objectReference: {fileID: 0}
     - target: {fileID: 3878458881813659985, guid: 1b26e593fec4f4144962397915f73fb3,
         type: 3}
@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 7709057011641303960, guid: 1b26e593fec4f4144962397915f73fb3,
         type: 3}
       propertyPath: m_Name
-      value: BowlCard
+      value: BowlCard Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b26e593fec4f4144962397915f73fb3, type: 3}
