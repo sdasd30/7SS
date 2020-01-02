@@ -67,4 +67,10 @@ public class AchievementManager : MonoBehaviour
             return met;
         }
     }
+
+    public void ResetAchievements()
+    {
+        AchievementsAlreadyUnlocked.Clear();
+    }
+
 }

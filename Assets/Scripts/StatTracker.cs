@@ -110,7 +110,7 @@ public class StatTracker : MonoBehaviour
         initFromClean();
     }
 
-    private void initFromClean()
+    public void initFromClean()
     {
         CurrentEnemykills = new Dictionary<string, Dictionary<string,int>>();
         CurrentWeaponKills = new Dictionary<string, int>();
@@ -309,5 +309,11 @@ public class StatTracker : MonoBehaviour
         else
             d[key] = new Dictionary<string, int>();
         return false;
+    }
+
+
+    public void resetAll()
+    {
+
     }
 }
