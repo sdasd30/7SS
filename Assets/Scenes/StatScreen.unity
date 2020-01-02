@@ -361,5 +361,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 8833001105417322315, guid: ab1319fc1c3774f4b8cb737ca113bcbf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833001105417322315, guid: ab1319fc1c3774f4b8cb737ca113bcbf,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1319fc1c3774f4b8cb737ca113bcbf, type: 3}

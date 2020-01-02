@@ -7,6 +7,7 @@ public class AchievementManager : MonoBehaviour
     private static AchievementManager m_instance;
     public GameObject UnlockNotificationPrefab;
     public List<string> AchievementsAlreadyUnlocked;
+    public bool UnlockEverythingMode = false;
     void Awake()
     {
         if (m_instance == null)
@@ -45,6 +46,8 @@ public class AchievementManager : MonoBehaviour
         //Debug.Log(AchievementsAlreadyUnlocked);
         //Debug.Log(a.DisplayName);
         //Debug.Log(AchievementsAlreadyUnlocked[0]);
+        if (UnlockEverythingMode)
+            return true;
         if (AchievementsAlreadyUnlocked.Contains(a.DisplayName))
         {
             return a;

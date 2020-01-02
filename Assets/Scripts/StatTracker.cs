@@ -236,8 +236,12 @@ public class StatTracker : MonoBehaviour
         string ret = "";
         foreach (string s in list.Keys)
         {
-            n = Mathf.Max(n, list[s]);
-            ret = s;
+            int newVal = list[s];
+            if (newVal > n)
+            {
+                n = newVal;
+                ret = s;
+            }
         }
         return ret;
     }

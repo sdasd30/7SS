@@ -55,11 +55,11 @@ public class StatScreenManager : MonoBehaviour
     public void ShowOverallStats()
     {
         string disp = "";
-        disp += "Most Enemies Defeated: " + m_st.maxKills + " | Most Weapon Switches: " + m_st.maxSwitches + "\n";
-        disp += "Highest Score: " + m_st.maxScore  + " | Most Used Weapon: " + m_st.MaxValString(m_st.LifetimeWeaponKills) + "\n";
-        disp += "Total Enemies Defeated: " + m_st.SumStat(m_st.LifetimeEnemyKills) + "\n";
-        disp += "Most Weapon Switches: " + m_st.maxSwitches + "\n";
-        disp += "Highest Level: " + m_st.MaxVal(m_st.MaxWeaponUsedAtLevel) + "\n";
+        disp += "Most Enemies Defeated : " + m_st.maxKills + "  \t \t \t| Most Weapon Kills (one life): " + m_st.MaxValString(m_st.MaxWeaponKills) + " : " + m_st.MaxVal(m_st.MaxWeaponKills) + "\n";
+        disp += "Total Enemies Defeated : " + m_st.SumStat(m_st.LifetimeEnemyKills) + "   \t \t \t| Most Weapon Kills (all time): " + m_st.MaxValString(m_st.LifetimeWeaponKills) + " : " + m_st.MaxVal(m_st.LifetimeWeaponKills) + "\n";
+        disp += "Highest Score : " + m_st.maxScore + "     \t \t \t \t \t \t| Highest Score Weapon: " + m_st.MaxValString(m_st.MaxWeaponScores) + " : " + m_st.MaxVal(m_st.MaxWeaponScores) + " points \n";
+        disp += "Most Switches (one life) : " + m_st.maxSwitches + "   \t \t \t| Most Used Weapon: " + m_st.MaxValString(m_st.LifetimeWeaponSwitches) + " : " + m_st.MaxVal(m_st.LifetimeWeaponSwitches) + " times \n";
+        disp += "Highest Level : " + m_st.MaxVal(m_st.MaxWeaponUsedAtLevel) + "\n";
         StatDisplay.text = disp;
     }
 
@@ -67,9 +67,9 @@ public class StatScreenManager : MonoBehaviour
     {
         string disp = "";
         string ws = sc.Weapon.GetComponent<WeaponStats>().name;
-        disp += "Most Kills in One Game: " + m_st.GetVal(m_st.MaxWeaponKills,ws) + " | Highest Score in One Game: " + m_st.GetVal(m_st.MaxWeaponScores,ws) + "\n";
-        disp += "Lifetime Kills: " + m_st.GetVal(m_st.LifetimeWeaponKills,ws) + " | Lifetime Score: " + m_st.GetVal(m_st.LifetimeWeaponScores,ws) + "\n";
-        disp += "Most Times Used in One Game: " + m_st.GetVal(m_st.MaxWeaponSwitches,ws) + " | Total Times Used: " + m_st.GetVal(m_st.LifetimeWeaponSwitches,ws) + "\n";
+        disp += "Most Kills in One Game: " + m_st.GetVal(m_st.MaxWeaponKills,ws) + "   \t \t \t| Highest Score in One Game: " + m_st.GetVal(m_st.MaxWeaponScores,ws) + "\n";
+        disp += "Lifetime Kills: " + m_st.GetVal(m_st.LifetimeWeaponKills,ws) + "       \t \t \t \t \t \t \t| Lifetime Score: " + m_st.GetVal(m_st.LifetimeWeaponScores,ws) + "\n";
+        disp += "Most Uses (one game): " + m_st.GetVal(m_st.MaxWeaponSwitches,ws) + "    \t \t \t \t| Total Times Used: " + m_st.GetVal(m_st.LifetimeWeaponSwitches,ws) + "\n";
         disp += "Highest Level: " + m_st.GetVal(m_st.MaxWeaponUsedAtLevel,ws) + "\n";
         StatDisplay.text = disp;
     }
