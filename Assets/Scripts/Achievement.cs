@@ -24,7 +24,12 @@ public class Achievement : MonoBehaviour
     {
         
     }
-
+    public string GetAchievementDescription()
+    {
+        if (Description.Length == 0)
+            Description = AutoGenDescription();
+        return Description;
+    }
     public string AutoGenDescription()
     {
         string s = "";

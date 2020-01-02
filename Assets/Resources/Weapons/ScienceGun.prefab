@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1720769669559322417}
   - component: {fileID: -8400197676861479831}
   - component: {fileID: 5835183039189422088}
+  - component: {fileID: 8445911267936669198}
   m_Layer: 0
-  m_Name: Acclimator
+  m_Name: ScienceGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   Icon: {fileID: 7780902796599373939, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 5
   auto: 0
+  deflector: 0
 --- !u!114 &-8400197676861479831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +149,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0
+--- !u!114 &8445911267936669198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720769669559322421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Big Boss Takedown
+  Description: 
+  typeOfAchievement: 3
+  value: 1
+  WithObject: {fileID: 6303718734239560748, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+    type: 3}
+  WithObject2: {fileID: 0}
+  InOneLife: 0

@@ -83,5 +83,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8430979264375925552, guid: 402a9d5bc30276440831c97be9c8e795,
+        type: 3}
+      propertyPath: TravelThroughWalls
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 402a9d5bc30276440831c97be9c8e795, type: 3}

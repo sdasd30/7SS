@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aac0eba69026dc408d366459fed77ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: Soup Can Buriel
+  DisplayName: Soup Can Burial
   Description: 
   typeOfAchievement: 3
   value: 20

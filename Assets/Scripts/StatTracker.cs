@@ -264,6 +264,7 @@ public class StatTracker : MonoBehaviour
             savMaxWeaponScores = MaxWeaponScores,
             savMaxWeaponSwitches = MaxWeaponSwitches,
             savMaxWeaponUsedAtLevel = MaxWeaponUsedAtLevel,
+            savMaxPowerups = MaxPowerUps,
             savAchivementsDone = FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked
         };
 
@@ -287,6 +288,7 @@ public class StatTracker : MonoBehaviour
         MaxWeaponScores = oldSave.savMaxWeaponScores;
         MaxWeaponSwitches = oldSave.savMaxWeaponSwitches;
         MaxWeaponUsedAtLevel = oldSave.savMaxWeaponUsedAtLevel;
+        MaxPowerUps = oldSave.savMaxPowerups;
         FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked = oldSave.savAchivementsDone;
     }
 

@@ -1441,6 +1441,7 @@ MonoBehaviour:
   m_AchievementManager: {fileID: 0}
   m_st: {fileID: 0}
   StatDisplay: {fileID: 8833001105417322315}
+  Message: {fileID: 5239650618032931091}
   CardPrefab: {fileID: 5026579926842162146, guid: 8a76bb6c8802d5c4eba03a546efbbb4d,
     type: 3}
   PoolTransform: {fileID: 2171853064281421539}

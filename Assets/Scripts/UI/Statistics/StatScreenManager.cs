@@ -8,6 +8,7 @@ public class StatScreenManager : MonoBehaviour
     public AchievementManager m_AchievementManager;
     public StatTracker m_st;
     public Text StatDisplay;
+    public Text Message;
     public GameObject CardPrefab;
     public RectTransform PoolTransform;
 
@@ -22,6 +23,7 @@ public class StatScreenManager : MonoBehaviour
         if (m_st == null)
             m_st = FindObjectOfType<StatTracker>();
 
+        Message.text = "Click on a Weapon to Show it's Stats.";
         initializePool();
         ShowOverallStats();
     }
@@ -60,7 +62,9 @@ public class StatScreenManager : MonoBehaviour
         disp += "Highest Score : " + m_st.maxScore + "     \t \t \t \t \t \t| Highest Score Weapon: " + m_st.MaxValString(m_st.MaxWeaponScores) + " : " + m_st.MaxVal(m_st.MaxWeaponScores) + " points \n";
         disp += "Most Switches (one life) : " + m_st.maxSwitches + "   \t \t \t| Most Used Weapon: " + m_st.MaxValString(m_st.LifetimeWeaponSwitches) + " : " + m_st.MaxVal(m_st.LifetimeWeaponSwitches) + " times \n";
         disp += "Highest Level : " + m_st.MaxVal(m_st.MaxWeaponUsedAtLevel) + "\n";
+
         StatDisplay.text = disp;
+        Message.text = "Click on a Weapon to Show it's Stats.";
     }
 
     public void ShowCardStats(StatCard sc)
@@ -71,8 +75,17 @@ public class StatScreenManager : MonoBehaviour
         disp += "Lifetime Kills: " + m_st.GetVal(m_st.LifetimeWeaponKills,ws) + "       \t \t \t \t \t \t \t| Lifetime Score: " + m_st.GetVal(m_st.LifetimeWeaponScores,ws) + "\n";
         disp += "Most Uses (one game): " + m_st.GetVal(m_st.MaxWeaponSwitches,ws) + "    \t \t \t \t| Total Times Used: " + m_st.GetVal(m_st.LifetimeWeaponSwitches,ws) + "\n";
         disp += "Highest Level: " + m_st.GetVal(m_st.MaxWeaponUsedAtLevel,ws) + "\n";
+
         StatDisplay.text = disp;
+        if (sc.Weapon.GetComponent<Achievement>() != null)
+        {
+            Message.text = "Achievement: \"" + sc.Weapon.GetComponent<Achievement>().DisplayName + "\"  : " + sc.Weapon.GetComponent<Achievement>().GetAchievementDescription();
+        } else
+        {
+            Message.text = "Unlocked from Start";
+        }
     }
+   
     private void initializePool()
     {
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
