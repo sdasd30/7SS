@@ -224,5 +224,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PowerUpID: Timer Speedup
-  lengthOfEffect: 14
-  desiredCooldown: 4.5
+  lengthOfEffect: 7
+  desiredCooldown: 2

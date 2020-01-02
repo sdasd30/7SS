@@ -44,4 +44,14 @@ public class CardManager : MonoBehaviour
             wh.weapons = CurrentHand;
         }
     }
+
+    public void resetWeapons()
+    {
+        WeaponHandler wh = FindObjectOfType<WeaponHandler>();
+        if (wh != null)
+        {
+            wh.weapons = CurrentHand;
+        }
+    }
+
 }

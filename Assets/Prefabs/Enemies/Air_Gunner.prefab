@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 9075143508853035556}
   - component: {fileID: 1478193371139158639}
   - component: {fileID: 5225551753610083270}
+  - component: {fileID: 5239706511406015459}
   m_Layer: 0
   m_Name: Air_Gunner
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -420,3 +422,19 @@ MonoBehaviour:
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
+--- !u!114 &5239706511406015459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075143508853035561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61128054a209244099ef1244b908d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathBarrier: -99
+  fallPenalty: 0
+  important: 0
+  returnPoint: {x: 0, y: 0, z: 0}
