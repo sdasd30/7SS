@@ -107,6 +107,7 @@ MonoBehaviour:
   shots: 1
   pierce: 0
   knockbackMult: 5
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0

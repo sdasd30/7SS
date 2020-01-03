@@ -15,10 +15,11 @@ public class WeaponStats : MonoBehaviour {
 	public int shots = 1; //How many shots does the gun shoot at once?
     public int pierce = 0; //How many enemies can this gun pierce;
     public float knockbackMult = 1; //Multiplier of knockback. 1 is mean does base knockback.
+    public Vector3 Offset; //How much offset does it have?
     public List<DeathDropItem> OnDeathCreate;
     public float GravityScale = 0f;
     public float timeToGravity = 0f; //How many seconds of flat travel before it begins to fall to gravity?
-    public float RecoilDamage = 0f;
+    public float RecoilDamage = 0f; //How much damage does it do to the player per shot
     public Sprite Icon;
     public int Cost;
 	//public int burstShots = 1;
@@ -26,4 +27,5 @@ public class WeaponStats : MonoBehaviour {
 	public bool auto = false; //Is full auto?
     public bool deflector = false;
     public List<AudioClip> attackSound; //What sounds should play when a projectile is created?
+
 }

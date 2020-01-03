@@ -132,6 +132,8 @@ MonoBehaviour:
   Cost: 1
   auto: 0
   deflector: 0
+  attackSound:
+  - {fileID: 8300000, guid: 41ff957885710fb44bed79aba21e123e, type: 3}
 --- !u!114 &7616695279003037448
 MonoBehaviour:
   m_ObjectHideFlags: 0

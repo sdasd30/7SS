@@ -75,7 +75,7 @@ public class WeaponHandler : MonoBehaviour {
             FindObjectOfType<PowerUpUI>().DestroySlow();
             poweredUpSlow = false;
         }
-
+        GetComponentInParent<BulletShooter>().ResetCooldown();
         nextWeapon = weapons[Random.Range(0, weapons.Count)];
         while (nextWeapon.GetComponent<WeaponStats>().name == transform.GetChild(0).GetComponent<WeaponStats>().name)
         {
@@ -124,6 +124,9 @@ public class WeaponHandler : MonoBehaviour {
             FindObjectOfType<PowerUpUI>().DestroySlow();
             poweredUpSlow = false;
         }
+
+        weaponSwitchDelay = DELAY;
+
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
         List<GameObject> ptWeapons = new List<GameObject>();
 

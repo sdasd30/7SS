@@ -17,6 +17,7 @@ public class BulletShooter : OffensiveTemplate
         if (GetComponent<AttackSound>() != null)
             AudioManager = GetComponent<AttackSound>();
     }
+
     public override void HandleInput(InputPacket ip)
     {
         if (Weapon == null)
@@ -90,12 +91,14 @@ public class BulletShooter : OffensiveTemplate
         Vector2 knockback = wps.knockbackMult * Vector2.right;
         bool fixedKnockback = false;
         ElementType element = ElementType.PHYSICAL;
-        Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
-        Vector3 newPos = transform.position + (Vector3)cOff;
+        //Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
+        //Vector3 newPos = transform.position + (Vector3)cOff;
+        Vector3 newPos = transform.GetChild(0).GetChild(0).position + wps.Offset;
+        Quaternion newRot = transform.GetChild(0).transform.rotation;
         GameObject go;
         if (prefab == null)
             return null;
-        go = GameObject.Instantiate(prefab, newPos, Quaternion.identity);
+        go = GameObject.Instantiate(prefab, newPos, newRot);
         Projectile newProjectile = go.GetComponent<Projectile>();
 
         newProjectile.Damage = damage;
@@ -125,5 +128,11 @@ public class BulletShooter : OffensiveTemplate
         OnDeathDrop odi = go.AddComponent<OnDeathDrop>();
         odi.DeathItems = wps.OnDeathCreate;
         return newProjectile;
+    }
+
+
+    public void ResetCooldown()
+    {
+        coolDown = 0f;
     }
 }
