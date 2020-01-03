@@ -32,7 +32,7 @@ public class LoadGame : MonoBehaviour
 
         else
         {
-            Debug.LogWarning("Load Failed!");
+            Debug.LogWarning("Load Failed! File does not exist.");
         }
     }
 }
