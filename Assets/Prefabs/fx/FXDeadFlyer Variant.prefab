@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 489281319345092685, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_Name
-      value: FXDeadFlyer
+      value: FXDeadFlyer Variant
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092686, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
@@ -20,17 +20,17 @@ PrefabInstance:
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -195.15039
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
@@ -45,12 +45,12 @@ PrefabInstance:
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.42261827
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9063079
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 489281319345092688, guid: 2eecddf29aa970444b2e41dcf22ff2be,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eecddf29aa970444b2e41dcf22ff2be, type: 3}

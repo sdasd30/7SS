@@ -89,6 +89,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 592955695280212857, guid: 11835dbedaffe4048b339172474e051c,
         type: 3}
+    - target: {fileID: 4853547310310615283, guid: 989bd73d7259cd7499f4e514356b3367,
+        type: 3}
+      propertyPath: TravelThroughWalls
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 381138087801120478, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}

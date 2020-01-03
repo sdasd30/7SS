@@ -125,22 +125,22 @@ PrefabInstance:
     - target: {fileID: 8592384625283888322, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_Name
-      value: FXDeadGears
+      value: FXDeadGears Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -195.15039
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
@@ -155,12 +155,12 @@ PrefabInstance:
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38268343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 8592384625283888351, guid: bebd9f1430c48a245809cb3e523d886c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bebd9f1430c48a245809cb3e523d886c, type: 3}

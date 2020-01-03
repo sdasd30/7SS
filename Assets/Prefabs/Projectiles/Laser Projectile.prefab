@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289179238640470838, guid: 7a6380cfe9e23da468e796d64513a749,
+        type: 3}
+      propertyPath: TravelThroughWalls
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5518592137215744146, guid: 7a6380cfe9e23da468e796d64513a749,
         type: 3}
       propertyPath: m_LocalPosition.x
