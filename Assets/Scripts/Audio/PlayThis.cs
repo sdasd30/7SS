@@ -11,10 +11,4 @@ public class PlayThis : MonoBehaviour
     {
         FindObjectOfType<MusicManager>().changeMusic(music);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WeaponStats : MonoBehaviour {
 
@@ -24,4 +25,5 @@ public class WeaponStats : MonoBehaviour {
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?
     public bool deflector = false;
+    public AudioClip attackSound; //What sound should play when a projectile is created?
 }

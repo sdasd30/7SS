@@ -32,6 +32,10 @@ public class Attackable : MonoBehaviour {
             {
                 FindObjectOfType<StatTracker>().TrackKill(GetComponent<Score>(), m_lastWeaponHurtBy);
             }
+            if (GetComponent<DeathSound>() != null)
+            {
+                GetComponent<DeathSound>().playSound();
+            }
         }
         if (!alive)
         {

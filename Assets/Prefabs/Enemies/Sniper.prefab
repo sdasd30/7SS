@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 2715755458628834814}
   - component: {fileID: 1423946379846023600}
   - component: {fileID: 5170057114875186687}
+  - component: {fileID: 1740822676681050058}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -305,6 +306,7 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 0
+  attackSound: {fileID: 0}
 --- !u!114 &2715755458628834802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,3 +431,18 @@ MonoBehaviour:
     UseExcludeCategory: 0
     ExcludeCategory: 0
     InheritFaction: 0
+--- !u!114 &1740822676681050058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2715755458628834803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 4f9a6cecce5f7c049af98093fd4d6d3a, type: 3}
+  - {fileID: 8300000, guid: f2f01f45ac17e11419a6ba9dd3f214ee, type: 3}
