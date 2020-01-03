@@ -74,7 +74,8 @@ public class BulletShooter : OffensiveTemplate
             //Debug.Log(rand + " : " + Mathf.Cos(angle) + " : " + Mathf.Sin(angle));
             CreateProjectile(wp.bullet, Vector2.zero, targetPoint, wp);
         }
-        AudioManager.playSound(Weapon.attackSound[Random.Range(0, Weapon.attackSound.Count)]);
+        if (Weapon.attackSound.Count > 0)
+            AudioManager.playSound(Weapon.attackSound[Random.Range(0, Weapon.attackSound.Count)]);
         coolDown = Weapon.firerate / 1000;
         
     }
