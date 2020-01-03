@@ -15,7 +15,7 @@ public class DeathSound : MonoBehaviour
         {
             if (item.identifySelf().Equals("Living"))
             {
-                Debug.Log("manager identified");
+                Debug.Log("Living manager identified");
                 manager = item;
             }
         }

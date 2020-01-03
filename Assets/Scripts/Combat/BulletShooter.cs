@@ -7,12 +7,15 @@ public class BulletShooter : OffensiveTemplate
 
     public WeaponStats Weapon;
     public Vector2 Offset;
+    AttackSound AudioManager;
     bool firing;
     float coolDown = 0;
 
     void Start()
     {
         Weapon = GetComponent<WeaponStats>();
+        if (GetComponent<AttackSound>() != null)
+            AudioManager = GetComponent<AttackSound>();
     }
     public override void HandleInput(InputPacket ip)
     {
@@ -71,7 +74,9 @@ public class BulletShooter : OffensiveTemplate
             //Debug.Log(rand + " : " + Mathf.Cos(angle) + " : " + Mathf.Sin(angle));
             CreateProjectile(wp.bullet, Vector2.zero, targetPoint, wp);
         }
+        AudioManager.playSound(Weapon.attackSound[Random.Range(0, Weapon.attackSound.Count)]);
         coolDown = Weapon.firerate / 1000;
+        
     }
 
     public Projectile CreateProjectile(GameObject prefab, Vector2 creationPoint, Vector2 targetPoint,

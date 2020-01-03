@@ -25,5 +25,5 @@ public class WeaponStats : MonoBehaviour {
 	//public float burstDelay = 0;
 	public bool auto = false; //Is full auto?
     public bool deflector = false;
-    public AudioClip attackSound; //What sound should play when a projectile is created?
+    public List<AudioClip> attackSound; //What sounds should play when a projectile is created?
 }

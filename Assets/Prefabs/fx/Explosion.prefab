@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 134092143657646101}
   - component: {fileID: 6922427807233331279}
   - component: {fileID: 2228743791356370417}
+  - component: {fileID: -7167484892071756873}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_damage: 4
   m_focusDamage: -1
   m_penetration: 0
-  m_duration: 0.25
+  m_duration: 0.01
   m_hasDuration: 1
   m_isFixedKnockback: 0
   m_resetKnockback: 0
@@ -93,3 +94,17 @@ MonoBehaviour:
   m_upRightDownLeftColliders: []
   m_collidedObjs: []
   m_overlappingControl: []
+--- !u!114 &-7167484892071756873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548057531607664229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6a418369b319b4cba534700bc93a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 3ab0d9a371b8ae74cb0b0c87dde5fa94, type: 3}
