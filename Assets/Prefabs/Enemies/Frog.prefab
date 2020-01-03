@@ -354,3 +354,11 @@ MonoBehaviour:
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
+  - Item: {fileID: 8490068090321137888, guid: a4b11d7798e3ed6499c1276fe53f698d, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0

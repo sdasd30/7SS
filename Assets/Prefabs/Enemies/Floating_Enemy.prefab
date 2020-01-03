@@ -235,5 +235,11 @@ PrefabInstance:
       propertyPath: DeathItems.Array.data[6].UseExcludeCategory
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7436565488246838021, guid: adcb87af776b6e246a30f1ee3c8e5ab6,
+        type: 3}
+      propertyPath: DeathItems.Array.data[7].Item
+      value: 
+      objectReference: {fileID: 1819079805373179394, guid: 1e4995f826b162544b0976973b49657f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adcb87af776b6e246a30f1ee3c8e5ab6, type: 3}

@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 12
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 1
   JumpProbabilityPercent: 0
@@ -332,7 +333,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 10
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -340,7 +341,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 10
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -348,7 +349,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 1
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -356,7 +357,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 2
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -364,7 +365,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 2
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 2
     UseExcludeCategory: 1
     ExcludeCategory: 0
     InheritFaction: 0
@@ -380,7 +381,15 @@ MonoBehaviour:
     Offset: {x: 0, y: 0}
     XOffsetRange: {x: 0, y: 0}
     YOffsetRange: {x: 0, y: 0}
-    Probability: 100
+    Probability: 10
     UseExcludeCategory: 1
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 5090427957005521839, guid: f20e55ed04591a442865fca4ec4e1a71, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
     ExcludeCategory: 0
     InheritFaction: 0

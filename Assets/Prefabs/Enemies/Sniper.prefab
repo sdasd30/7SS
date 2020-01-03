@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -418,5 +419,13 @@ MonoBehaviour:
     YOffsetRange: {x: 0, y: 0}
     Probability: 10
     UseExcludeCategory: 1
+    ExcludeCategory: 0
+    InheritFaction: 0
+  - Item: {fileID: 8560604379594827692, guid: 7da7bb4fd90d4a840b33cc38143ad476, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
     ExcludeCategory: 0
     InheritFaction: 0
