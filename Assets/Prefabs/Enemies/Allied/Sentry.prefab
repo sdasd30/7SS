@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1225009456418190744}
   - component: {fileID: 8679246162176923091}
   - component: {fileID: -1217219209217284808}
+  - component: {fileID: 1576102818176228187}
   m_Layer: 0
   m_Name: Sentry
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -350,3 +352,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 14
   toDisappear: 1
+--- !u!114 &1576102818176228187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225009456418190741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f970af80ad03428dba3be2b7b5242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathItems:
+  - Item: {fileID: 5989529135883025877, guid: 85abf32b4fbe0a245b7aaed26b0fe68e, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0

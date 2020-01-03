@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4442863109441688065}
   - component: {fileID: 4442863109441688073}
   - component: {fileID: 5557223093594166436}
+  - component: {fileID: -1842965060389309411}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -268,3 +269,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: 1
+--- !u!114 &-1842965060389309411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442863109441688074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f970af80ad03428dba3be2b7b5242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathItems:
+  - Item: {fileID: 2336740043556713829, guid: 4e0c49c321b1ba445bff98f74ce646cb, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 0
+    ExcludeCategory: 0
+    InheritFaction: 0
