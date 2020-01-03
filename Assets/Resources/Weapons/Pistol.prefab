@@ -114,6 +114,9 @@ MonoBehaviour:
   Icon: {fileID: -4167987384140197314, guid: 73b19f8afbc522f449fcb46b2922c752, type: 3}
   Cost: 0
   auto: 0
+  deflector: 0
+  attackSound:
+  - {fileID: 8300000, guid: fcf2eba6f088fb3459df7005d0ad7038, type: 3}
 --- !u!114 &2834987892926104129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4372e67f1b3846b95d53327be2315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasParent: 0

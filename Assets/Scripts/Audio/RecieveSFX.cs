@@ -19,7 +19,7 @@ public class RecieveSFX : MonoBehaviour
 
     public string identifySelf()
     {
-        Debug.Log("Asked for audio type, returning: " + aS.outputAudioMixerGroup.name);
+        //Debug.Log("Asked for audio type, returning: " + aS.outputAudioMixerGroup.name);
         return aS.outputAudioMixerGroup.name;
     }
 }
