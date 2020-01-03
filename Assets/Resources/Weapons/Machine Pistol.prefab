@@ -102,8 +102,8 @@ MonoBehaviour:
   spread: 12
   firerate: 100
   damage: 0.5
-  speed: 11
-  duration: 0.7
+  speed: 18
+  duration: 0.4
   shots: 1
   pierce: 0
   knockbackMult: 2
@@ -115,6 +115,7 @@ MonoBehaviour:
   Cost: 1
   auto: 1
   deflector: 0
+  attackSound: []
 --- !u!114 &7134458166870073481
 MonoBehaviour:
   m_ObjectHideFlags: 0

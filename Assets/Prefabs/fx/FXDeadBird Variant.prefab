@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8560604379594827692, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
       propertyPath: m_Name
-      value: FXDeadBird
+      value: FXDeadBird Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8560604379594827694, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
@@ -115,12 +115,12 @@ PrefabInstance:
     - target: {fileID: 8560604379594827697, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38268343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8560604379594827697, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8560604379594827697, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 8560604379594827697, guid: 7da7bb4fd90d4a840b33cc38143ad476,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7da7bb4fd90d4a840b33cc38143ad476, type: 3}

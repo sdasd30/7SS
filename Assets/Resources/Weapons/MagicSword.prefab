@@ -102,10 +102,10 @@ MonoBehaviour:
   spread: 20
   firerate: 500
   damage: 2
-  speed: 15
-  duration: 0.4
+  speed: 22
+  duration: 0.25
   shots: 1
-  pierce: 1
+  pierce: 2
   knockbackMult: 35
   OnDeathCreate: []
   GravityScale: 0
