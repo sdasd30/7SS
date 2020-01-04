@@ -40,27 +40,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: Absolute Front
-    uniqueID: 55058903
-    locked: 0
-  - name: UI
-    uniqueID: 3955203281
-    locked: 0
-  - name: Foreground
-    uniqueID: 952139791
-    locked: 0
-  - name: Mid Ground
-    uniqueID: 1436643337
-    locked: 0
-  - name: Living
-    uniqueID: 1017380951
+  - name: Absolute Back
+    uniqueID: 2295906011
     locked: 0
   - name: Back Ground
     uniqueID: 2412304815
     locked: 0
-  - name: Absolute Back
-    uniqueID: 2295906011
+  - name: Living
+    uniqueID: 1017380951
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Mid Ground
+    uniqueID: 1436643337
+    locked: 0
+  - name: Foreground
+    uniqueID: 952139791
+    locked: 0
+  - name: UI
+    uniqueID: 3955203281
+    locked: 0
+  - name: Absolute Front
+    uniqueID: 55058903
     locked: 0
