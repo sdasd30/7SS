@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1017380951
-  m_SortingLayer: 5
+  m_SortingLayer: -1
   m_SortingOrder: 5
   m_Sprite: {fileID: -859302592743651864, guid: 73b19f8afbc522f449fcb46b2922c752,
     type: 3}
@@ -101,7 +101,7 @@ MonoBehaviour:
   name: Sniper
   spread: 0
   firerate: 1000
-  damage: 5
+  damage: 6
   speed: 40
   duration: 3
   shots: 1
