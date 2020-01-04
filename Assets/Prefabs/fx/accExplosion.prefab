@@ -87,6 +87,7 @@ MonoBehaviour:
   m_stun: 0
   m_isRandomKnockback: 0
   m_FreezeTime: 0
+  Deflector: 0
   m_elementList: 
   m_followObj: {fileID: 0}
   m_followOffset: {x: 0, y: 0}

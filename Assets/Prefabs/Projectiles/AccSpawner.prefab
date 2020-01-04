@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 527719213308957519}
   - component: {fileID: 527719213308957518}
   - component: {fileID: 527719213308957517}
+  - component: {fileID: -2953628700553289826}
   m_Layer: 0
   m_Name: AccSpawner
   m_TagString: Untagged
@@ -78,3 +79,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: 1
+--- !u!114 &-2953628700553289826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527719213308957513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6a418369b319b4cba534700bc93a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: cbcd196d35cb4704f971d6422d42f92d, type: 3}
+  - {fileID: 8300000, guid: 16277df2df7801344a5c8fd73458909c, type: 3}
