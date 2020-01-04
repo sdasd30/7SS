@@ -89,10 +89,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 592955695280212857, guid: 11835dbedaffe4048b339172474e051c,
         type: 3}
+    - target: {fileID: 3986417862505481081, guid: 989bd73d7259cd7499f4e514356b3367,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986417862505481081, guid: 989bd73d7259cd7499f4e514356b3367,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986417862505481081, guid: 989bd73d7259cd7499f4e514356b3367,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4853547310310615283, guid: 989bd73d7259cd7499f4e514356b3367,
         type: 3}
       propertyPath: TravelThroughWalls
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853547310310615283, guid: 989bd73d7259cd7499f4e514356b3367,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 381138087801120478, guid: 989bd73d7259cd7499f4e514356b3367, type: 3}
