@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 1812678192}
   - component: {fileID: 8202169124244574584}
   - component: {fileID: 8229960801638117778}
+  - component: {fileID: -3472497405190923848}
   m_Layer: 11
   m_Name: you_irl
   m_TagString: Untagged
@@ -317,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathBarrier: -20
-  fallPenalty: 0.25
+  fallPenalty: 0.5
   important: 1
   returnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &1812678189
@@ -373,3 +374,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - {fileID: 8300000, guid: 8651c124262dbf948a0df958eead5605, type: 3}
+--- !u!114 &-3472497405190923848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 4f9a6cecce5f7c049af98093fd4d6d3a, type: 3}
+  - {fileID: 8300000, guid: f2f01f45ac17e11419a6ba9dd3f214ee, type: 3}
