@@ -91,10 +91,19 @@ public class BulletShooter : OffensiveTemplate
         Vector2 knockback = wps.knockbackMult * Vector2.right;
         bool fixedKnockback = false;
         ElementType element = ElementType.PHYSICAL;
-        //Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
-        //Vector3 newPos = transform.position + (Vector3)cOff;
-        Vector3 newPos = transform.GetChild(0).GetChild(0).position + wps.Offset;
-        Quaternion newRot = transform.GetChild(0).transform.rotation;
+        Vector3 newPos; Quaternion newRot;
+        if (GetComponent<BasicMovement>().IsCurrentPlayer)
+        {
+            newPos = transform.GetChild(0).GetChild(0).position + wps.Offset;
+            newRot = transform.GetChild(0).transform.rotation;
+        }
+        else
+        {
+            Vector2 cOff = (GetComponent<Orientation>() == null) ? creationPoint : GetComponent<Orientation>().OrientVectorToDirection2D(creationPoint);
+            newPos = transform.position + (Vector3)cOff;
+            newRot = Quaternion.identity;
+        }
+
         GameObject go;
         if (prefab == null)
             return null;

@@ -108,6 +108,7 @@ MonoBehaviour:
   shots: 1
   pierce: 0
   knockbackMult: 5
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate:
   - Item: {fileID: 4442863109441688074, guid: bbf5ad1be802fad458a10914cd1c55df, type: 3}
     Offset: {x: 0, y: 1.5}
@@ -124,6 +125,8 @@ MonoBehaviour:
   Cost: 1
   auto: 0
   deflector: 0
+  attackSound:
+  - {fileID: 8300000, guid: c9a6e3b94fb20f24b8fca73b757951e0, type: 3}
 --- !u!114 &3702042750767309853
 MonoBehaviour:
   m_ObjectHideFlags: 0

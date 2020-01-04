@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3678778574432301352}
   - component: {fileID: 4531465855353183365}
   - component: {fileID: 4879108192856281601}
+  - component: {fileID: 5558021770894463551}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -283,3 +285,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 7
   toDisappear: 1
+--- !u!114 &5558021770894463551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678778574432301355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: e1c1be7d95e3dce409153bd32348f519, type: 3}

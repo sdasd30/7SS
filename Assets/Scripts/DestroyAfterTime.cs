@@ -26,4 +26,10 @@ public class DestroyAfterTime : MonoBehaviour
             GameObject.Destroy(gameObject, duration);
         }
     }
+
+    private void OnDestroy()
+    {
+        if (GetComponent<DeathSound>() != null)
+            GetComponent<DeathSound>().playSound();
+    }
 }

@@ -107,6 +107,7 @@ MonoBehaviour:
   shots: 1
   pierce: 2
   knockbackMult: 25
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0
@@ -115,6 +116,8 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 1
+  attackSound:
+  - {fileID: 8300000, guid: 4dad9064dac624148ac20f683057ae6a, type: 3}
 --- !u!114 &1115220257158614439
 MonoBehaviour:
   m_ObjectHideFlags: 0
