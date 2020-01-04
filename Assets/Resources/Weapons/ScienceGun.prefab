@@ -101,7 +101,7 @@ MonoBehaviour:
   bullet: {fileID: 3777282351467004036, guid: 148385e65e4d4c444bb58a3ef8b7e604, type: 3}
   name: Science Gun
   spread: 0
-  firerate: 1000
+  firerate: 2000
   damage: 6
   speed: 5
   duration: 6
@@ -125,8 +125,7 @@ MonoBehaviour:
   Cost: 5
   auto: 0
   deflector: 0
-  attackSound:
-  - {fileID: 0}
+  attackSound: []
 --- !u!114 &-8400197676861479831
 MonoBehaviour:
   m_ObjectHideFlags: 0

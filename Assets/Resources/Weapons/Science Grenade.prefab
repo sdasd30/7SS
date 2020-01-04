@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6522115660478036893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2080645482279133519, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: DisplayName
+      value: What Tech Tree?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080645482279133519, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: WithObject
+      value: 
+      objectReference: {fileID: 6303718734239560748, guid: c90a0125fc81db642b27fa77a3ffd5c3,
+        type: 3}
+    - target: {fileID: 2080645482279133519, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: WithObject2
+      value: 
+      objectReference: {fileID: 1357241947132668247, guid: a021f5c9471c48845ba703499ca2ceed,
+        type: 3}
+    - target: {fileID: 2080645482279133519, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080645482279133519, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: InOneLife
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309850, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_Name
+      value: Science Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309851, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7864609983425001368, guid: 73b19f8afbc522f449fcb46b2922c752,
+        type: 3}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309852, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: attackSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5445592806223550514, guid: 3e6eb3d8a07046c48b2e0fab478cbb10,
+        type: 3}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: name
+      value: Science Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: OnDeathCreate.Array.data[0].Item
+      value: 
+      objectReference: {fileID: 527719213308957513, guid: 0b5adf7b3896683499adf2b82653ee4a,
+        type: 3}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: Cost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: auto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: attackSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9a6e3b94fb20f24b8fca73b757951e0, type: 3}
+    - target: {fileID: 3702042750767309854, guid: d13e027d96a3a4c42837ca5d34f4597c,
+        type: 3}
+      propertyPath: Icon
+      value: 
+      objectReference: {fileID: -7864609983425001368, guid: 73b19f8afbc522f449fcb46b2922c752,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d13e027d96a3a4c42837ca5d34f4597c, type: 3}

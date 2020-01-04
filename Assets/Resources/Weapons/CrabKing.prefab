@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1284245335966166247, guid: c50528b1ea8d83640bce4d5c2ea3d6ab, type: 3}
+  bullet: {fileID: 7386790054234351408, guid: b02ff7debcd5b9d46b0cece88da4de1e, type: 3}
   name: Crab King
   spread: 0
   firerate: 1000
@@ -125,8 +125,7 @@ MonoBehaviour:
   Cost: 1
   auto: 0
   deflector: 0
-  attackSound:
-  - {fileID: 8300000, guid: c9a6e3b94fb20f24b8fca73b757951e0, type: 3}
+  attackSound: []
 --- !u!114 &3702042750767309853
 MonoBehaviour:
   m_ObjectHideFlags: 0
