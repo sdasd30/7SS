@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 8679246162176923091}
   - component: {fileID: -1217219209217284808}
   - component: {fileID: 1576102818176228187}
+  - component: {fileID: -6181776145010820330}
   m_Layer: 0
   m_Name: Sentry
   m_TagString: Untagged
@@ -283,6 +284,7 @@ MonoBehaviour:
   shots: 1
   pierce: 0
   knockbackMult: 25
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0
@@ -291,6 +293,7 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 0
+  attackSound: []
 --- !u!114 &1225009456418190740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,3 +376,19 @@ MonoBehaviour:
     UseExcludeCategory: 0
     ExcludeCategory: 0
     InheritFaction: 0
+--- !u!114 &-6181776145010820330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225009456418190741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: cbcd196d35cb4704f971d6422d42f92d, type: 3}
+  - {fileID: 8300000, guid: 16277df2df7801344a5c8fd73458909c, type: 3}
+  - {fileID: 8300000, guid: 3ab0d9a371b8ae74cb0b0c87dde5fa94, type: 3}

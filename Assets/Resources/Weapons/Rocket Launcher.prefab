@@ -99,14 +99,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1145310422289480940, guid: 4af06ee3109a6874390bda607b5818c0, type: 3}
   name: Rocket Launcher
-  spread: 2
+  spread: 3
   firerate: 1000
-  damage: 1
+  damage: 5
   speed: 30
   duration: 3
-  shots: 2
+  shots: 1
   pierce: 0
   knockbackMult: 20
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate:
   - Item: {fileID: 715994477026459634, guid: 05fd9eedd29140f42a17eb6c5162104d, type: 3}
     Offset: {x: 0, y: 0}

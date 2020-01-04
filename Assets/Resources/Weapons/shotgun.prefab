@@ -103,10 +103,11 @@ MonoBehaviour:
   firerate: 1000
   damage: 1
   speed: 20
-  duration: 3
-  shots: 10
+  duration: 0.4
+  shots: 8
   pierce: 0
   knockbackMult: 5
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0
