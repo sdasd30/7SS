@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 4018753783026640028}
   - component: {fileID: 3987923408441297627}
   - component: {fileID: 9184550821582185578}
+  - component: {fileID: 381958389930357796}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -298,6 +299,7 @@ MonoBehaviour:
   shots: 1
   pierce: 0
   knockbackMult: 1
+  Offset: {x: 0, y: 0, z: 0}
   OnDeathCreate: []
   GravityScale: 0
   timeToGravity: 0
@@ -306,6 +308,7 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 0
+  attackSound: []
 --- !u!114 &6825065320747222235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,3 +449,17 @@ MonoBehaviour:
   fallPenalty: 0
   important: 0
   returnPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &381958389930357796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825065320747222234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: a0a5ac1d8c8427f47a852cf8f1a9c4dd, type: 3}

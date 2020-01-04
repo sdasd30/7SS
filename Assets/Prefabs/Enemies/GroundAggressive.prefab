@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7519023884761355106}
   - component: {fileID: -5222660129193750445}
   - component: {fileID: 935052777009167906}
+  - component: {fileID: -8958587878588018945}
   m_Layer: 0
   m_Name: GroundAggressive
   m_TagString: Untagged
@@ -379,3 +380,17 @@ MonoBehaviour:
   fallPenalty: 0
   important: 0
   returnPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8958587878588018945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796919630272550348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f2bf5c0b81a9f43ad1820c473ace90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 9362e1d34edd7d9419a0c834521cb095, type: 3}
