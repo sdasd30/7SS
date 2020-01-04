@@ -96,6 +96,7 @@ public class WeaponHandler : MonoBehaviour {
         FindObjectOfType<PowerUpUI>().CreateSlow();
         if (poweredUpFast)
         {
+            weaponSwitchDelay = DELAY;
             FindObjectOfType<PowerUpUI>().DestroySpeed();
             poweredUpFast = false;
         }
