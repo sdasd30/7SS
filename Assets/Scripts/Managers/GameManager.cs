@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject CurrentPlayer;
     public Text GameOverText;
     public GameObject LoseMenu;
-    private bool m_startedGameOver = false;
+    public bool StartedGameOver = false;
     private float m_timeSinceGameOver = 0.0f;
 
     // Start is called before the first frame update
@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (CurrentPlayer == null)
-            m_startedGameOver = true;
-        if (m_startedGameOver)
+            StartedGameOver = true;
+        if (StartedGameOver)
             gameOverSequence();
     }
 

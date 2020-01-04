@@ -7,6 +7,7 @@ public class PauseGame : MonoBehaviour
 {
 
     public bool isPaused = false;
+    public GameObject PauseMenu;
     public Text PauseText;
     private bool m_startedPauseAction = false;
     private float m_timeSincePauseAction = 0.0f;
@@ -42,7 +43,7 @@ public class PauseGame : MonoBehaviour
         PauseText.color = new Color(1f, 1f, 1f, Mathf.Max(0f, Mathf.Min(1f, m_timeSincePauseAction)));
         if (m_timeSincePauseAction > 1f)
         {
-            GetComponent<GameManager>().LoseMenu.SetActive(true);
+            PauseMenu.SetActive(true);
             m_inSequence = false;
         }
     }
@@ -51,14 +52,16 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = Mathf.Min(1f, (m_timeSincePauseAction /2f) + 0.5f);
         m_timeSincePauseAction += Time.unscaledDeltaTime;
         PauseText.color = new Color(1f, 1f, 1f, Mathf.Max(0f, Mathf.Max(0f,1f - m_timeSincePauseAction)));
-        GetComponent<GameManager>().LoseMenu.SetActive(false);
+        PauseMenu.SetActive(false);
         if (m_timeSincePauseAction > 1f)
         {
             m_inSequence = false;
         }
     }
-    private void togglePause()
+    public void togglePause()
     {
+        if (FindObjectOfType<GameManager>().StartedGameOver)
+            return;
         setPause(!isPaused);
     }
     private void setPause(bool pause)
