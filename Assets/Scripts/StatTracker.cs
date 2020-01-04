@@ -302,11 +302,11 @@ public class StatTracker : MonoBehaviour
     }
     public bool IsAchievementMet(Dictionary<string, Dictionary<string,int>> d, string key,string key2, int criteria)
     {
-        if (d.ContainsKey(key) && d[key].ContainsKey(key2))
-            return d[key][key2] >= criteria;
-        else
+        if (!d.ContainsKey(key))
             d[key] = new Dictionary<string, int>();
-        return false;
+        if (!d[key].ContainsKey(key2))
+            d[key][key2] = 0;
+        return d[key][key2] >= criteria;
     }
     public bool IsAchievementMet(Dictionary<string, Dictionary<string, int>> d, string key, int criteria)
     {

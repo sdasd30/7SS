@@ -1279,7 +1279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOU SUX
+  m_Text: GAME OVER
 --- !u!1 &1790790553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,6 +3707,7 @@ MonoBehaviour:
   CurrentPlayer: {fileID: 0}
   GameOverText: {fileID: 1727690638}
   LoseMenu: {fileID: 1228754421670146982}
+  StartedGameOver: 0
 --- !u!114 &159889451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1812678189}
   - component: {fileID: 1812678192}
   - component: {fileID: 8202169124244574584}
+  - component: {fileID: -5315608117080859926}
   m_Layer: 11
   m_Name: you_irl
   m_TagString: Untagged
@@ -149,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1017380951
-  m_SortingLayer: 5
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9f5c2bced369f2146b27fd70ebbb7c74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -358,3 +359,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70899c12ad6b09419f9798ed5c3143e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5315608117080859926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457555227399086765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f970af80ad03428dba3be2b7b5242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathItems:
+  - Item: {fileID: 7994273685819659183, guid: d548fc24cec1dca428150a8fe5400216, type: 3}
+    Offset: {x: 0, y: 0}
+    XOffsetRange: {x: 0, y: 0}
+    YOffsetRange: {x: 0, y: 0}
+    Probability: 100
+    UseExcludeCategory: 1
+    ExcludeCategory: 0
+    InheritFaction: 0

@@ -8,15 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TempTitle.unity
     guid: b2c504c1ae095e840a565ddbb4bdbcb2
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/CardSelection.unity
     guid: a1094b15a74956e49846fb65c85bf576
-  - enabled: 1
-    path: Assets/Scenes/Statistics.unity
-    guid: c22e024d46446ca45bb78fdbb824ad89
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Bowl.unity
     guid: d09adde413e7a024686040d72c016ed6
