@@ -44,7 +44,9 @@ public class Attackable : MonoBehaviour {
     }
 
 	public void TakeDamage(float damage){
-		hp -= damage;
+        if (GetComponent<HurtSound>() != null && damage > 0)
+            GetComponent<HurtSound>().playSound();
+        hp -= damage;
         hp = Mathf.Min(maxHP, hp);
 	}
 
