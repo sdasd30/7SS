@@ -130,7 +130,6 @@ public class WeaponHandler : MonoBehaviour {
             FindObjectOfType<PowerUpUI>().DestroySlow();
             poweredUpSlow = false;
         }
-
         weaponSwitchDelay = DELAY;
 
         Object[] loadedObjs = Resources.LoadAll("Weapons", typeof(GameObject));
@@ -166,6 +165,7 @@ public class WeaponHandler : MonoBehaviour {
         currWeapon.transform.parent = transform;
         currWeapon.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         cooldown = seconds;
+        GetComponentInParent<BulletShooter>().ResetCooldown();
 
     }
 

@@ -75,6 +75,7 @@ public class BasicMovement : MonoBehaviour {
             {
                 poweredUp = false;
                 doubleJumpAvailable = false;
+                canDoubleJump = false;
                 FindObjectOfType<PowerUpUI>().DestroyJump();
             }
         }

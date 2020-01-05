@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("TempTitle");
     }
+
     // Update is called once per frame
     public void WriteSaveToFile()
     {
