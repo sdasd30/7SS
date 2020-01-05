@@ -84,6 +84,11 @@ public class WeaponHandler : MonoBehaviour {
         return;
     }
 
+    public void ForceWeapons(List<GameObject> forced)
+    {
+        weapons = forced;
+    }
+
     #region Power Up Functions
     private bool poweredUpSlow;
     private bool poweredUpFast;
