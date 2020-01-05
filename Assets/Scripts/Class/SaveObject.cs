@@ -1,26 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class SaveObject
 {
+    [System.Serializable] public class DictionaryOfStringAndInt : SerializableDictionary<string, int> { }
+
+    [System.Serializable] public class DoubleStringAndIntDict : SerializableDictionary<string, DictionaryOfStringAndInt> { }
     public List<string> savAchivementsDone;
-    public Dictionary<string, Dictionary<string, int>> savMaxEnemyWeaponKills;
-    public Dictionary<string, int> savMaxEnemykills;
-    public Dictionary<string, int> savMaxWeaponKills;
-    public Dictionary<string, int> savMaxWeaponScores;
+    public DoubleStringAndIntDict savMaxEnemyWeaponKills;
+    public DictionaryOfStringAndInt savMaxEnemykills;
+    public DictionaryOfStringAndInt savMaxWeaponKills;
+    public DictionaryOfStringAndInt savMaxWeaponScores;
 
-    public Dictionary<string, Dictionary<string, int>> savLifetimeEnemyKills;
-    public Dictionary<string, int> savLifetimeWeaponKills;
-    public Dictionary<string, int> savLifetimeWeaponScores;
+    public DoubleStringAndIntDict savLifetimeEnemyKills;
+    public DictionaryOfStringAndInt savLifetimeWeaponKills;
+    public DictionaryOfStringAndInt savLifetimeWeaponScores;
 
-    public Dictionary<string, int> savMaxWeaponSwitches;
-    public Dictionary<string, int> savLifetimeWeaponSwitches;
+    public DictionaryOfStringAndInt savMaxWeaponSwitches;
+    public DictionaryOfStringAndInt savLifetimeWeaponSwitches;
 
-    public Dictionary<string, int> savMaxWeaponUsedAtLevel;
+    public DictionaryOfStringAndInt savMaxWeaponUsedAtLevel;
 
-    public Dictionary<string, int> savMaxPowerups;
+    public DictionaryOfStringAndInt savMaxPowerups;
 
     public int savmaxScore;
     public int savmaxKills;

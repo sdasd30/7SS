@@ -245,26 +245,67 @@ public class StatTracker : MonoBehaviour
         }
         return ret;
     }
+    private Dictionary<string,int> FromSerializableSaveStruct(SaveObject.DictionaryOfStringAndInt dsoi)
+    {
+        Dictionary<string, int> converted = new Dictionary<string, int>();
+        foreach(string s in dsoi.Keys)
+        {
+            converted[s] = dsoi[s];
+        }
+        return converted;
+    }
+    private SaveObject.DictionaryOfStringAndInt ToSerializationSaveStruct(Dictionary<string,int> dsoi)
+    {
+        SaveObject.DictionaryOfStringAndInt converted = new SaveObject.DictionaryOfStringAndInt();
+        foreach (string s in dsoi.Keys)
+        {
+            converted[s] = dsoi[s];
+        }
+        return converted;
+    }
+
+    private Dictionary<string, Dictionary<string, int>> FromSerializableSaveStruct(SaveObject.DoubleStringAndIntDict dsoi)
+    {
+       Dictionary<string, Dictionary<string, int>> converted = new Dictionary<string, Dictionary<string, int>>();
+        foreach (string s in dsoi.Keys)
+        {
+            if (!converted.ContainsKey(s))
+                converted[s] = new Dictionary<string, int>();
+            converted[s] = FromSerializableSaveStruct(dsoi[s]);
+        }
+        return converted;
+    }
+    private SaveObject.DoubleStringAndIntDict ToSerializationSaveStruct(Dictionary<string, Dictionary<string, int>> dsoi)
+    {
+        SaveObject.DoubleStringAndIntDict converted = new SaveObject.DoubleStringAndIntDict();
+        foreach (string s in dsoi.Keys)
+        {
+            if (!converted.ContainsKey(s))
+                converted[s] = new SaveObject.DictionaryOfStringAndInt();
+            converted[s] = ToSerializationSaveStruct(dsoi[s]);
+        }
+        return converted;
+    }
     public SaveObject TransferToSaveObject()
     {
         SaveObject newSave = new SaveObject
         {
 
-            savLifetimeEnemyKills = LifetimeEnemyKills,
-            savLifetimeWeaponKills = LifetimeWeaponKills,
-            savLifetimeWeaponScores = LifetimeWeaponScores,
-            savLifetimeWeaponSwitches = LifetimeWeaponSwitches,
+            savLifetimeEnemyKills = ToSerializationSaveStruct(LifetimeEnemyKills),
+            savLifetimeWeaponKills = ToSerializationSaveStruct(LifetimeWeaponKills),
+            savLifetimeWeaponScores = ToSerializationSaveStruct(LifetimeWeaponScores),
+            savLifetimeWeaponSwitches = ToSerializationSaveStruct(LifetimeWeaponSwitches),
 
-            savMaxEnemyWeaponKills = MaxEnemyWeaponKills,
-            savMaxEnemykills = MaxEnemyKills,
+            savMaxEnemyWeaponKills = ToSerializationSaveStruct(MaxEnemyWeaponKills),
+            savMaxEnemykills = ToSerializationSaveStruct(MaxEnemyKills),
             savmaxScore = maxScore,
             savmaxKills = maxKills,
             savmaxSwitches = maxSwitches,
-            savMaxWeaponKills = MaxWeaponKills,
-            savMaxWeaponScores = MaxWeaponScores,
-            savMaxWeaponSwitches = MaxWeaponSwitches,
-            savMaxWeaponUsedAtLevel = MaxWeaponUsedAtLevel,
-            savMaxPowerups = MaxPowerUps,
+            savMaxWeaponKills = ToSerializationSaveStruct(MaxWeaponKills),
+            savMaxWeaponScores = ToSerializationSaveStruct(MaxWeaponScores),
+            savMaxWeaponSwitches = ToSerializationSaveStruct(MaxWeaponSwitches),
+            savMaxWeaponUsedAtLevel = ToSerializationSaveStruct(MaxWeaponUsedAtLevel),
+            savMaxPowerups = ToSerializationSaveStruct(MaxPowerUps),
             savAchivementsDone = FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked
         };
 
@@ -274,21 +315,21 @@ public class StatTracker : MonoBehaviour
 
     public void LoadFromSaveObject(SaveObject oldSave)
     {
-        LifetimeEnemyKills = oldSave.savLifetimeEnemyKills;
-        LifetimeWeaponKills = oldSave.savLifetimeWeaponKills;
-        LifetimeWeaponScores = oldSave.savLifetimeWeaponScores;
-        LifetimeWeaponSwitches = oldSave.savLifetimeWeaponSwitches;
+        LifetimeEnemyKills = FromSerializableSaveStruct(oldSave.savLifetimeEnemyKills);
+        LifetimeWeaponKills = FromSerializableSaveStruct(oldSave.savLifetimeWeaponKills);
+        LifetimeWeaponScores = FromSerializableSaveStruct(oldSave.savLifetimeWeaponScores);
+        LifetimeWeaponSwitches = FromSerializableSaveStruct(oldSave.savLifetimeWeaponSwitches);
 
-        MaxEnemyKills = oldSave.savMaxEnemykills;
+        MaxEnemyKills = FromSerializableSaveStruct(oldSave.savMaxEnemykills);
         maxScore = oldSave.savmaxScore;
-        MaxEnemyWeaponKills = oldSave.savMaxEnemyWeaponKills;
+        MaxEnemyWeaponKills = FromSerializableSaveStruct(oldSave.savMaxEnemyWeaponKills);
         maxKills = oldSave.savmaxKills;
         maxSwitches = oldSave.savmaxSwitches;
-        MaxWeaponKills = oldSave.savMaxWeaponKills;
-        MaxWeaponScores = oldSave.savMaxWeaponScores;
-        MaxWeaponSwitches = oldSave.savMaxWeaponSwitches;
-        MaxWeaponUsedAtLevel = oldSave.savMaxWeaponUsedAtLevel;
-        MaxPowerUps = oldSave.savMaxPowerups;
+        MaxWeaponKills = FromSerializableSaveStruct(oldSave.savMaxWeaponKills);
+        MaxWeaponScores = FromSerializableSaveStruct(oldSave.savMaxWeaponScores);
+        MaxWeaponSwitches = FromSerializableSaveStruct(oldSave.savMaxWeaponSwitches);
+        MaxWeaponUsedAtLevel = FromSerializableSaveStruct(oldSave.savMaxWeaponUsedAtLevel);
+        MaxPowerUps = FromSerializableSaveStruct(oldSave.savMaxPowerups);
         FindObjectOfType<AchievementManager>().AchievementsAlreadyUnlocked = oldSave.savAchivementsDone;
     }
 

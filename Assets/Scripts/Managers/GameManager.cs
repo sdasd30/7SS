@@ -99,12 +99,8 @@ public class GameManager : MonoBehaviour
             return;
         SaveObject newSave = FindObjectOfType<StatTracker>().TransferToSaveObject();
 
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "\\gamesave.sav"); //
-        Debug.Log("Saved Game to " + Application.persistentDataPath + "\\gamesave.sav");
-        bf.Serialize(file, newSave);
-        file.Close();
-
+        string json = JsonUtility.ToJson(newSave);
+        File.WriteAllText(Application.persistentDataPath + "\\gamesave.sav", json);
         Debug.Log("Game Saved");
     }
 }
