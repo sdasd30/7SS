@@ -39,9 +39,12 @@ public class CardManager : MonoBehaviour
     private void onSceneLoad(Scene scene, LoadSceneMode mode)
     {
         WeaponHandler wh = FindObjectOfType<WeaponHandler>();
-        if (wh != null)
+        if (scene.name != "Tutorial")
         {
-            wh.weapons = CurrentHand;
+            if (wh != null)
+            {
+                wh.weapons = CurrentHand;
+            }
         }
     }
 
