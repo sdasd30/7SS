@@ -117,15 +117,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6003231345849108831, guid: b334e26cb97231d45ab34ab1a3505a1d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003231345849108831, guid: b334e26cb97231d45ab34ab1a3505a1d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003231345849108831, guid: b334e26cb97231d45ab34ab1a3505a1d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003231345849108831, guid: b334e26cb97231d45ab34ab1a3505a1d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b836e0e32638442be4dc67658c6ba8,
+        type: 3}
     - target: {fileID: 6122197009633808824, guid: b334e26cb97231d45ab34ab1a3505a1d,
         type: 3}
       propertyPath: NameOfLevel
-      value: Lab
+      value: Teleportation lab
       objectReference: {fileID: 0}
     - target: {fileID: 6122197009633808824, guid: b334e26cb97231d45ab34ab1a3505a1d,
         type: 3}
       propertyPath: Description
-      value: Brave the Tight Hallways of a Teleportation Lab
+      value: Brave the Tight Hallways of the Lab!
       objectReference: {fileID: 0}
     - target: {fileID: 6122197009633808824, guid: b334e26cb97231d45ab34ab1a3505a1d,
         type: 3}
