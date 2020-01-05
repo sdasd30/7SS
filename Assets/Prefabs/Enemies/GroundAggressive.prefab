@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  coolDownTime: 0.25
+  coolDownTime: 0.5
   knockback: {x: 16, y: 12}
   recoilKnockback: {x: 7, y: 5}
   recoilDamage: 0

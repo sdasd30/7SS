@@ -153,7 +153,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllyHelicopter Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2518332941531949594, guid: c90a0125fc81db642b27fa77a3ffd5c3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c90a0125fc81db642b27fa77a3ffd5c3, type: 3}
 --- !u!1 &9157079404234166867 stripped
 GameObject:
