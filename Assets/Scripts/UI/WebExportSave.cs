@@ -6,7 +6,8 @@ using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Json;
 public class WebExportSave : MonoBehaviour
 {
     public GameObject TextBoxWindow;
@@ -34,18 +35,19 @@ public class WebExportSave : MonoBehaviour
     }
     private string SerializeDataToString(SaveObject staticOptions)
     {
-        MemoryStream ms = new MemoryStream();
-        BinaryFormatter bf = new BinaryFormatter();
+        //MemoryStream ms = new MemoryStream();
+        //BinaryFormatter bf = new BinaryFormatter();
         //BinaryWriter tw = new BinaryWriter(ms, Encoding.UTF8);
-        bf.Serialize(ms, staticOptions);
+        //bf.Serialize(ms, staticOptions);
+        string json = JsonUtility.ToJson(staticOptions);
         //ms = (MemoryStream)tw.BaseStream;
-        string utfString = UtfToString(ms.ToArray());
-        return utfString;
+        //string utfString = UtfToString(ms.ToArray());
+        return json;
     }
-    private string UtfToString(byte[] bytes)
-    {
-        UTF8Encoding encoding = new UTF8Encoding();
-        string constructedString = encoding.GetString(bytes);
-        return (constructedString);
-    }
+    //private string UtfToString(byte[] bytes)
+    //{
+    //    UTF8Encoding encoding = new UTF8Encoding();
+    //    string constructedString = encoding.GetString(bytes);
+    //    return (constructedString);
+    //}
 }

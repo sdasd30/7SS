@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 
 public class LoadGame : MonoBehaviour
@@ -21,11 +22,15 @@ public class LoadGame : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/gamesave.sav"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.sav", FileMode.Open);
-            SaveObject oldSave = (SaveObject)bf.Deserialize(file);
+            //BinaryFormatter bf = new BinaryFormatter();
+            //FileStream file = File.Open(Application.persistentDataPath + "/gamesave.sav", FileMode.Open);
+            //SaveObject oldSave = (SaveObject)bf.Deserialize(file);
+            //stats.LoadFromSaveObject(oldSave);
+            //file.Close();
+
+            string json = File.ReadAllText(Application.persistentDataPath + "/gamesave.sav");
+            SaveObject oldSave = JsonUtility.FromJson<SaveObject>(json);
             stats.LoadFromSaveObject(oldSave);
-            file.Close();
             Debug.Log("Loaded game from " + Application.persistentDataPath + "/gamesave.sav");
             return;
         }

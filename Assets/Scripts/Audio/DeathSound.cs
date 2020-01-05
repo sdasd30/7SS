@@ -22,6 +22,8 @@ public class DeathSound : MonoBehaviour
 
         if (manager == null)
             Debug.Log("No LivingSFXManager in scene! Create one for death sounds to play");
+        if (sounds == null)
+            return;
         manager.playSound(sounds[Random.Range(0, sounds.Count)]);
     }
 }
