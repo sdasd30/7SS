@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
+  bullet: {fileID: 7229093593420484653, guid: d284e878075baa845bd1fa3eb73306d3, type: 3}
   name: AIBullet
   spread: 1
   firerate: 400

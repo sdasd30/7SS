@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 [RequireComponent(typeof(CameraFollow))]
 public class GameManager : MonoBehaviour
 {
+    public Texture2D testTexture;
     public GameObject CurrentPlayer;
     public Text GameOverText;
     public GameObject LoseMenu;

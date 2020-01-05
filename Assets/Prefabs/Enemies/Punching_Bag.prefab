@@ -181,6 +181,7 @@ MonoBehaviour:
   knockback: {x: 10, y: 12}
   recoilKnockback: {x: 3, y: 5}
   recoilDamage: 0
+  MinimumArmTime: 0
 --- !u!114 &2948297629604272381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChaseDistance: 10
+  MaxYDistanceChase: -1
   AbandonDistance: 15
   DelayAfterAttack: 2
   JumpProbabilityPercent: 0
@@ -217,6 +219,7 @@ MonoBehaviour:
   YAccessMove: 1
   TargetOffset: {x: 0, y: 0}
   TargetTolerance: 0.2
+  m_targetObj: {fileID: 0}
 --- !u!114 &2173643771367291834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +237,7 @@ MonoBehaviour:
   TimeToJumpApex: 0.4
   MoveSpeed: 4
   canDoubleJump: 1
+  doubleJumpAvailable: 1
   autonomy: 1
   minDistance: 1
   abandonDistance: 10
@@ -250,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22de906ac614094998daa5b6a6ae511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  hp: 100
+  maxHP: 10
+  hp: 10
 --- !u!114 &7756308805849818503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackName: Punching Bag
-  scoreValue: 777
+  scoreValue: 3
   value: 2
 --- !u!114 &1424528153081009695
 MonoBehaviour:

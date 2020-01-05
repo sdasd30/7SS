@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9209251900481486847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9209251900481486845}
+  - component: {fileID: 9209251900481486846}
+  - component: {fileID: 9209251900481486844}
+  m_Layer: 0
+  m_Name: Bottomless Pit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9209251900481486845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209251900481486847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.3, y: -46.3, z: -94.75781}
+  m_LocalScale: {x: 191.9, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9209251900481486846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209251900481486847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a46787416583f545a5242c11184da4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damage: 20
+  m_focusDamage: -1
+  m_penetration: 0
+  m_duration: 1
+  m_hasDuration: 1
+  m_isFixedKnockback: 0
+  m_resetKnockback: 1
+  m_knockback: {x: 0, y: 40}
+  m_stun: 0
+  m_isRandomKnockback: 0
+  m_FreezeTime: 0
+  Deflector: 0
+  m_elementList: 
+  m_followObj: {fileID: 0}
+  m_followOffset: {x: 0, y: 0}
+  m_upRightDownLeftColliders: []
+  m_collidedObjs: []
+  m_overlappingControl: []
+--- !u!114 &9209251900481486844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209251900481486847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9004efc3b557c344aae11917af970c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  name: Bottomless Pit
+  spread: 0
+  firerate: 0
+  damage: 1
+  speed: 10
+  duration: 5
+  shots: 1
+  pierce: 0
+  knockbackMult: 1
+  Offset: {x: 0, y: 0, z: 0}
+  OnDeathCreate: []
+  GravityScale: 0
+  timeToGravity: 0
+  RecoilDamage: 0
+  Icon: {fileID: 0}
+  Cost: 0
+  auto: 0
+  deflector: 0
+  attackSound: []

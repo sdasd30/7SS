@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1017380951
-  m_SortingLayer: 5
+  m_SortingLayer: -1
   m_SortingOrder: 5
   m_Sprite: {fileID: -5157738489087914723, guid: 917adc5b74efb5b499b83d9ff90c8f9e,
     type: 3}
@@ -168,7 +168,7 @@ MonoBehaviour:
   DisplayName: Big Mean Mother Hubbard
   Description: 
   typeOfAchievement: 1
-  value: 10
+  value: 20
   WithObject: {fileID: 1935454864474655953, guid: 01797ec6b25db9a4bad7a1a57ba55afe,
     type: 3}
   WithObject2: {fileID: 0}
