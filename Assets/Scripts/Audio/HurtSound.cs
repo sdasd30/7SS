@@ -15,7 +15,7 @@ public class HurtSound : MonoBehaviour
         {
             if (item.identifySelf().Equals("Living"))
             {
-                Debug.Log("Living manager identified");
+                //Debug.Log("Living manager identified");
                 manager = item;
             }
         }

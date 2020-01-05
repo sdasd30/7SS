@@ -14,14 +14,14 @@ public class AttackSound : MonoBehaviour
         {
             if (item.identifySelf().Equals("Attacks"))
             {
-                Debug.Log("Attack manager identified");
+                //Debug.Log("Attack manager identified");
                 manager = item;
             }
         }
 
         if (manager == null)
             Debug.Log("No SFXManager in scene! Create one for attack sounds to play");
-        Debug.Log("Attempting to play " + sent);    
+        //Debug.Log("Attempting to play " + sent);    
         manager.playSound(sent);
     }
 }
