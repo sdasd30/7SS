@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2173643771367291826}
   - component: {fileID: 7756308805849818503}
   - component: {fileID: 1424528153081009695}
+  - component: {fileID: -3281099419656206632}
   m_Layer: 0
   m_Name: Punching_Bag
   m_TagString: Untagged
@@ -284,3 +285,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Faction: 2
+--- !u!114 &-3281099419656206632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2173643771367291825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b9c8506d7ff24439400d8c40f901c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 466a2d40a1fd26a4786d19e6e575b86e, type: 3}

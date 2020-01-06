@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: -1198368164430987464}
   - component: {fileID: 7065681462927042938}
   - component: {fileID: 8501163149012986192}
+  - component: {fileID: -6064503256179846998}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -394,3 +395,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - {fileID: 8300000, guid: 15f8940e0461ab441afa5f395ffb6102, type: 3}
+--- !u!114 &-6064503256179846998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514619932770599800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b9c8506d7ff24439400d8c40f901c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 466a2d40a1fd26a4786d19e6e575b86e, type: 3}

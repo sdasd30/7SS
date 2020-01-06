@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 1631873917782523594}
   - component: {fileID: 4816864316946369157}
   - component: {fileID: 4711634850767016394}
+  - component: {fileID: -7545477703278081658}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -414,3 +415,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab19d5bcd4649144a94b3b3ddce884da, type: 3}
   - {fileID: 8300000, guid: cbcd196d35cb4704f971d6422d42f92d, type: 3}
   - {fileID: 8300000, guid: 16277df2df7801344a5c8fd73458909c, type: 3}
+--- !u!114 &-7545477703278081658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366366923679879817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b9c8506d7ff24439400d8c40f901c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 466a2d40a1fd26a4786d19e6e575b86e, type: 3}

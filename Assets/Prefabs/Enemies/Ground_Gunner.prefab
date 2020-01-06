@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: -1911440362302427406}
   - component: {fileID: 3532043819072592573}
   - component: {fileID: 3046242981436565728}
+  - component: {fileID: 6361467952843990608}
+  - component: {fileID: 2021250873814673121}
   m_Layer: 0
   m_Name: Ground_Gunner
   m_TagString: Untagged
@@ -288,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8192ba5f0000c34e9a0e7e7b27f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 879148698963788461, guid: a61fdaf840533c64fb4778fb6707f53f, type: 3}
+  bullet: {fileID: 29548179566829757, guid: 2baececf6fc025e42bee4d0e5451094e, type: 3}
   name: AIBullet
   spread: 1
   firerate: 400
@@ -307,7 +309,8 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 0
-  attackSound: []
+  attackSound:
+  - {fileID: 8300000, guid: da521aacfc488fe46bbf794bdfe41c1d, type: 3}
 --- !u!114 &5984054227554796208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,3 +450,29 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: cbcd196d35cb4704f971d6422d42f92d, type: 3}
   - {fileID: 8300000, guid: 16277df2df7801344a5c8fd73458909c, type: 3}
+--- !u!114 &6361467952843990608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984054227554796209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b9c8506d7ff24439400d8c40f901c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 466a2d40a1fd26a4786d19e6e575b86e, type: 3}
+--- !u!114 &2021250873814673121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984054227554796209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70899c12ad6b09419f9798ed5c3143e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

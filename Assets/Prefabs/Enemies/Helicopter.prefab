@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 4470303323586843754}
   - component: {fileID: 4511266813240212013}
   - component: {fileID: -4005423920175493800}
+  - component: {fileID: 7554711540410161373}
+  - component: {fileID: -4940375095683807429}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
@@ -307,7 +309,8 @@ MonoBehaviour:
   Cost: 0
   auto: 0
   deflector: 0
-  attackSound: []
+  attackSound:
+  - {fileID: 8300000, guid: 9a562a1f372fb0c478f51edfd7589794, type: 3}
 --- !u!114 &6303718734239560749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,3 +451,29 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e1d4773b753f585448ea8bf3189defce, type: 3}
   - {fileID: 8300000, guid: ab19d5bcd4649144a94b3b3ddce884da, type: 3}
   - {fileID: 8300000, guid: 3ab0d9a371b8ae74cb0b0c87dde5fa94, type: 3}
+--- !u!114 &7554711540410161373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303718734239560748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b9c8506d7ff24439400d8c40f901c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 466a2d40a1fd26a4786d19e6e575b86e, type: 3}
+--- !u!114 &-4940375095683807429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303718734239560748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70899c12ad6b09419f9798ed5c3143e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

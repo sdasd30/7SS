@@ -160,7 +160,7 @@ MonoBehaviour:
   DisplayName: Gesture of the Drowned
   Description: 
   typeOfAchievement: 1
-  value: 2
+  value: 20
   WithObject: {fileID: 9209251900481486847, guid: ac3e0629aa2f73c4fbd23a47a3eda4bf,
     type: 3}
   WithObject2: {fileID: 0}
